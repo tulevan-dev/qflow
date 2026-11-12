@@ -1,3 +1,15 @@
+erver:
+  port: 8080
+
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: hello-route
+              uri: ${HELLO_URI:http://localhost:8081}
+              predicates:
+                - Path=/hello
