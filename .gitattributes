@@ -1,0 +1,15 @@
+# Shell scripts: Linux-compatible line endings
+*.sh text eol=lf
+
+# Maven Wrapper
+mvnw text eol=lf
+
+# Windows batch scripts
+*.bat text eol=crlf
+
+# General text files
+*.md text
+*.yml text
+*.yaml text
+*.xml text
+*.properties text
