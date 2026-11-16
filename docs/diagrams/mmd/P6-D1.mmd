@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 5: order sync + reconciler"] --> G["Goal<br/>Event-driven đúng nghĩa; saga bất đồng bộ."]
+  G --> F["Features<br/>Outbox, payment + mock provider, ticket, compensation, DLQ"]
+  G --> A["Architecture / Technology<br/>Kafka + outbox/inbox + payment + ticket"]
+  F --> O["Output<br/>Saga bất đồng bộ chịu được chaos"]
+  A --> O
+  O --> D["Definition of Done<br/>Chạy chaos script (kill Kafka/consumer/ticket-service) → cuối cùng mọi order đạt trạng thái cuối hợp lệ (COMPLETED/EXPIRED/REFUNDED); Không vé mất, không vé trùng, không tiền treo"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 7"]
+  GT -->|"chưa đạt"| G

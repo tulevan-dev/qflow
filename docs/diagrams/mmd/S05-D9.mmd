@@ -1,0 +1,8 @@
+flowchart LR
+  WR["waiting-room"] --> K1["wr:eventId:queue<br/>ZSET score = join time"]
+  WR --> K2["wr:eventId:admitted:userId<br/>TTL, đã được vào"]
+  GW["gateway"] --> K3["rl:route:userId/ip<br/>rate limit"]
+  CAT["catalog"] --> K4["cache:event:id<br/>cache"]
+  INV["inventory"] --> K5["avail:tierId<br/>cache hiển thị, KHÔNG quyết định"]
+  NOTI["notification"] -.-> K6["Redis pub/sub<br/>SSE push"]
+  K5 -.->|"quyết định thật luôn ở PostgreSQL"| PG[("PG inventory")]

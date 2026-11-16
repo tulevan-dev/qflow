@@ -1,0 +1,36 @@
+mindmap
+  root((QFlow))
+    Bài toán thật
+      Show hot mở bán thì hệ thống sập
+      Bot hốt sạch vé
+      Bán trùng ghế
+      BTC nhỏ không có hạ tầng chịu thundering herd
+    Vì sao hợp mục tiêu
+      Concurrency thật
+        5.000 người tranh 200 vé
+        Phải đúng tuyệt đối không oversell
+      Microservices có lý do tách
+        Waiting room dùng Redis throughput cao
+        Inventory cần consistency cao
+        Payment làm việc với hệ thống ngoài
+        Catalog đọc nhiều
+      Event-driven tự nhiên
+        Order Payment Ticket Notification Audit
+      Distributed transaction thật
+        Saga reserve pay issue
+        Compensating action
+      Real-time thật
+        Vị trí hàng đợi
+        Số vé còn lại
+        Check-in live
+      Nhiều role có trách nhiệm thật
+      Public được
+        CLB workshop sự kiện cộng đồng
+        Flash sale simulation để demo
+      Khác biệt
+        Lõi là fairness inventory contention saga
+        Không phải giỏ hàng
+    Rủi ro
+      Thanh toán thật có pháp lý
+      Dễ over-engineer vì nhiều service
+      Phần lõi khó test

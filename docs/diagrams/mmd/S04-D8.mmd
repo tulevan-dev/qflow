@@ -1,0 +1,21 @@
+sequenceDiagram
+  autonumber
+  participant ORD as order
+  participant INV as inventory
+  participant PAY as payment
+  participant K as Kafka
+  INV->>INV: hold EXPIRED bởi worker
+  ORD->>ORD: order EXPIRED
+  PAY->>K: PaymentSucceeded
+  K->>ORD: consume
+  ORD->>ORD: state machine từ chối chuyển sang PAID
+  alt Phương án A refund tự động
+    ORD->>ORD: order REFUND_PENDING
+    ORD->>K: RefundRequested
+    K->>PAY: consume và hoàn tiền
+    PAY->>K: RefundSucceeded
+    K->>ORD: order REFUNDED
+  else Phương án B cứu order nếu còn vé
+    Note over ORD,INV: cần cơ chế xin lại stock
+  end
+  Note over ORD: quyết định chưa chốt, ghi ADR-010

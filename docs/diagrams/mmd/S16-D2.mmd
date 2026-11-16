@@ -1,0 +1,17 @@
+flowchart TB
+  P0["P0 repo, CI, error model, correlation id"] --> P1["P1 auth"]
+  P1 --> P2["P2 catalog, ownership"]
+  P1 -.-> P3["P3 UI nền"]
+  P2 -.-> P3
+  P2 --> P4["P4 inventory cần tier và EventPublished"]
+  P4 --> P5["P5 order cần Reserve"]
+  P5 --> P6["P6 saga async cần order sync + reconciler"]
+  P6 --> P7["P7 notification, audit, SSE cần event stream"]
+  P7 --> P8["P8 waiting room dùng SSE"]
+  P5 -.-> P8
+  P1 -.->|"rate limit ở gateway"| P8
+  P8 --> P9["P9 observability trên hệ thống đủ thành phần"]
+  P6 -.-> P9
+  P9 --> P10["P10 debug lab cần trace và metric"]
+  P10 --> P11["P11 deploy bản đã tune"]
+  P11 --> P12["P12 mở rộng sau v1.0"]

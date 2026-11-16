@@ -1,0 +1,13 @@
+stateDiagram-v2
+  [*] --> DRAFT
+  DRAFT --> PENDING_REVIEW : submit bởi ORGANIZER chủ sự kiện
+  PENDING_REVIEW --> PUBLISHED : approve bởi MODERATOR khác người tạo
+  PENDING_REVIEW --> REJECTED : reject kèm lý do bắt buộc
+  REJECTED --> DRAFT : edit và resubmit
+  PUBLISHED --> ON_SALE : SYSTEM scheduler khi đến sale_starts_at
+  ON_SALE --> SALE_CLOSED : sold out hoặc sale_ends
+  SALE_CLOSED --> ENDED
+  PUBLISHED --> CANCELLED : cancel bởi ORGANIZER hoặc ADMIN
+  ON_SALE --> CANCELLED : cancel và phát EventCancelled
+  CANCELLED --> [*]
+  ENDED --> [*]

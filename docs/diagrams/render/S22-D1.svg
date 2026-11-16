@@ -1,0 +1,507 @@
+<svg id="g162" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mindmapDiagram" style="max-width: 1156.16943359375px;" viewBox="5 5 1156.16943359375 672.1847534179688" role="graphics-document document" aria-roledescription="mindmap"><style>#g162{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#g162 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#g162 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#g162 .error-icon{fill:#552222;}#g162 .error-text{fill:#552222;stroke:#552222;}#g162 .edge-thickness-normal{stroke-width:1px;}#g162 .edge-thickness-thick{stroke-width:3.5px;}#g162 .edge-pattern-solid{stroke-dasharray:0;}#g162 .edge-thickness-invisible{stroke-width:0;fill:none;}#g162 .edge-pattern-dashed{stroke-dasharray:3;}#g162 .edge-pattern-dotted{stroke-dasharray:2;}#g162 .marker{fill:#333333;stroke:#333333;}#g162 .marker.cross{stroke:#333333;}#g162 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#g162 p{margin:0;}#g162 .edge{stroke-width:3;}#g162 .section--1 rect,#g162 .section--1 path,#g162 .section--1 circle,#g162 .section--1 polygon,#g162 .section--1 path{fill:hsl(240, 100%, 76.2745098039%);}#g162 .section--1 text{fill:#ffffff;}#g162 .section--1 span{color:#ffffff;}#g162 .node-icon--1{font-size:40px;color:#ffffff;}#g162 .section-edge--1{stroke:hsl(240, 100%, 76.2745098039%);}#g162 .edge-depth--1{stroke-width:17;}#g162 .section--1 line{stroke:hsl(60, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section--1 rect,#g162 [data-look="neo"].mindmap-node.section--1 path,#g162 [data-look="neo"].mindmap-node.section--1 circle,#g162 [data-look="neo"].mindmap-node.section--1 polygon{fill:hsl(240, 100%, 76.2745098039%);stroke:hsl(240, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge--1{stroke:hsl(240, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section--1 text{fill:#ffffff;}#g162 .section-0 rect,#g162 .section-0 path,#g162 .section-0 circle,#g162 .section-0 polygon,#g162 .section-0 path{fill:hsl(60, 100%, 73.5294117647%);}#g162 .section-0 text{fill:black;}#g162 .section-0 span{color:black;}#g162 .node-icon-0{font-size:40px;color:black;}#g162 .section-edge-0{stroke:hsl(60, 100%, 73.5294117647%);}#g162 .edge-depth-0{stroke-width:14;}#g162 .section-0 line{stroke:hsl(240, 100%, 83.5294117647%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-0 rect,#g162 [data-look="neo"].mindmap-node.section-0 path,#g162 [data-look="neo"].mindmap-node.section-0 circle,#g162 [data-look="neo"].mindmap-node.section-0 polygon{fill:hsl(60, 100%, 73.5294117647%);stroke:hsl(60, 100%, 73.5294117647%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-0{stroke:hsl(60, 100%, 73.5294117647%);}#g162 [data-look="neo"].mindmap-node.section-0 text{fill:black;}#g162 .section-1 rect,#g162 .section-1 path,#g162 .section-1 circle,#g162 .section-1 polygon,#g162 .section-1 path{fill:hsl(80, 100%, 76.2745098039%);}#g162 .section-1 text{fill:black;}#g162 .section-1 span{color:black;}#g162 .node-icon-1{font-size:40px;color:black;}#g162 .section-edge-1{stroke:hsl(80, 100%, 76.2745098039%);}#g162 .edge-depth-1{stroke-width:11;}#g162 .section-1 line{stroke:hsl(260, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-1 rect,#g162 [data-look="neo"].mindmap-node.section-1 path,#g162 [data-look="neo"].mindmap-node.section-1 circle,#g162 [data-look="neo"].mindmap-node.section-1 polygon{fill:hsl(80, 100%, 76.2745098039%);stroke:hsl(80, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-1{stroke:hsl(80, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-1 text{fill:black;}#g162 .section-2 rect,#g162 .section-2 path,#g162 .section-2 circle,#g162 .section-2 polygon,#g162 .section-2 path{fill:hsl(270, 100%, 76.2745098039%);}#g162 .section-2 text{fill:#ffffff;}#g162 .section-2 span{color:#ffffff;}#g162 .node-icon-2{font-size:40px;color:#ffffff;}#g162 .section-edge-2{stroke:hsl(270, 100%, 76.2745098039%);}#g162 .edge-depth-2{stroke-width:8;}#g162 .section-2 line{stroke:hsl(90, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-2 rect,#g162 [data-look="neo"].mindmap-node.section-2 path,#g162 [data-look="neo"].mindmap-node.section-2 circle,#g162 [data-look="neo"].mindmap-node.section-2 polygon{fill:hsl(270, 100%, 76.2745098039%);stroke:hsl(270, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-2{stroke:hsl(270, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-2 text{fill:#ffffff;}#g162 .section-3 rect,#g162 .section-3 path,#g162 .section-3 circle,#g162 .section-3 polygon,#g162 .section-3 path{fill:hsl(300, 100%, 76.2745098039%);}#g162 .section-3 text{fill:black;}#g162 .section-3 span{color:black;}#g162 .node-icon-3{font-size:40px;color:black;}#g162 .section-edge-3{stroke:hsl(300, 100%, 76.2745098039%);}#g162 .edge-depth-3{stroke-width:5;}#g162 .section-3 line{stroke:hsl(120, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-3 rect,#g162 [data-look="neo"].mindmap-node.section-3 path,#g162 [data-look="neo"].mindmap-node.section-3 circle,#g162 [data-look="neo"].mindmap-node.section-3 polygon{fill:hsl(300, 100%, 76.2745098039%);stroke:hsl(300, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-3{stroke:hsl(300, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-3 text{fill:black;}#g162 .section-4 rect,#g162 .section-4 path,#g162 .section-4 circle,#g162 .section-4 polygon,#g162 .section-4 path{fill:hsl(330, 100%, 76.2745098039%);}#g162 .section-4 text{fill:black;}#g162 .section-4 span{color:black;}#g162 .node-icon-4{font-size:40px;color:black;}#g162 .section-edge-4{stroke:hsl(330, 100%, 76.2745098039%);}#g162 .edge-depth-4{stroke-width:2;}#g162 .section-4 line{stroke:hsl(150, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-4 rect,#g162 [data-look="neo"].mindmap-node.section-4 path,#g162 [data-look="neo"].mindmap-node.section-4 circle,#g162 [data-look="neo"].mindmap-node.section-4 polygon{fill:hsl(330, 100%, 76.2745098039%);stroke:hsl(330, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-4{stroke:hsl(330, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-4 text{fill:black;}#g162 .section-5 rect,#g162 .section-5 path,#g162 .section-5 circle,#g162 .section-5 polygon,#g162 .section-5 path{fill:hsl(0, 100%, 76.2745098039%);}#g162 .section-5 text{fill:black;}#g162 .section-5 span{color:black;}#g162 .node-icon-5{font-size:40px;color:black;}#g162 .section-edge-5{stroke:hsl(0, 100%, 76.2745098039%);}#g162 .edge-depth-5{stroke-width:-1;}#g162 .section-5 line{stroke:hsl(180, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-5 rect,#g162 [data-look="neo"].mindmap-node.section-5 path,#g162 [data-look="neo"].mindmap-node.section-5 circle,#g162 [data-look="neo"].mindmap-node.section-5 polygon{fill:hsl(0, 100%, 76.2745098039%);stroke:hsl(0, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-5{stroke:hsl(0, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-5 text{fill:black;}#g162 .section-6 rect,#g162 .section-6 path,#g162 .section-6 circle,#g162 .section-6 polygon,#g162 .section-6 path{fill:hsl(30, 100%, 76.2745098039%);}#g162 .section-6 text{fill:black;}#g162 .section-6 span{color:black;}#g162 .node-icon-6{font-size:40px;color:black;}#g162 .section-edge-6{stroke:hsl(30, 100%, 76.2745098039%);}#g162 .edge-depth-6{stroke-width:-4;}#g162 .section-6 line{stroke:hsl(210, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-6 rect,#g162 [data-look="neo"].mindmap-node.section-6 path,#g162 [data-look="neo"].mindmap-node.section-6 circle,#g162 [data-look="neo"].mindmap-node.section-6 polygon{fill:hsl(30, 100%, 76.2745098039%);stroke:hsl(30, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-6{stroke:hsl(30, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-6 text{fill:black;}#g162 .section-7 rect,#g162 .section-7 path,#g162 .section-7 circle,#g162 .section-7 polygon,#g162 .section-7 path{fill:hsl(90, 100%, 76.2745098039%);}#g162 .section-7 text{fill:black;}#g162 .section-7 span{color:black;}#g162 .node-icon-7{font-size:40px;color:black;}#g162 .section-edge-7{stroke:hsl(90, 100%, 76.2745098039%);}#g162 .edge-depth-7{stroke-width:-7;}#g162 .section-7 line{stroke:hsl(270, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-7 rect,#g162 [data-look="neo"].mindmap-node.section-7 path,#g162 [data-look="neo"].mindmap-node.section-7 circle,#g162 [data-look="neo"].mindmap-node.section-7 polygon{fill:hsl(90, 100%, 76.2745098039%);stroke:hsl(90, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-7{stroke:hsl(90, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-7 text{fill:black;}#g162 .section-8 rect,#g162 .section-8 path,#g162 .section-8 circle,#g162 .section-8 polygon,#g162 .section-8 path{fill:hsl(150, 100%, 76.2745098039%);}#g162 .section-8 text{fill:black;}#g162 .section-8 span{color:black;}#g162 .node-icon-8{font-size:40px;color:black;}#g162 .section-edge-8{stroke:hsl(150, 100%, 76.2745098039%);}#g162 .edge-depth-8{stroke-width:-10;}#g162 .section-8 line{stroke:hsl(330, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-8 rect,#g162 [data-look="neo"].mindmap-node.section-8 path,#g162 [data-look="neo"].mindmap-node.section-8 circle,#g162 [data-look="neo"].mindmap-node.section-8 polygon{fill:hsl(150, 100%, 76.2745098039%);stroke:hsl(150, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-8{stroke:hsl(150, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-8 text{fill:black;}#g162 .section-9 rect,#g162 .section-9 path,#g162 .section-9 circle,#g162 .section-9 polygon,#g162 .section-9 path{fill:hsl(180, 100%, 76.2745098039%);}#g162 .section-9 text{fill:black;}#g162 .section-9 span{color:black;}#g162 .node-icon-9{font-size:40px;color:black;}#g162 .section-edge-9{stroke:hsl(180, 100%, 76.2745098039%);}#g162 .edge-depth-9{stroke-width:-13;}#g162 .section-9 line{stroke:hsl(0, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-9 rect,#g162 [data-look="neo"].mindmap-node.section-9 path,#g162 [data-look="neo"].mindmap-node.section-9 circle,#g162 [data-look="neo"].mindmap-node.section-9 polygon{fill:hsl(180, 100%, 76.2745098039%);stroke:hsl(180, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-9{stroke:hsl(180, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-9 text{fill:black;}#g162 .section-10 rect,#g162 .section-10 path,#g162 .section-10 circle,#g162 .section-10 polygon,#g162 .section-10 path{fill:hsl(210, 100%, 76.2745098039%);}#g162 .section-10 text{fill:black;}#g162 .section-10 span{color:black;}#g162 .node-icon-10{font-size:40px;color:black;}#g162 .section-edge-10{stroke:hsl(210, 100%, 76.2745098039%);}#g162 .edge-depth-10{stroke-width:-16;}#g162 .section-10 line{stroke:hsl(30, 100%, 86.2745098039%);stroke-width:3;}#g162 .disabled,#g162 .disabled circle,#g162 .disabled text{fill:lightgray;}#g162 .disabled text{fill:#efefef;}#g162 [data-look="neo"].mindmap-node.section-10 rect,#g162 [data-look="neo"].mindmap-node.section-10 path,#g162 [data-look="neo"].mindmap-node.section-10 circle,#g162 [data-look="neo"].mindmap-node.section-10 polygon{fill:hsl(210, 100%, 76.2745098039%);stroke:hsl(210, 100%, 76.2745098039%);stroke-width:1px;}#g162 [data-look="neo"].section-edge-10{stroke:hsl(210, 100%, 76.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-10 text{fill:black;}#g162 .section-root rect,#g162 .section-root path,#g162 .section-root circle,#g162 .section-root polygon{fill:hsl(240, 100%, 46.2745098039%);}#g162 .section-root text{fill:#ffffff;}#g162 .section-root span{color:#ffffff;}#g162 .icon-container{height:100%;display:flex;justify-content:center;align-items:center;}#g162 .edge{fill:none;}#g162 .mindmap-node-label{dy:1em;alignment-baseline:middle;text-anchor:middle;dominant-baseline:middle;text-align:center;}#g162 [data-look="neo"].mindmap-node{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 [data-look="neo"].mindmap-node.section-root rect,#g162 [data-look="neo"].mindmap-node.section-root path,#g162 [data-look="neo"].mindmap-node.section-root circle,#g162 [data-look="neo"].mindmap-node.section-root polygon{fill:hsl(240, 100%, 46.2745098039%);}#g162 [data-look="neo"].mindmap-node.section-root .text-inner-tspan{fill:#ffffff;}#g162 .node .neo-node{stroke:#9370DB;}#g162 [data-look="neo"].node rect,#g162 [data-look="neo"].cluster rect,#g162 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 [data-look="neo"].swimlane.cluster rect{filter:none;}#g162 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#g162 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#g162 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 [data-look="neo"].node circle .state-start{fill:#000000;}#g162 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#g162 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="g162_mindmap-pointEnd" class="marker mindmap" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="g162_mindmap-pointStart" class="marker mindmap" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="g162_mindmap-pointEnd-margin" class="marker mindmap" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="g162_mindmap-pointStart-margin" class="marker mindmap" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><g class="subgraphs"></g><g class="edgePaths"><path d="M523.239,354.178L516.439,340.874C509.639,327.569,496.039,300.96,482.44,274.351C468.84,247.741,455.24,221.132,448.44,207.827L441.64,194.523" id="g162-edge_0_1" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-1" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_0_1" data-points="W3sieCI6NTIzLjIzODg2NjcwMjc5MTUsInkiOjM1NC4xNzg0NDI5NjMyNTk0fSx7IngiOjQ4Mi40Mzk1MDE5NDk4NjA3NiwieSI6Mjc0LjM1MDY0MjM2OTgwMjl9LHsieCI6NDQxLjY0MDEzNzE5NjkzLCJ5IjoxOTQuNTIyODQxNzc2MzQ2NDR9XQ==" data-look="classic"></path><path d="M420.229,184.672L410.711,186.961C401.192,189.249,382.155,193.826,363.117,198.402C344.08,202.979,325.043,207.556,315.524,209.844L306.005,212.132" id="g162-edge_1_2" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_2" data-points="W3sieCI6NDIwLjIyOTIwNzA3MDc5NjYzLCJ5IjoxODQuNjcyNDEyMTA3ODM4MDZ9LHsieCI6MzYzLjExNzMzMTQwNjUyNzksInkiOjE5OC40MDI0NTA0ODY0OTE4M30seyJ4IjozMDYuMDA1NDU1NzQyMjU5MiwieSI6MjEyLjEzMjQ4ODg2NTE0NTZ9XQ==" data-look="classic"></path><path d="M420.371,185.215L397.793,191.545C375.216,197.875,330.061,210.534,284.907,223.194C239.752,235.853,194.598,248.513,172.02,254.843L149.443,261.172" id="g162-edge_1_3" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_3" data-points="W3sieCI6NDIwLjM3MDU1ODQ1MDA4MDMsInkiOjE4NS4yMTU0NzU1MjMxODAxMn0seyJ4IjoyODQuOTA2ODM1ODgzNjIwMSwieSI6MjIzLjE5Mzk0NTg3MDIxODg0fSx7IngiOjE0OS40NDMxMTMzMTcxNTk4OCwieSI6MjYxLjE3MjQxNjIxNzI1NzZ9XQ==" data-look="classic"></path><path d="M421.07,175.157L406.915,168.969C392.761,162.781,364.451,150.404,336.142,138.028C307.833,125.651,279.523,113.274,265.369,107.086L251.214,100.898" id="g162-edge_1_4" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_4" data-points="W3sieCI6NDIxLjA2OTc2ODE4NzUyLCJ5IjoxNzUuMTU3NDY1OTM2NTAzMjl9LHsieCI6MzM2LjE0MjAwNjIxMTg0MzEsInkiOjEzOC4wMjc1NTE5OTY5ODI4OH0seyJ4IjoyNTEuMjE0MjQ0MjM2MTY2MTQsInkiOjEwMC44OTc2MzgwNTc0NjI0Nn1d" data-look="classic"></path><path d="M419.815,181.356L398.306,181.629C376.798,181.902,333.78,182.448,290.763,182.993C247.746,183.539,204.729,184.085,183.22,184.358L161.711,184.63" id="g162-edge_1_5" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_5" data-points="W3sieCI6NDE5LjgxNDg3ODM1OTUwOSwieSI6MTgxLjM1NjQ3MjM2ODY0ODUzfSx7IngiOjI5MC43NjMxMzI4OTA3ODUsInkiOjE4Mi45OTM0Mzg2MDY5ODI3NX0seyJ4IjoxNjEuNzExMzg3NDIyMDYxMDIsInkiOjE4NC42MzA0MDQ4NDUzMTY5N31d" data-look="classic"></path><path d="M449.813,181.08L472.433,180.951C495.053,180.821,540.293,180.561,585.532,180.302C630.772,180.043,676.012,179.783,698.632,179.653L721.251,179.524" id="g162-edge_1_6" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_6" data-points="W3sieCI6NDQ5LjgxMzQyNTE3NDQ5ODEsInkiOjE4MS4wODAyMDkwNzY0Mzg5M30seyJ4Ijo1ODUuNTMyNDIyNjIzODkzOCwieSI6MTgwLjMwMTk4MzQ4MDEzNjJ9LHsieCI6NzIxLjI1MTQyMDA3MzI4OTUsInkiOjE3OS41MjM3NTc4ODM4MzM0NH1d" data-look="classic"></path><path d="M436.024,166.215L436.304,162.754C436.584,159.292,437.145,152.369,437.705,145.446C438.266,138.523,438.826,131.6,439.106,128.139L439.386,124.677" id="g162-edge_1_7" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_7" data-points="W3sieCI6NDM2LjAyMzkzMjMzNTgwOTYsInkiOjE2Ni4yMTUxMjMxNTkzOTYyNn0seyJ4Ijo0MzcuNzA1MTQ0NDc5NDg4MzUsInkiOjE0NS40NDYwNzE2OTgwMjk5OH0seyJ4Ijo0MzkuMzg2MzU2NjIzMTY3MSwieSI6MTI0LjY3NzAyMDIzNjY2MzcxfV0=" data-look="classic"></path><path d="M420.088,178.308L407.357,175.838C394.625,173.367,369.161,168.425,343.697,163.483C318.233,158.541,292.769,153.6,280.037,151.129L267.305,148.658" id="g162-edge_1_8" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_8" data-points="W3sieCI6NDIwLjA4ODQxMTI1ODg2ODcsInkiOjE3OC4zMDg0NzQ3MDA5NjE4NX0seyJ4IjozNDMuNjk2OTQ4MTM4NzQ3MjUsInkiOjE2My40ODMxMTU2MTUyMTU0fSx7IngiOjI2Ny4zMDU0ODUwMTg2MjU4LCJ5IjoxNDguNjU3NzU2NTI5NDY4OTd9XQ==" data-look="classic"></path><path d="M449.322,184.975L457.224,187.05C465.126,189.125,480.929,193.274,496.733,197.424C512.536,201.573,528.34,205.722,536.242,207.797L544.143,209.872" id="g162-edge_1_9" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_9" data-points="W3sieCI6NDQ5LjMyMTkyOTM2MDUwOTcsInkiOjE4NC45NzU0NzkwNjU5MDU2fSx7IngiOjQ5Ni43MzI2OTY3MTQ4MTkxLCJ5IjoxOTcuNDIzNTU4MjExMDUyODZ9LHsieCI6NTQ0LjE0MzQ2NDA2OTEyODQsInkiOjIwOS44NzE2MzczNTYyMDAxM31d" data-look="classic"></path><path d="M449.485,178.045L462.793,175.214C476.1,172.383,502.715,166.722,529.33,161.06C555.944,155.398,582.559,149.736,595.867,146.905L609.174,144.075" id="g162-edge_1_10" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_10" data-points="W3sieCI6NDQ5LjQ4NTM2ODYxNjMxMzg1LCJ5IjoxNzguMDQ1MTExNjU3NjM1ODN9LHsieCI6NTI5LjMyOTY3ODE1Mjk4NSwieSI6MTYxLjA1OTg0NjA3ODg0MDM0fSx7IngiOjYwOS4xNzM5ODc2ODk2NTYyLCJ5IjoxNDQuMDc0NTgwNTAwMDQ0ODV9XQ==" data-look="classic"></path><path d="M448.533,175.101L465.044,167.802C481.555,160.503,514.577,145.905,547.599,131.307C580.621,116.709,613.643,102.111,630.154,94.811L646.665,87.512" id="g162-edge_1_11" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_11" data-points="W3sieCI6NDQ4LjUzMjg5MjE0NjcwMTksInkiOjE3NS4xMDEzMjA3MTkxNTN9LHsieCI6NTQ3LjU5OTAxNDA1MjQ2MjQsInkiOjEzMS4zMDY4NTI1MDgwNTg2OH0seyJ4Ijo2NDYuNjY1MTM1OTU4MjIyOSwieSI6ODcuNTEyMzg0Mjk2OTY0Mzd9XQ==" data-look="classic"></path><path d="M431.553,166.525L429.551,157.535C427.549,148.544,423.545,130.564,419.541,112.583C415.537,94.603,411.533,76.622,409.531,67.632L407.529,58.641" id="g162-edge_1_12" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_12" data-points="W3sieCI6NDMxLjU1MzIzMDkzODMzODQ2LCJ5IjoxNjYuNTI0ODU1NTY4NTM1ODh9LHsieCI6NDE5LjU0MTEwNzE0MDA5NDM3LCJ5IjoxMTIuNTgzMTA5NTQyMTU4MjR9LHsieCI6NDA3LjUyODk4MzM0MTg1MDMsInkiOjU4LjY0MTM2MzUxNTc4MDU4fV0=" data-look="classic"></path><path d="M426.233,193.47L423.186,197.839C420.139,202.209,414.044,210.948,407.949,219.687C401.855,228.427,395.76,237.166,392.713,241.535L389.665,245.905" id="g162-edge_1_13" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_13" data-points="W3sieCI6NDI2LjIzMzI3MTEzNjY1NTMsInkiOjE5My40Njk3NDM5ODY1MDAzM30seyJ4Ijo0MDcuOTQ5MjczODUyNzczMzMsInkiOjIxOS42ODczNTYxNDQ1OX0seyJ4IjozODkuNjY1Mjc2NTY4ODkxNCwieSI6MjQ1LjkwNDk2ODMwMjY3OTd9XQ==" data-look="classic"></path><path d="M449.042,185.916L465.887,191.539C482.731,197.162,516.421,208.408,550.11,219.654C583.799,230.9,617.488,242.146,634.333,247.769L651.178,253.392" id="g162-edge_1_14" class=" edge-thickness-normal edge-pattern-solid edge section-edge-0 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_1_14" data-points="W3sieCI6NDQ5LjA0MTg2OTIyNDA4MjQ2LCJ5IjoxODUuOTE1Nzg3MTgzNTM0MTV9LHsieCI6NTUwLjEwOTgzMDM0OTE4ODMsInkiOjIxOS42NTM2NjMzNTk5NjY0Nn0seyJ4Ijo2NTEuMTc3NzkxNDc0Mjk0MiwieSI6MjUzLjM5MTUzOTUzNjM5ODc3fV0=" data-look="classic"></path><path d="M544.478,363.38L562.658,358.138C580.838,352.896,617.198,342.413,653.557,331.93C689.917,321.447,726.277,310.963,744.456,305.722L762.636,300.48" id="g162-edge_0_15" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-1" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_0_15" data-points="W3sieCI6NTQ0LjQ3ODIyOTM2MTc4NDEsInkiOjM2My4zNzk1NDAwMDE3MTAxNX0seyJ4Ijo2NTMuNTU3MjA1MDk4NTE1LCJ5IjozMzEuOTI5ODk2MzQzNzY2OH0seyJ4Ijo3NjIuNjM2MTgwODM1MjQ2LCJ5IjozMDAuNDgwMjUyNjg1ODIzNX1d" data-look="classic"></path><path d="M787.052,285.147L790.954,280.787C794.856,276.427,802.659,267.708,810.463,258.988C818.266,250.268,826.07,241.549,829.972,237.189L833.874,232.829" id="g162-edge_15_16" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_16" data-points="W3sieCI6Nzg3LjA1MjIxNDU4NjYxNzUsInkiOjI4NS4xNDcxOTMzMjc0OTI4Nn0seyJ4Ijo4MTAuNDYyOTI4MjkzODUzMywieSI6MjU4Ljk4Nzk5NDA2NjU3OTg2fSx7IngiOjgzMy44NzM2NDIwMDEwODk0LCJ5IjoyMzIuODI4Nzk0ODA1NjY2ODZ9XQ==" data-look="classic"></path><path d="M762.19,298.373L752.124,299.76C742.058,301.148,721.926,303.923,701.795,306.697C681.663,309.472,661.531,312.247,651.465,313.635L641.4,315.022" id="g162-edge_15_17" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_17" data-points="W3sieCI6NzYyLjE4OTU2OTA0NTAzMTcsInkiOjI5OC4zNzI4OTQ5MjA1OTk0NH0seyJ4Ijo3MDEuNzk0NTY5NDI1Mzc5OSwieSI6MzA2LjY5NzQ3MDAyNDM3NDV9LHsieCI6NjQxLjM5OTU2OTgwNTcyODEsInkiOjMxNS4wMjIwNDUxMjgxNDk2fV0=" data-look="classic"></path><path d="M788.397,306.134L792.654,309.813C796.911,313.492,805.424,320.85,813.937,328.208C822.45,335.566,830.963,342.924,835.219,346.603L839.476,350.283" id="g162-edge_15_18" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_18" data-points="W3sieCI6Nzg4LjM5NzQ2OTk1MzA1OTUsInkiOjMwNi4xMzM2MDA2NDQ2ODI0fSx7IngiOjgxMy45MzY1ODM3NTMxNDA3LCJ5IjozMjguMjA4MDg4NTQ1Njc2N30seyJ4Ijo4MzkuNDc1Njk3NTUzMjIxNiwieSI6MzUwLjI4MjU3NjQ0NjY3MDkzfV0=" data-look="classic"></path><path d="M766.385,306.873L761.824,311.385C757.262,315.896,748.14,324.919,739.018,333.942C729.896,342.965,720.773,351.988,716.212,356.5L711.651,361.012" id="g162-edge_15_19" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_19" data-points="W3sieCI6NzY2LjM4NDY0NTcwNDE5NTUsInkiOjMwNi44NzMxODEwNjI2NDM2fSx7IngiOjczOS4wMTc4Mzg4MjI5MDQsInkiOjMzMy45NDIzNjcxNzUxMDExNH0seyJ4Ijo3MTEuNjUxMDMxOTQxNjEyNSwieSI6MzYxLjAxMTU1MzI4NzU1ODd9XQ==" data-look="classic"></path><path d="M762.094,295.163L744.59,293.803C727.086,292.443,692.078,289.722,657.07,287.002C622.062,284.282,587.054,281.562,569.55,280.202L552.046,278.842" id="g162-edge_15_20" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_20" data-points="W3sieCI6NzYyLjA5NDE1NTczMTYxNDcsInkiOjI5NS4xNjI3MDM3ODk4MzA2fSx7IngiOjY1Ny4wNzAyMzAyMjExNDk3LCJ5IjoyODcuMDAyMTYzNzUyNTI2NX0seyJ4Ijo1NTIuMDQ2MzA0NzEwNjg0NywieSI6Mjc4Ljg0MTYyMzcxNTIyMjR9XQ==" data-look="classic"></path><path d="M791.621,292.767L805.965,289.264C820.309,285.762,848.997,278.758,877.684,271.753C906.372,264.749,935.06,257.744,949.404,254.242L963.748,250.739" id="g162-edge_15_21" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_21" data-points="W3sieCI6NzkxLjYyMTAwMjMyNjkwMzMsInkiOjI5Mi43NjY3NzQ5MTE2ODM0fSx7IngiOjg3Ny42ODQzODk4NDY2MTQzLCJ5IjoyNzEuNzUzMTE4MzMzNzc1MX0seyJ4Ijo5NjMuNzQ3Nzc3MzY2MzI1MywieSI6MjUwLjczOTQ2MTc1NTg2Njc4fV0=" data-look="classic"></path><path d="M792.048,296.169L800.867,296.077C809.686,295.986,827.323,295.803,844.961,295.62C862.598,295.437,880.236,295.253,889.055,295.162L897.873,295.07" id="g162-edge_15_22" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_22" data-points="W3sieCI6NzkyLjA0ODI2OTY2MjQ0MDEsInkiOjI5Ni4xNjg5OTgzOTA4NjI5NX0seyJ4Ijo4NDQuOTYwNzcwMjQyNzA1MiwieSI6Mjk1LjYxOTYzNTk5NTMxODE2fSx7IngiOjg5Ny44NzMyNzA4MjI5NzAyLCJ5IjoyOTUuMDcwMjczNTk5NzczNH1d" data-look="classic"></path><path d="M791.986,297.696L812.188,299.551C832.389,301.406,872.792,305.116,913.195,308.826C953.598,312.536,994.001,316.246,1014.203,318.101L1034.404,319.956" id="g162-edge_15_23" class=" edge-thickness-normal edge-pattern-solid edge section-edge-1 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_15_23" data-points="W3sieCI6NzkxLjk4NjIzNzE1ODM5NDcsInkiOjI5Ny42OTYzMjM5ODY1NzY5fSx7IngiOjkxMy4xOTUxOTk4NjA0MiwieSI6MzA4LjgyNjI3NDY3MTAwMTU2fSx7IngiOjEwMzQuNDA0MTYyNTYyNDQ1MiwieSI6MzE5Ljk1NjIyNTM1NTQyNjJ9XQ==" data-look="classic"></path><path d="M515.159,369.204L499.486,370.959C483.814,372.715,452.47,376.225,421.126,379.735C389.782,383.245,358.438,386.755,342.766,388.51L327.094,390.265" id="g162-edge_0_24" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-1" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_0_24" data-points="W3sieCI6NTE1LjE1ODUxMzMwOTkzNDMsInkiOjM2OS4yMDQ0MjI1OTQ4Nzl9LHsieCI6NDIxLjEyNjIwMzAxMjM5MSwieSI6Mzc5LjczNDczNzA1MDkzMzJ9LHsieCI6MzI3LjA5Mzg5MjcxNDg0NzgsInkiOjM5MC4yNjUwNTE1MDY5ODczM31d" data-look="classic"></path><path d="M299.136,399.329L291.713,403.535C284.29,407.741,269.443,416.154,254.596,424.566C239.749,432.979,224.902,441.391,217.478,445.597L210.055,449.804" id="g162-edge_24_25" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_25" data-points="W3sieCI6Mjk5LjEzNjQzMjgwNjUxNjcsInkiOjM5OS4zMjkwNTI5NDQ0NTgyfSx7IngiOjI1NC41OTU2NzY2MzM4ODM3OCwieSI6NDI0LjU2NjM2MTYyNTE5NDN9LHsieCI6MjEwLjA1NDkyMDQ2MTI1MDg3LCJ5Ijo0NDkuODAzNjcwMzA1OTMwNH1d" data-look="classic"></path><path d="M297.611,388.395L283.985,385.087C270.36,381.779,243.109,375.163,215.859,368.547C188.608,361.93,161.358,355.314,147.732,352.006L134.107,348.698" id="g162-edge_24_26" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_26" data-points="W3sieCI6Mjk3LjYxMDU1MTM4NDY0MDc2LCJ5IjozODguMzk1MzQxOTYxNzk4NX0seyJ4IjoyMTUuODU4ODQ1Mjg0NjAwNDIsInkiOjM2OC41NDY2NjI0ODU2MDE4fSx7IngiOjEzNC4xMDcxMzkxODQ1NjAwNSwieSI6MzQ4LjY5Nzk4MzAwOTQwNTF9XQ==" data-look="classic"></path><path d="M325.772,398.294L332.031,401.223C338.289,404.152,350.806,410.011,363.323,415.87C375.84,421.729,388.357,427.588,394.615,430.518L400.873,433.447" id="g162-edge_24_27" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_27" data-points="W3sieCI6MzI1Ljc3MjQyNDY4ODkzOTMsInkiOjM5OC4yOTM1MTU1OTU1NjIwNH0seyJ4IjozNjMuMzIyODkzMzg3ODc3MjMsInkiOjQxNS44NzAzNDk0NjA2Mjc5NX0seyJ4Ijo0MDAuODczMzYyMDg2ODE1MDYsInkiOjQzMy40NDcxODMzMjU2OTM4Nn1d" data-look="classic"></path><path d="M314.629,377.135L315.296,373.095C315.963,369.055,317.296,360.976,318.629,352.897C319.962,344.818,321.295,336.738,321.962,332.699L322.629,328.659" id="g162-edge_24_28" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_28" data-points="W3sieCI6MzE0LjYyOTMyODg4MzU1MzIsInkiOjM3Ny4xMzQ1NjQxNzE3OTgxNn0seyJ4IjozMTguNjI5MDIyMTEyNzIxNDMsInkiOjM1Mi44OTY3ODUwOTAzMzUyNH0seyJ4IjozMjIuNjI4NzE1MzQxODg5NjMsInkiOjMyOC42NTkwMDYwMDg4NzIzfV0=" data-look="classic"></path><path d="M326.151,386.455L334.307,383.254C342.464,380.054,358.777,373.652,375.091,367.251C391.404,360.849,407.717,354.448,415.874,351.247L424.031,348.047" id="g162-edge_24_29" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_29" data-points="W3sieCI6MzI2LjE1MDUwMjkwNzk1OTE1LCJ5IjozODYuNDU1MTE1NTk3NjE2NX0seyJ4IjozNzUuMDkwNjUyOTE2MzY0ODMsInkiOjM2Ny4yNTA4NDg5NjE3MjA1fSx7IngiOjQyNC4wMzA4MDI5MjQ3NzA1LCJ5IjozNDguMDQ2NTgyMzI1ODI0NTV9XQ==" data-look="classic"></path><path d="M297.254,393.347L281.847,394.805C266.441,396.263,235.628,399.178,204.816,402.093C174.003,405.009,143.19,407.924,127.784,409.381L112.378,410.839" id="g162-edge_24_30" class=" edge-thickness-normal edge-pattern-solid edge section-edge-2 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_24_30" data-points="W3sieCI6Mjk3LjI1Mzc2NDQ3OTMyOTcsInkiOjM5My4zNDczMDI2MzEwMzI1fSx7IngiOjIwNC44MTU2NTQwODk1MjY2MiwieSI6NDAyLjA5MzIwNTE2MjA3OTZ9LHsieCI6MTEyLjM3NzU0MzY5OTcyMzU5LCJ5Ijo0MTAuODM5MTA3NjkzMTI2NjZ9XQ==" data-look="classic"></path><path d="M539.905,378.857L549.507,389.907C559.109,400.956,578.314,423.055,597.519,445.154C616.724,467.253,635.928,489.351,645.531,500.401L655.133,511.45" id="g162-edge_0_31" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-1" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_0_31" data-points="W3sieCI6NTM5LjkwNDYxMTYzNDQwNDEsInkiOjM3OC44NTcxMDUxNzQ4NzQzM30seyJ4Ijo1OTcuNTE4ODY2NjIxNTEzNywieSI6NDQ1LjE1MzcxNDc3MTk1MjF9LHsieCI6NjU1LjEzMzEyMTYwODYyMzIsInkiOjUxMS40NTAzMjQzNjkwMjk4M31d" data-look="classic"></path><path d="M679.727,520.069L692.638,517.703C705.549,515.337,731.372,510.605,757.195,505.873C783.017,501.142,808.84,496.41,821.751,494.044L834.662,491.678" id="g162-edge_31_32" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_32" data-points="W3sieCI6Njc5LjcyNjc0MTMyODIzOTIsInkiOjUyMC4wNjg3NjU0MDg3MDY5fSx7IngiOjc1Ny4xOTQ1Mzk0Mzc0MTU0LCJ5Ijo1MDUuODczNDk2ODg5Nzc4N30seyJ4Ijo4MzQuNjYyMzM3NTQ2NTkxNiwieSI6NDkxLjY3ODIyODM3MDg1MDV9XQ==" data-look="classic"></path><path d="M651.515,529.399L638.542,535.786C625.569,542.174,599.623,554.95,573.677,567.726C547.731,580.502,521.784,593.277,508.811,599.665L495.838,606.053" id="g162-edge_31_33" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_33" data-points="W3sieCI6NjUxLjUxNTMwNjkwNTQyMDcsInkiOjUyOS4zOTg1NzA2MTMwMDcyfSx7IngiOjU3My42NzY3NDcwNTg3MjIxLCJ5Ijo1NjcuNzI1ODkzMDUwNjIzOX0seyJ4Ijo0OTUuODM4MTg3MjEyMDIzNCwieSI6NjA2LjA1MzIxNTQ4ODI0MDV9XQ==" data-look="classic"></path><path d="M650.013,521.663L626.622,519.928C603.231,518.193,556.448,514.723,509.666,511.253C462.883,507.783,416.101,504.312,392.71,502.577L369.318,500.842" id="g162-edge_31_34" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_34" data-points="W3sieCI6NjUwLjAxMzQ5NTUzMjAyNjEsInkiOjUyMS42NjI3OTQ2NTEwNjA0fSx7IngiOjUwOS42NjU5MzQ0MzI4NjEyNiwieSI6NTExLjI1MjU4NTQ1ODY4MjIzfSx7IngiOjM2OS4zMTgzNzMzMzM2OTYzLCJ5Ijo1MDAuODQyMzc2MjY2MzA0MX1d" data-look="classic"></path><path d="M673.948,510.754L675.843,508.216C677.738,505.678,681.529,500.603,685.319,495.527C689.11,490.452,692.9,485.376,694.795,482.838L696.691,480.301" id="g162-edge_31_35" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_35" data-points="W3sieCI6NjczLjk0NzgyMjI4NTQyMDIsInkiOjUxMC43NTM5NjkwNDAxNDk0fSx7IngiOjY4NS4zMTkxNzU3Njc4NjM0LCJ5Ijo0OTUuNTI3MzM5MTc1MDE3N30seyJ4Ijo2OTYuNjkwNTI5MjUwMzA2NiwieSI6NDgwLjMwMDcwOTMwOTg4Nn1d" data-look="classic"></path><path d="M676.729,532.088L684.505,538.25C692.282,544.412,707.835,556.736,723.387,569.06C738.94,581.383,754.493,593.707,762.269,599.869L770.046,606.031" id="g162-edge_31_36" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_36" data-points="W3sieCI6Njc2LjcyODk2NTU2NDk4NTcsInkiOjUzMi4wODgxMTM1NzU0OTQ4fSx7IngiOjcyMy4zODczODUyMDExNDA4LCJ5Ijo1NjkuMDU5NjQyMTAzMjU5OX0seyJ4Ijo3NzAuMDQ1ODA0ODM3Mjk1OCwieSI6NjA2LjAzMTE3MDYzMTAyNDl9XQ==" data-look="classic"></path><path d="M658.301,536.207L657.16,538.505C656.019,540.803,653.737,545.399,651.454,549.995C649.172,554.591,646.89,559.186,645.749,561.484L644.608,563.782" id="g162-edge_31_37" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_37" data-points="W3sieCI6NjU4LjMwMTAzMTU5NzM5NzIsInkiOjUzNi4yMDcxMjU4NDQ3ODc2fSx7IngiOjY1MS40NTQ0NDc2MDQ4NDE3LCJ5Ijo1NDkuOTk0NzMzNjE3MzIwMn0seyJ4Ijo2NDQuNjA3ODYzNjEyMjg2MSwieSI6NTYzLjc4MjM0MTM4OTg1Mjh9XQ==" data-look="classic"></path><path d="M679.575,526.203L701.816,531.429C724.057,536.656,768.54,547.108,813.023,557.56C857.506,568.012,901.988,578.464,924.23,583.69L946.471,588.916" id="g162-edge_31_38" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_38" data-points="W3sieCI6Njc5LjU3NDcxNjM1NDU3ODksInkiOjUyNi4yMDM0NTU0ODA3ODg1fSx7IngiOjgxMy4wMjI5Mjk2NjM1MTA1LCJ5Ijo1NTcuNTU5NjUwMzczMzc0N30seyJ4Ijo5NDYuNDcxMTQyOTcyNDQyMywieSI6NTg4LjkxNTg0NTI2NTk2MDh9XQ==" data-look="classic"></path><path d="M660.249,537.009L657.513,545.254C654.778,553.499,649.307,569.989,643.836,586.479C638.365,602.968,632.894,619.458,630.158,627.703L627.423,635.948" id="g162-edge_31_39" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_39" data-points="W3sieCI6NjYwLjI0ODg2NDA3Mzk0NTQsInkiOjUzNy4wMDkyMjQ0MjI1OX0seyJ4Ijo2NDMuODM1ODE4OTI3MjAwOSwieSI6NTg2LjQ3ODU1OTEzNTQxODN9LHsieCI6NjI3LjQyMjc3Mzc4MDQ1NjQsInkiOjYzNS45NDc4OTM4NDgyNDY2fV0=" data-look="classic"></path><path d="M679.602,526.087L689.648,528.363C699.695,530.639,719.788,535.191,739.882,539.743C759.975,544.295,780.068,548.847,790.115,551.123L800.162,553.399" id="g162-edge_31_40" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_40" data-points="W3sieCI6Njc5LjYwMTY5MDgwMTMwMiwieSI6NTI2LjA4NjU1ODA4MDg2NDR9LHsieCI6NzM5Ljg4MTcxMDg2OTU5MiwieSI6NTM5Ljc0MjcwMjQ3NjI1ODR9LHsieCI6ODAwLjE2MTczMDkzNzg4MiwieSI6NTUzLjM5ODg0Njg3MTY1MjR9XQ==" data-look="classic"></path><path d="M679.971,523.001L702.055,523.338C724.139,523.675,768.307,524.348,812.475,525.022C856.643,525.695,900.811,526.369,922.895,526.706L944.979,527.043" id="g162-edge_31_41" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_41" data-points="W3sieCI6Njc5Ljk3MDY1NzAzNDg1OTQsInkiOjUyMy4wMDEwOTc4NTgxMDE4fSx7IngiOjgxMi40NzQ4OTc1Nzg5MDQxLCJ5Ijo1MjUuMDIxODgwODc4OTA0N30seyJ4Ijo5NDQuOTc5MTM4MTIyOTQ4OCwieSI6NTI3LjA0MjY2Mzg5OTcwNzV9XQ==" data-look="classic"></path><path d="M650.834,517.761L642.957,514.969C635.08,512.177,619.327,506.593,603.573,501.009C587.819,495.426,572.065,489.842,564.188,487.05L556.311,484.258" id="g162-edge_31_42" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_42" data-points="W3sieCI6NjUwLjgzNDI0MTE5NDEwMjksInkiOjUxNy43NjExMzMwODQwMDM5fSx7IngiOjYwMy41NzI3MjM2Mzg4MTk5LCJ5Ijo1MDEuMDA5NDIxODI1NTc4OX0seyJ4Ijo1NTYuMzExMjA2MDgzNTM2OCwieSI6NDg0LjI1NzcxMDU2NzE1Mzk0fV0=" data-look="classic"></path><path d="M656.316,510.522L652.3,504.84C648.284,499.157,640.252,487.791,632.221,476.426C624.189,465.06,616.157,453.695,612.142,448.012L608.126,442.329" id="g162-edge_31_43" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_43" data-points="W3sieCI6NjU2LjMxNTc0NDg1NjEwNywieSI6NTEwLjUyMjM3MTk1MDE0ODc0fSx7IngiOjYzMi4yMjA3ODkyMzk3NjI5LCJ5Ijo0NzYuNDI1NzE4MDcxMDUzMn0seyJ4Ijo2MDguMTI1ODMzNjIzNDE4OCwieSI6NDQyLjMyOTA2NDE5MTk1Nzd9XQ==" data-look="classic"></path><path d="M650.149,525.066L624.678,529.007C599.207,532.949,548.266,540.831,497.324,548.714C446.382,556.596,395.441,564.479,369.97,568.42L344.499,572.361" id="g162-edge_31_44" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_44" data-points="W3sieCI6NjUwLjE0ODgxNDY3Njg0NjQsInkiOjUyNS4wNjYxMTMwNTU5NDd9LHsieCI6NDk3LjMyMzkxODY1MzA1NTMzLCJ5Ijo1NDguNzEzNjk1MjA5NTY2NX0seyJ4IjozNDQuNDk5MDIyNjI5MjY0MjMsInkiOjU3Mi4zNjEyNzczNjMxODZ9XQ==" data-look="classic"></path><path d="M650.026,524.04L637.36,525.114C624.695,526.188,599.364,528.336,574.033,530.484C548.702,532.632,523.37,534.781,510.705,535.855L498.039,536.929" id="g162-edge_31_45" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_45" data-points="W3sieCI6NjUwLjAyNjA0ODYxNDIzNTIsInkiOjUyNC4wMzk4NjAyNjE3OTR9LHsieCI6NTc0LjAzMjY4ODg2MjEyNzIsInkiOjUzMC40ODQzMjk0MzIxMzMzfSx7IngiOjQ5OC4wMzkzMjkxMTAwMTkyNSwieSI6NTM2LjkyODc5ODYwMjQ3MjZ9XQ==" data-look="classic"></path><path d="M678.943,517.311L696.687,510.376C714.43,503.44,749.918,489.568,785.405,475.696C820.893,461.824,856.38,447.953,874.124,441.017L891.868,434.081" id="g162-edge_31_46" class=" edge-thickness-normal edge-pattern-solid edge section-edge-3 edge-depth-3" style="undefined;;;undefined" data-edge="true" data-et="edge" data-id="edge_31_46" data-points="W3sieCI6Njc4Ljk0Mjk5OTgwNzIzNCwieSI6NTE3LjMxMTM3NzUyNTY4NTN9LHsieCI6Nzg1LjQwNTI5MTAyMjM4NSwieSI6NDc1LjY5NjE4NzQzMTUwNTU2fSx7IngiOjg5MS44Njc1ODIyMzc1MzYsInkiOjQzNC4wODA5OTczMzczMjU4fV0=" data-look="classic"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="edge_0_1" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_2" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_3" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_4" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_5" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_6" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_7" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_8" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_9" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_10" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_11" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_12" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_13" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_1_14" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_0_15" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_16" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_17" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_18" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_19" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_20" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_21" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_22" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_15_23" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_0_24" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_25" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_26" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_27" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_28" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_29" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_24_30" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_0_31" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_32" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_33" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_34" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_35" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_36" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_37" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_38" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_39" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_40" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_41" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_42" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_43" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_44" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_45" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="edge_31_46" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g></g><g class="nodes"><g class="node mindmap-node section-root section--1 " id="g162-node_0" data-look="classic" transform="translate(530.0653321324813, 367.5350656552894)"><circle class="basic label-container" style="" r="36.40625" cx="0" cy="0"></circle><g class="label" style="" transform="translate(-26.40625, -12)"><rect></rect><foreignObject width="52.8125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Ưu tiên</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_1" data-look="classic" transform="translate(434.8136717672402, 181.16621908431648)"><path id="g162-node_1" class="node-bkg node-0" style="" d="
+    M-103.2890625 12
+    v-24
+    q0,-5 5,-5
+    h196.578125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-196.578125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-103.2890625" y1="17" x2="103.2890625" y2="17"></line><g class="label" style="" transform="translate(-83.2890625, -12)"><rect></rect><foreignObject width="166.578125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>MUST HAVE đạt Junior</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_2" data-look="classic" transform="translate(291.42099104581564, 215.63868188866718)"><path id="g162-node_2" class="node-bkg node-0" style="" d="
+    M-60.4765625 12
+    v-24
+    q0,-5 5,-5
+    h110.953125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-110.953125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-60.4765625" y1="17" x2="60.4765625" y2="17"></line><g class="label" style="" transform="translate(-40.4765625, -12)"><rect></rect><foreignObject width="80.953125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Auth chuẩn</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_3" data-look="classic" transform="translate(135, 265.2216726561212)"><path id="g162-node_3" class="node-bkg node-0" style="" d="
+    M-120 24
+    v-48
+    q0,-5 5,-5
+    h230
+    q5,0 5,5
+    v48
+    q0,5 -5,5
+    h-230
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-120" y1="29" x2="120" y2="29"></line><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel markdown-node-label"><p>State machine và ownership</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_4" data-look="classic" transform="translate(237.47034065644596, 94.88888490964928)"><path id="g162-node_4" class="node-bkg node-0" style="" d="
+    M-106.71875 12
+    v-24
+    q0,-5 5,-5
+    h203.4375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-203.4375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-106.71875" y1="17" x2="106.71875" y2="17"></line><g class="label" style="" transform="translate(-86.71875, -12)"><rect></rect><foreignObject width="173.4375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Inventory không oversell</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_5" data-look="classic" transform="translate(146.71259401432985, 184.82065812964902)"><path id="g162-node_5" class="node-bkg node-0" style="" d="
+    M-65.8046875 12
+    v-24
+    q0,-5 5,-5
+    h121.609375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-121.609375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-65.8046875" y1="17" x2="65.8046875" y2="17"></line><g class="label" style="" transform="translate(-45.8046875, -12)"><rect></rect><foreignObject width="91.609375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Idempotency</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_6" data-look="classic" transform="translate(736.2511734805474, 179.4377478759559)"><path id="g162-node_6" class="node-bkg node-0" style="" d="
+    M-81.5234375 12
+    v-24
+    q0,-5 5,-5
+    h153.046875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-153.046875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-81.5234375" y1="17" x2="81.5234375" y2="17"></line><g class="label" style="" transform="translate(-61.5234375, -12)"><rect></rect><foreignObject width="123.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Transaction đúng</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_7" data-look="classic" transform="translate(440.5966171917365, 109.72592431174348)"><path id="g162-node_7" class="node-bkg node-0" style="" d="
+    M-78.2578125 12
+    v-24
+    q0,-5 5,-5
+    h146.515625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-146.515625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-78.2578125" y1="17" x2="78.2578125" y2="17"></line><g class="label" style="" transform="translate(-58.2578125, -12)"><rect></rect><foreignObject width="116.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Outbox và Inbox</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_8" data-look="classic" transform="translate(252.5802245102543, 145.80001214611434)"><path id="g162-node_8" class="node-bkg node-0" style="" d="
+    M-65.7265625 12
+    v-24
+    q0,-5 5,-5
+    h121.453125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-121.453125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-65.7265625" y1="17" x2="65.7265625" y2="17"></line><g class="label" style="" transform="translate(-45.7265625, -12)"><rect></rect><foreignObject width="91.453125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Saga cơ bản</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_9" data-look="classic" transform="translate(558.651721662398, 213.68089733778925)"><path id="g162-node_9" class="node-bkg node-0" style="" d="
+    M-119.609375 12
+    v-24
+    q0,-5 5,-5
+    h229.21875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-229.21875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-119.609375" y1="17" x2="119.609375" y2="17"></line><g class="label" style="" transform="translate(-99.609375, -12)"><rect></rect><foreignObject width="199.21875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Kafka consumer idempotent</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_10" data-look="classic" transform="translate(623.8456845387299, 140.9534730733642)"><path id="g162-node_10" class="node-bkg node-0" style="" d="
+    M-86.2578125 12
+    v-24
+    q0,-5 5,-5
+    h162.515625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-162.515625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-86.2578125" y1="17" x2="86.2578125" y2="17"></line><g class="label" style="" transform="translate(-66.2578125, -12)"><rect></rect><foreignObject width="132.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Index và EXPLAIN</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_11" data-look="classic" transform="translate(660.3843563376846, 81.44748593180088)"><path id="g162-node_11" class="node-bkg node-0" style="" d="
+    M-120 24
+    v-48
+    q0,-5 5,-5
+    h230
+    q5,0 5,5
+    v48
+    q0,5 -5,5
+    h-230
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-120" y1="29" x2="120" y2="29"></line><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel markdown-node-label"><p>Testcontainers và concurrency test</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_12" data-look="classic" transform="translate(404.26854251294856, 44)"><path id="g162-node_12" class="node-bkg node-0" style="" d="
+    M-120 24
+    v-48
+    q0,-5 5,-5
+    h230
+    q5,0 5,5
+    v48
+    q0,5 -5,5
+    h-230
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-120" y1="29" x2="120" y2="29"></line><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel markdown-node-label"><p>Structured log và correlation id</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_13" data-look="classic" transform="translate(381.0848759383065, 258.20849320486354)"><path id="g162-node_13" class="node-bkg node-0" style="" d="
+    M-81.8046875 12
+    v-24
+    q0,-5 5,-5
+    h153.609375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-153.609375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-81.8046875" y1="17" x2="81.8046875" y2="17"></line><g class="label" style="" transform="translate(-61.8046875, -12)"><rect></rect><foreignObject width="123.609375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Docker Compose</p></span></div></foreignObject></g></g><g class="node mindmap-node section-0 " id="g162-node_14" data-look="classic" transform="translate(665.4059889311364, 258.14110763561644)"><path id="g162-node_14" class="node-bkg node-0" style="" d="
+    M-55.0390625 12
+    v-24
+    q0,-5 5,-5
+    h100.078125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-100.078125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-55.0390625" y1="17" x2="55.0390625" y2="17"></line><g class="label" style="" transform="translate(-35.0390625, -12)"><rect></rect><foreignObject width="70.078125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>CI cơ bản</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_15" data-look="classic" transform="translate(777.0490780645488, 296.32472703224425)"><path id="g162-node_15" class="node-bkg node-0" style="" d="
+    M-76.7578125 12
+    v-24
+    q0,-5 5,-5
+    h143.515625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-143.515625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-76.7578125" y1="17" x2="76.7578125" y2="17"></line><g class="label" style="" transform="translate(-56.7578125, -12)"><rect></rect><foreignObject width="113.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>SHOULD HAVE</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_16" data-look="classic" transform="translate(843.8767785231581, 221.65126110091546)"><path id="g162-node_16" class="node-bkg node-0" style="" d="
+    M-67.578125 12
+    v-24
+    q0,-5 5,-5
+    h125.15625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-125.15625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-67.578125" y1="17" x2="67.578125" y2="17"></line><g class="label" style="" transform="translate(-47.578125, -12)"><rect></rect><foreignObject width="95.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>gRPC 1 điểm</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_17" data-look="classic" transform="translate(626.540060786211, 317.0702130165048)"><path id="g162-node_17" class="node-bkg node-0" style="" d="
+    M-63.1328125 12
+    v-24
+    q0,-5 5,-5
+    h116.265625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-116.265625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-63.1328125" y1="17" x2="63.1328125" y2="17"></line><g class="label" style="" transform="translate(-43.1328125, -12)"><rect></rect><foreignObject width="86.265625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Resilience4j</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_18" data-look="classic" transform="translate(850.8240894417323, 360.0914500591091)"><path id="g162-node_18" class="node-bkg node-0" style="" d="
+    M-89.5078125 12
+    v-24
+    q0,-5 5,-5
+    h169.015625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-169.015625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-89.5078125" y1="17" x2="89.5078125" y2="17"></line><g class="label" style="" transform="translate(-69.5078125, -12)"><rect></rect><foreignObject width="139.015625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Waiting room Redis</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_19" data-look="classic" transform="translate(700.9865995812592, 371.560007317958)"><path id="g162-node_19" class="node-bkg node-0" style="" d="
+    M-36.0078125 12
+    v-24
+    q0,-5 5,-5
+    h62.015625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-62.015625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-36.0078125" y1="17" x2="36.0078125" y2="17"></line><g class="label" style="" transform="translate(-16.0078125, -12)"><rect></rect><foreignObject width="32.015625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>SSE</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_20" data-look="classic" transform="translate(537.0913823777506, 277.6796004728087)"><path id="g162-node_20" class="node-bkg node-0" style="" d="
+    M-53.34375 12
+    v-24
+    q0,-5 5,-5
+    h96.6875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-96.6875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-53.34375" y1="17" x2="53.34375" y2="17"></line><g class="label" style="" transform="translate(-33.34375, -12)"><rect></rect><foreignObject width="66.6875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Rate limit</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_21" data-look="classic" transform="translate(978.3197016286798, 247.18150963530593)"><path id="g162-node_21" class="node-bkg node-0" style="" d="
+    M-46.3828125 12
+    v-24
+    q0,-5 5,-5
+    h82.765625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-82.765625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-46.3828125" y1="17" x2="46.3828125" y2="17"></line><g class="label" style="" transform="translate(-26.3828125, -12)"><rect></rect><foreignObject width="52.765625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Tracing</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_22" data-look="classic" transform="translate(912.8724624208616, 294.91454495839207)"><path id="g162-node_22" class="node-bkg node-0" style="" d="
+    M-28.453125 12
+    v-24
+    q0,-5 5,-5
+    h46.90625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-46.90625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-28.453125" y1="17" x2="28.453125" y2="17"></line><g class="label" style="" transform="translate(-8.453125, -12)"><rect></rect><foreignObject width="16.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>k6</p></span></div></foreignObject></g></g><g class="node mindmap-node section-1 " id="g162-node_23" data-look="classic" transform="translate(1049.3413216562913, 321.32782230975886)"><path id="g162-node_23" class="node-bkg node-0" style="" d="
+    M-101.828125 12
+    v-24
+    q0,-5 5,-5
+    h193.65625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-193.65625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-101.828125" y1="17" x2="101.828125" y2="17"></line><g class="label" style="" transform="translate(-81.828125, -12)"><rect></rect><foreignObject width="163.65625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Deploy VPS và backup</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_24" data-look="classic" transform="translate(312.18707389230076, 391.934408446577)"><path id="g162-node_24" class="node-bkg node-0" style="" d="
+    M-75.5703125 12
+    v-24
+    q0,-5 5,-5
+    h141.140625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-141.140625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-75.5703125" y1="17" x2="75.5703125" y2="17"></line><g class="label" style="" transform="translate(-55.5703125, -12)"><rect></rect><foreignObject width="111.140625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>NICE TO HAVE</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_25" data-look="classic" transform="translate(197.0042793754668, 457.1983148038116)"><path id="g162-node_25" class="node-bkg node-0" style="" d="
+    M-93.375 12
+    v-24
+    q0,-5 5,-5
+    h176.75
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-176.75
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-93.375" y1="17" x2="93.375" y2="17"></line><g class="label" style="" transform="translate(-73.375, -12)"><rect></rect><foreignObject width="146.75" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Redis Lua pre-check</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_26" data-look="classic" transform="translate(119.53061667690008, 345.15891652462665)"><path id="g162-node_26" class="node-bkg node-0" style="" d="
+    M-79.15625 12
+    v-24
+    q0,-5 5,-5
+    h148.3125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-148.3125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-79.15625" y1="17" x2="79.15625" y2="17"></line><g class="label" style="" transform="translate(-59.15625, -12)"><rect></rect><foreignObject width="118.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Sharded counter</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_27" data-look="classic" transform="translate(414.4587128834536, 439.8062904746789)"><path id="g162-node_27" class="node-bkg node-0" style="" d="
+    M-97.390625 12
+    v-24
+    q0,-5 5,-5
+    h184.78125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-184.78125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-97.390625" y1="17" x2="97.390625" y2="17"></line><g class="label" style="" transform="translate(-77.390625, -12)"><rect></rect><foreignObject width="154.78125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Partitioned audit table</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_28" data-look="classic" transform="translate(325.0709703331421, 313.8591617340935)"><path id="g162-node_28" class="node-bkg node-0" style="" d="
+    M-56.015625 12
+    v-24
+    q0,-5 5,-5
+    h102.03125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-102.03125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-56.015625" y1="17" x2="56.015625" y2="17"></line><g class="label" style="" transform="translate(-36.015625, -12)"><rect></rect><foreignObject width="72.03125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Debezium</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_29" data-look="classic" transform="translate(437.9942319404289, 342.56728947686406)"><path id="g162-node_29" class="node-bkg node-0" style="" d="
+    M-36.0078125 12
+    v-24
+    q0,-5 5,-5
+    h62.015625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-62.015625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-36.0078125" y1="17" x2="36.0078125" y2="17"></line><g class="label" style="" transform="translate(-16.0078125, -12)"><rect></rect><foreignObject width="32.015625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Pact</p></span></div></foreignObject></g></g><g class="node mindmap-node section-2 " id="g162-node_30" data-look="classic" transform="translate(97.44423428675248, 412.2520018775822)"><path id="g162-node_30" class="node-bkg node-0" style="" d="
+    M-71.4375 12
+    v-24
+    q0,-5 5,-5
+    h132.875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-132.875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-71.4375" y1="17" x2="71.4375" y2="17"></line><g class="label" style="" transform="translate(-51.4375, -12)"><rect></rect><foreignObject width="102.875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Virtual threads</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_31" data-look="classic" transform="translate(664.972401110546, 522.7723638886148)"><path id="g162-node_31" class="node-bkg node-0" style="" d="
+    M-94.390625 12
+    v-24
+    q0,-5 5,-5
+    h178.78125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-178.78125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-94.390625" y1="17" x2="94.390625" y2="17"></line><g class="label" style="" transform="translate(-74.390625, -12)"><rect></rect><foreignObject width="148.78125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>DO NOT BUILD YET</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_32" data-look="classic" transform="translate(849.4166777642848, 488.97462989094265)"><path id="g162-node_32" class="node-bkg node-0" style="" d="
+    M-60.921875 12
+    v-24
+    q0,-5 5,-5
+    h111.84375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-111.84375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-60.921875" y1="17" x2="60.921875" y2="17"></line><g class="label" style="" transform="translate(-40.921875, -12)"><rect></rect><foreignObject width="81.84375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Kubernetes</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_33" data-look="classic" transform="translate(482.38109300689814, 612.679422212633)"><path id="g162-node_33" class="node-bkg node-0" style="" d="
+    M-68.4609375 12
+    v-24
+    q0,-5 5,-5
+    h126.921875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-126.921875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-68.4609375" y1="17" x2="68.4609375" y2="17"></line><g class="label" style="" transform="translate(-48.4609375, -12)"><rect></rect><foreignObject width="96.921875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Service mesh</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_34" data-look="classic" transform="translate(354.3594677551764, 499.7328070287497)"><path id="g162-node_34" class="node-bkg node-0" style="" d="
+    M-107.15625 12
+    v-24
+    q0,-5 5,-5
+    h204.3125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-204.3125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-107.15625" y1="17" x2="107.15625" y2="17"></line><g class="label" style="" transform="translate(-87.15625, -12)"><rect></rect><foreignObject width="174.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Eureka và Config Server</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_35" data-look="classic" transform="translate(705.6659504251808, 468.2823144614206)"><path id="g162-node_35" class="node-bkg node-0" style="" d="
+    M-67.578125 12
+    v-24
+    q0,-5 5,-5
+    h125.15625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-125.15625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-67.578125" y1="17" x2="67.578125" y2="17"></line><g class="label" style="" transform="translate(-47.578125, -12)"><rect></rect><foreignObject width="95.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Elasticsearch</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_36" data-look="classic" transform="translate(781.8023692917355, 615.346920317905)"><path id="g162-node_36" class="node-bkg node-0" style="" d="
+    M-74.2578125 12
+    v-24
+    q0,-5 5,-5
+    h138.515625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-138.515625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-74.2578125" y1="17" x2="74.2578125" y2="17"></line><g class="label" style="" transform="translate(-54.2578125, -12)"><rect></rect><foreignObject width="108.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Event Sourcing</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_37" data-look="classic" transform="translate(637.9364940991373, 577.2171033460256)"><path id="g162-node_37" class="node-bkg node-0" style="" d="
+    M-93.078125 12
+    v-24
+    q0,-5 5,-5
+    h176.15625
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-176.15625
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-93.078125" y1="17" x2="93.078125" y2="17"></line><g class="label" style="" transform="translate(-73.078125, -12)"><rect></rect><foreignObject width="146.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>GraphQL Federation</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_38" data-look="classic" transform="translate(961.0734582164752, 592.3469368581345)"><path id="g162-node_38" class="node-bkg node-0" style="" d="
+    M-92.7890625 12
+    v-24
+    q0,-5 5,-5
+    h175.578125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-175.578125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-92.7890625" y1="17" x2="92.7890625" y2="17"></line><g class="label" style="" transform="translate(-72.7890625, -12)"><rect></rect><foreignObject width="145.578125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Axon hoặc Temporal</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_39" data-look="classic" transform="translate(622.6992367438557, 650.1847543822219)"><path id="g162-node_39" class="node-bkg node-0" style="" d="
+    M-72.46875 12
+    v-24
+    q0,-5 5,-5
+    h134.9375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-134.9375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-72.46875" y1="17" x2="72.46875" y2="17"></line><g class="label" style="" transform="translate(-52.46875, -12)"><rect></rect><foreignObject width="104.9375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Kafka Streams</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_40" data-look="classic" transform="translate(814.791020628638, 556.713041063902)"><path id="g162-node_40" class="node-bkg node-0" style="" d="
+    M-61.796875 12
+    v-24
+    q0,-5 5,-5
+    h113.59375
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-113.59375
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-61.796875" y1="17" x2="61.796875" y2="17"></line><g class="label" style="" transform="translate(-41.796875, -12)"><rect></rect><foreignObject width="83.59375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Multi-region</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_41" data-look="classic" transform="translate(959.9773940472622, 527.2713978691945)"><path id="g162-node_41" class="node-bkg node-0" style="" d="
+    M-67.140625 12
+    v-24
+    q0,-5 5,-5
+    h124.28125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-124.28125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-67.140625" y1="17" x2="67.140625" y2="17"></line><g class="label" style="" transform="translate(-47.140625, -12)"><rect></rect><foreignObject width="94.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Payment thật</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_42" data-look="classic" transform="translate(542.1730461670937, 479.246479762543)"><path id="g162-node_42" class="node-bkg node-0" style="" d="
+    M-60.9140625 12
+    v-24
+    q0,-5 5,-5
+    h111.828125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-111.828125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-60.9140625" y1="17" x2="60.9140625" y2="17"></line><g class="label" style="" transform="translate(-40.9140625, -12)"><rect></rect><foreignObject width="81.828125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Social login</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_43" data-look="classic" transform="translate(599.4691773689798, 430.07907225349163)"><path id="g162-node_43" class="node-bkg node-0" style="" d="
+    M-59.140625 12
+    v-24
+    q0,-5 5,-5
+    h108.28125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-108.28125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-59.140625" y1="17" x2="59.140625" y2="17"></line><g class="label" style="" transform="translate(-39.140625, -12)"><rect></rect><foreignObject width="78.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Mobile app</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_44" data-look="classic" transform="translate(329.67543619556466, 574.6550265305182)"><path id="g162-node_44" class="node-bkg node-0" style="" d="
+    M-111.609375 12
+    v-24
+    q0,-5 5,-5
+    h213.21875
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-213.21875
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-111.609375" y1="17" x2="111.609375" y2="17"></line><g class="label" style="" transform="translate(-91.609375, -12)"><rect></rect><foreignObject width="183.21875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Recommendation hoặc AI</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_45" data-look="classic" transform="translate(483.0929766137084, 538.1962949756519)"><path id="g162-node_45" class="node-bkg node-0" style="" d="
+    M-68.9140625 12
+    v-24
+    q0,-5 5,-5
+    h127.828125
+    q5,0 5,5
+    v24
+    q0,5 -5,5
+    h-127.828125
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-68.9140625" y1="17" x2="68.9140625" y2="17"></line><g class="label" style="" transform="translate(-48.9140625, -12)"><rect></rect><foreignObject width="97.828125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel markdown-node-label"><p>Microfrontend</p></span></div></foreignObject></g></g><g class="node mindmap-node section-3 " id="g162-node_46" data-look="classic" transform="translate(905.8381809342239, 428.62001097439634)"><path id="g162-node_46" class="node-bkg node-0" style="" d="
+    M-120 24
+    v-48
+    q0,-5 5,-5
+    h230
+    q5,0 5,5
+    v48
+    q0,5 -5,5
+    h-230
+    q-5,0 -5,-5
+    Z
+  "></path><line class="node-line-" x1="-120" y1="29" x2="120" y2="29"></line><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel markdown-node-label"><p>Tự viết identity thay OIDC đầy đủ</p></span></div></foreignObject></g></g></g></g><defs><filter id="g162-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="g162-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs></svg>

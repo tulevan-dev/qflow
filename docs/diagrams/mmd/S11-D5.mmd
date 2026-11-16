@@ -1,0 +1,11 @@
+flowchart LR
+  PW["Playwright"] --> W["Next.js"]
+  W --> GW["Gateway"]
+  GW --> O["order"]
+  O --> I["inventory"]
+  O --> P["payment"]
+  P --> MP["mock-payment provider"]
+  P -.-> K[("Kafka")]
+  K -.-> T["ticket"]
+  K -.-> N["notification"]
+  Scope["Happy path + ít nhất 3 failure path<br/>failure path cụ thể: SOURCE CHƯA QUY ĐỊNH"] -.-> PW

@@ -1,0 +1,28 @@
+flowchart TB
+  subgraph FE["Frontend"]
+    F["Next.js App Router, TypeScript, Tailwind<br/>TanStack Query, react-hook-form, zod"]
+  end
+  subgraph BE["Backend"]
+    L["Java 21 — records, pattern matching; virtual threads để dành sau"]
+    FW["Spring Boot 3.x"]
+    GWY["Spring Cloud Gateway"]
+    AU["Spring Security + JWT RS256 + JWKS — chưa dùng Keycloak lúc đầu"]
+    RPC["gRPC — 1 điểm: order → inventory"]
+    RT["SSE — ưu tiên, WebSocket chỉ khi cần 2 chiều"]
+  end
+  subgraph DATA["Dữ liệu và messaging"]
+    PG["PostgreSQL 16 + Flyway<br/>1 instance, nhiều database, tách logic nghiêm ngặt"]
+    RD["Redis 7"]
+    KF["Kafka KRaft, không Zookeeper — Redpanda nhẹ hơn nếu máy yếu"]
+  end
+  subgraph QA["Test và Observability"]
+    T["JUnit5, Mockito, Testcontainers, Playwright, k6"]
+    OB["Micrometer, OpenTelemetry, Prometheus, Grafana, Jaeger"]
+  end
+  subgraph OPS["CI/CD và Deploy"]
+    CI["GitHub Actions + GHCR"]
+    DP["VPS + Docker Compose + Caddy auto HTTPS + Cloudflare"]
+  end
+  FE --> BE --> DATA
+  BE --> QA
+  QA --> OPS

@@ -1,0 +1,10 @@
+flowchart TB
+  V10["v1.0<br/>Workflow + checkout saga + QR check-in<br/>Consistency, idempotency, saga"] --> V11["v1.1<br/>Notification đa kênh, email digest, preference<br/>Retry, template, rate limit gửi, dedupe"]
+  V11 --> V20["v2.0<br/>Waiting room + fairness + rate limit nâng cao<br/>Thundering herd, Redis Lua, backpressure"]
+  V20 --> V21["v2.1<br/>Real-time dashboard organizer, live check-in map<br/>SSE scale, fan-out, read model"]
+  V21 --> V30["v3.0<br/>Analytics pipeline hourly và daily rollup, xuất CSV hoặc PDF bất đồng bộ<br/>Batch hoặc stream aggregation, file processing, job scheduling"]
+  V30 --> V31["v3.1<br/>Seat map, giữ ghế theo từng ghế<br/>Locking mịn, bitmap hoặc range lock, hot-spot"]
+  V31 --> V32["v3.2<br/>Dynamic pricing, early-bird<br/>Rule engine, nhất quán giá, cache"]
+  V32 --> V40["v4.0<br/>Multi-tenant: workspace, plan, quota<br/>Tenant isolation, row-level security, rate limit theo tenant"]
+  V40 --> V41["v4.1<br/>Debezium CDC thay outbox poller, schema registry<br/>CDC, schema evolution"]
+  V41 --> V50["v5.0<br/>Kubernetes, autoscale, multi-AZ — chỉ khi có tải thật<br/>Orchestration, HA"]

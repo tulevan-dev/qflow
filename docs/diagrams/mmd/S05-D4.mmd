@@ -1,0 +1,34 @@
+erDiagram
+  tier_stock ||--o{ holds : reserves
+  tier_stock {
+    uuid tier_id PK
+    uuid event_id
+    int total
+    int reserved
+    int sold
+    bigint version
+  }
+  holds {
+    uuid id PK
+    uuid order_id "UK cùng tier_id"
+    uuid tier_id FK
+    uuid user_id
+    int quantity
+    string status "ACTIVE CONSUMED RELEASED EXPIRED"
+    timestamp expires_at
+    timestamp created_at
+  }
+  user_tier_purchases {
+    uuid user_id PK
+    uuid tier_id PK
+    int quantity
+  }
+  processed_events {
+    uuid event_id PK
+    string consumer
+    timestamp processed_at
+  }
+  outbox_events {
+    uuid id PK
+    string other_columns "SOURCE CHƯA QUY ĐỊNH"
+  }

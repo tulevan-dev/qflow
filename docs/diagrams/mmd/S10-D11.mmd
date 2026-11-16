@@ -1,0 +1,9 @@
+flowchart TB
+  SLOW["Service chậm"] --> TO["Client timeout"]
+  TO --> RT["Mọi client retry đồng loạt"]
+  RT --> LOAD["RPS tăng đột ngột"]
+  LOAD --> SLOW
+  BO["Exponential backoff + jitter"] -.->|"làm lệch thời điểm retry"| RT
+  CB["Circuit breaker"] -.->|"ngắt gọi service đang lỗi"| TO
+  RL["429 Retry-After"] -.->|"bảo client chờ"| LOAD
+  BH["Bulkhead và shed load"] -.->|"từ chối bớt để cứu hệ thống"| LOAD

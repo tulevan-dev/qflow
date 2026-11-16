@@ -1,0 +1,8 @@
+stateDiagram-v2
+  [*] --> ACTIVE
+  ACTIVE --> CONSUMED : order PAID
+  ACTIVE --> RELEASED : user cancel hoặc order failed
+  ACTIVE --> EXPIRED : now lớn hơn expires_at do worker
+  CONSUMED --> [*]
+  RELEASED --> [*]
+  EXPIRED --> [*]

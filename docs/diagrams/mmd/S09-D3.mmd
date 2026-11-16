@@ -1,0 +1,10 @@
+flowchart LR
+  SV["Các service"] -->|"log JSON"| LG["Logback JSON"]
+  LG -.->|"thêm sau"| LK["Loki"]
+  SV -->|"Micrometer metrics"| PR["Prometheus"]
+  SV -->|"OpenTelemetry traces"| JG["Jaeger hoặc Tempo"]
+  KE["kafka-exporter"] --> PR
+  PGS["pg_stat_statements"] --> PR
+  PR --> GF["Grafana"]
+  JG --> GF
+  LK -.-> GF

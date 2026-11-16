@@ -1,0 +1,46 @@
+mindmap
+  root((10 service))
+    api-gateway
+      Điểm vào duy nhất
+      Chặn traffic xấu trước service
+      Lưu trữ Redis
+    identity-service
+      Bảo mật là bounded context riêng
+      Blast radius lớn nếu lỗi
+      PostgreSQL
+    catalog-service
+      Read-heavy đổi chậm
+      Cần cache và search riêng
+      Có workflow duyệt
+      PostgreSQL
+    waiting-room-service
+      Nhiều kết nối SSE
+      Ghi đọc Redis tốc độ cao
+      Scale ngang lúc mở bán
+      Redis
+    inventory-service
+      Nơi duy nhất quyết định còn vé hay không
+      Consistency mạnh contention cao
+      PostgreSQL source of truth
+    order-service
+      Điều phối checkout
+      Nhạc trưởng của saga
+      PostgreSQL
+    payment-service
+      Ranh giới với hệ thống ngoài
+      Bắt buộc idempotent
+      Cô lập dữ liệu nhạy cảm
+      PostgreSQL
+    ticket-service
+      Check-in có burst tại cổng
+      Phải chạy khi service khác chậm
+      PostgreSQL
+    notification-service
+      Thuần consumer
+      Lỗi gửi mail không làm hỏng checkout
+      PostgreSQL và Redis
+    audit-service
+      Append-only
+      Consume tất cả
+      Không ai sửa được log
+      PostgreSQL

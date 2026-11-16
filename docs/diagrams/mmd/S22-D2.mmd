@@ -1,0 +1,10 @@
+flowchart LR
+  S1["Thêm service thứ 11"] --> A1["Dừng. Service mới phải có lý do workload, ownership hoặc failure domain viết thành ADR"]
+  S2["Dùng Kafka cho request/response đơn giản"] --> A2["Đổi sang sync"]
+  S3["Tạo interface chỉ có 1 implementation phòng khi"] --> A3["Xóa"]
+  S4["Tối ưu khi chưa có baseline"] --> A4["Dừng, đo trước"]
+  S5["Làm UI quá 25% thời gian"] --> A5["Cắt UI"]
+  S6["Dành quá 25% thời gian cho DevOps hoặc YAML"] --> A6["Quay lại backend fundamentals"]
+  S7["libs/common vài trăm dòng hoặc chứa logic"] --> A7["Tách trả về service"]
+  S8["Cố làm exactly-once"] --> A8["Đọc lại S06 mục 6.3"]
+  S9["Copy code AI hoặc blog mà không giải thích được từng dòng"] --> A9["Viết lại bằng tay và giải thích vào docs/learning"]

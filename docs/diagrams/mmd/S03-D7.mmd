@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph YES["CÓ"]
+    G["API Gateway<br/>rate limit, JWT, correlation id"]
+    K["Kafka<br/>≥5 luồng event thật"]
+    R["Redis có điểm dừng<br/>waiting room, rate limit, cache catalog"]
+    GR["gRPC 1 chỗ duy nhất<br/>order→inventory"]
+  end
+  subgraph NO["KHÔNG — OVERENGINEERING"]
+    SD["Service Discovery<br/>Docker Compose DNS đủ"]
+    CC["Config Server<br/>env + Docker secrets + profiles"]
+    ES["Elasticsearch<br/>Postgres FTS + pg_trgm đủ"]
+    K8["Kubernetes<br/>Compose trên VPS"]
+    SM["Service Mesh"]
+  end

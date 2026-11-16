@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph EXT["Ngoài hệ thống — không tin"]
+    CL["Browser, bot, attacker"]
+    MP["Payment provider webhook"]
+  end
+  subgraph EDGE["Biên"]
+    GW["Gateway<br/>verify JWT, rate limit, xóa header giả mạo<br/>là cổng public duy nhất"]
+  end
+  subgraph NET["Mạng nội bộ Docker — port service không expose ra ngoài"]
+    SV["Các service<br/>verify lại JWT, kiểm ownership"]
+    SYS["SYSTEM worker<br/>machine token client credentials"]
+  end
+  CL -->|"HTTPS"| GW
+  GW --> SV
+  MP -->|"webhook có HMAC + timestamp + dedupe"| SV
+  SYS --> SV

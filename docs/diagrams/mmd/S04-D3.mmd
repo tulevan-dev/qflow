@@ -1,0 +1,15 @@
+stateDiagram-v2
+  [*] --> PENDING
+  PENDING --> AWAITING_PAYMENT : reserve OK
+  PENDING --> REJECTED : reserve FAIL
+  AWAITING_PAYMENT --> PAID : PaymentSucceeded
+  AWAITING_PAYMENT --> CANCELLED : user cancel
+  AWAITING_PAYMENT --> EXPIRED : hold expired
+  EXPIRED --> REFUND_PENDING : PaymentSucceeded đến muộn
+  PAID --> COMPLETED : TicketsIssued
+  PAID --> REFUND_PENDING : issue FAIL hết retry
+  REFUND_PENDING --> REFUNDED
+  REJECTED --> [*]
+  CANCELLED --> [*]
+  COMPLETED --> [*]
+  REFUNDED --> [*]

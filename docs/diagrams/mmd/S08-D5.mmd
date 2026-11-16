@@ -1,0 +1,10 @@
+flowchart TB
+  I["User bấm Mua"] --> K["Sinh Idempotency-Key một lần cho ý định này"]
+  K --> S["Gửi POST /orders, disable nút, hiện đang giữ vé"]
+  S --> R{"Kết quả?"}
+  R -->|"thành công"| OK["Chuyển sang /checkout/orderId"]
+  R -->|"timeout hoặc 5xx"| RT["Retry với CÙNG key"]
+  RT --> S
+  R -->|"4xx lỗi nhập hoặc hết vé"| ER["Hiện lỗi cho user sửa"]
+  R -->|"429"| W["Chờ theo Retry-After"]
+  ER --> NEW["User bấm Mua lần mới thì key mới"]

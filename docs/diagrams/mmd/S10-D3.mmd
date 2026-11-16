@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph SC8["#8 Concurrent update cùng resource"]
+    direction TB
+    p8["Problem: Concurrent update cùng resource"] --> w8["Why: 2 transaction đọc cũ rồi ghi đè"] --> d8["Detect: OptimisticLockException"] --> pr8["Prevent: @Version, atomic UPDATE"] --> r8["Recover: 409 + client refetch, hoặc retry có giới hạn"] --> t8["Trade-off: retry nhiều khi contention cao"]
+  end
+  subgraph SC17["#17 Clock skew và TTL"]
+    direction TB
+    p17["Problem: Clock skew và TTL"] --> w17["Why: nhiều node lệch giờ"] --> d17["Detect: hold hết hạn sai"] --> pr17["Prevent: dùng thời gian DB (now()) cho expiry"] --> r17["Recover: source không nêu"] --> t17["Trade-off: source không nêu"]
+  end
+  subgraph SC18["#18 Cache inconsistency (giá hoặc availability cũ)"]
+    direction TB
+    p18["Problem: Cache inconsistency (giá hoặc availability cũ)"] --> w18["Why: invalidate trễ"] --> d18["Detect: so sánh cache với DB"] --> pr18["Prevent: TTL ngắn, invalidate theo event, quyết định ghi luôn ở DB"] --> r18["Recover: xóa cache"] --> t18["Trade-off: stale để hiển thị chấp nhận được, stale để quyết định thì không"]
+  end

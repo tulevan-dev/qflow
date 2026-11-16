@@ -1,0 +1,10 @@
+flowchart LR
+  T1["Privilege escalation"] --> C1["Role từ JWT, ownership ở service, đổi role chỉ ADMIN + audit, xóa header nội bộ ở gateway"]
+  T2["Lộ DB refresh token"] --> C2["Chỉ lưu hash"]
+  T3["Token cũ bị dùng lại"] --> C3["Rotation + reuse detection thu hồi family"]
+  T4["XSS lấy token"] --> C4["Access token trong memory, refresh trong httpOnly cookie"]
+  T5["CSRF"] --> C5["Cookie chỉ cho /auth/refresh, SameSite=Strict, kiểm Origin hoặc custom header"]
+  T6["Brute force login"] --> C6["Rate limit login, lock tạm sau N lần sai, Argon2id hoặc BCrypt cost ≥ 12"]
+  T7["Webhook giả mạo"] --> C7["HMAC signature + timestamp tolerance + dedupe event id"]
+  T8["Giả vé QR"] --> C8["QR chứa ticketId + chữ ký, server vẫn là nguồn sự thật"]
+  T9["Lộ secret"] --> C9["Env hoặc Docker secrets, không commit, có .env.example"]

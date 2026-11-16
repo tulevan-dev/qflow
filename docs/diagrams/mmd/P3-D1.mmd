@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 1 (auth API) · Phase 2 (catalog/workflow API)"] --> G["Goal<br/>Có UI đủ để dùng thật 2 phase đầu."]
+  G --> F["Features<br/>Auth flow, list/search/detail, organizer, moderator"]
+  G --> A["Architecture / Technology<br/>Next.js App Router (chi tiết kiến trúc: SOURCE CHƯA QUY ĐỊNH)"]
+  F --> O["Output<br/>UI dùng được cho auth, catalog, organizer, moderator"]
+  A --> O
+  O --> D["Definition of Done<br/>Hết token → tự refresh không nhảy lỗi; Lỗi validation backend hiện đúng field"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 4"]
+  GT -->|"chưa đạt"| G

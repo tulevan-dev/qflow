@@ -1,0 +1,21 @@
+flowchart LR
+  subgraph EXT["Ngoài hệ thống, không tin"]
+    C["Client: curl, Postman, hoặc Next.js từ Phase 3"]
+  end
+  subgraph EDGE["Biên"]
+    GW["API Gateway<br/>CORS, rate limit, xóa header giả mạo, verify JWT, role thô"]
+  end
+  subgraph NET["Mạng nội bộ Docker, không expose port service"]
+    ID["identity-service"]
+    HELLO["hello service từ Phase 0<br/>ĐỀ XUẤT: resource server mẫu"]
+    PG[("PostgreSQL identity-db")]
+    RD[("Redis rate limit")]
+  end
+  C -->|"HTTPS"| GW
+  GW --> RD
+  GW -->|"route công khai: register, login, refresh, logout, jwks"| ID
+  GW -->|"route bảo vệ sau khi verify JWT"| HELLO
+  GW -->|"route bảo vệ của identity: me, organizer, admin"| ID
+  ID --> PG
+  GW -.->|"lấy JWKS, cache có TTL"| ID
+  HELLO -.->|"verify lại JWT bằng JWKS"| ID

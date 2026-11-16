@@ -1,0 +1,22 @@
+sequenceDiagram
+  autonumber
+  participant C as Client
+  participant GW as Gateway
+  participant S as Service nghiệp vụ
+  participant ID as identity JWKS
+  C->>GW: request kèm Bearer access token
+  GW->>GW: xóa header nội bộ giả mạo như X-User-Id nếu đến từ ngoài
+  GW->>GW: verify chữ ký, exp, rate limit, role thô theo route
+  alt token sai hoặc hết hạn hoặc vượt rate limit
+    GW-->>C: 401 hoặc 429 kèm Retry-After
+  else hợp lệ
+    GW->>S: forward kèm correlation id
+    S->>ID: lấy JWKS nếu chưa cache
+    S->>S: verify lại JWT, lấy userId và role từ JWT
+    S->>S: kiểm tra ownership hoặc ABAC
+    alt không sở hữu resource
+      S-->>C: 403
+    else được phép
+      S-->>C: kết quả
+    end
+  end

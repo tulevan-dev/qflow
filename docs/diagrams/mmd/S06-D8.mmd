@@ -1,0 +1,9 @@
+flowchart LR
+  Need["Cần nhất quán giữa DB, Kafka và payment provider"] --> X["2PC / XA"]
+  X --> X1["Blocking"]
+  X --> X2["Coupling"]
+  X --> X3["Kafka và payment provider không tham gia XA"]
+  Need --> S["Saga + compensating action + eventual consistency"]
+  S --> S1["Outbox cho ghi DB + event"]
+  S --> S2["Idempotent consumer"]
+  S --> S3["Refund khi cần bù trừ"]

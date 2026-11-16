@@ -1,0 +1,16 @@
+sequenceDiagram
+  autonumber
+  actor C as Client
+  participant GW as Gateway
+  participant H as hello
+  C->>GW: GET hello, chưa có X-Correlation-Id
+  GW->>GW: sinh X-Correlation-Id, ghi log JSON
+  GW->>H: chuyển tiếp kèm X-Correlation-Id
+  H->>H: ghi log JSON cùng correlationId
+  alt thành công
+    H-->>GW: 200
+    GW-->>C: 200 kèm X-Correlation-Id
+  else lỗi
+    H-->>GW: lỗi
+    GW-->>C: problem+json có correlationId, không lộ stack trace
+  end

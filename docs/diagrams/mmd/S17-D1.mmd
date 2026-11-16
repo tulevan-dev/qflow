@@ -1,0 +1,14 @@
+flowchart TB
+  s1["1 Phase 0: Repo, CI, compose, error model, correlation id, logging, ADR 1–5"] --> s2["2 Phase 1: identity + gateway — auth chuẩn trước, đừng vá sau"]
+  s2 --> s3["3 Phase 2: catalog + workflow — state machine, ownership"]
+  s3 --> s4["4 Phase 3: frontend nền — song song: login, list, organizer, moderator"]
+  s4 --> s5["5 Phase 4: inventory — concurrency core, KHÔNG bỏ qua, KHÔNG rút gọn"]
+  s5 --> s6["6 Phase 5: order sync + gRPC — dual-write, reconciler"]
+  s6 --> s7["7 Phase 6: Kafka + outbox + payment + ticket — phase khó nhất"]
+  s7 --> s8["8 Phase 7: notification + audit + SSE + check-in"]
+  s8 --> s9["9 Phase 8: waiting room + rate limit"]
+  s9 --> s10["10 Phase 9: observability + chaos"]
+  s10 --> s11["11 Phase 10: debug lab + perf"]
+  s11 --> s12["12 Phase 11: deploy + public"]
+  s12 --> s13["13 Phase 12: expansion v1.1+"]
+  LOCK["Khóa phase: chưa qua DoD + interview checkpoint của phase trước thì không sang phase sau"] -.-> s2

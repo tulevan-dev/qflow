@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 0: repo, CI, error model, correlation id"] --> G["Goal<br/>Auth chuẩn production."]
+  G --> F["Features<br/>Register/login, JWT+JWKS, rotation, RBAC, rate limit"]
+  G --> A["Architecture / Technology<br/>gateway → identity, verify JWT, propagate user context"]
+  F --> O["Output<br/>Dịch vụ auth chạy sau gateway + bộ test bảo mật"]
+  A --> O
+  O --> D["Definition of Done<br/>Test bảo mật pass (token hết hạn, sai chữ ký, reuse, role sai); Không có secret trong repo; OpenAPI"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 2"]
+  GT -->|"chưa đạt"| G

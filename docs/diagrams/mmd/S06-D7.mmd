@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph ORCH["Checkout = ORCHESTRATION"]
+    O["order-service<br/>orchestrator, state machine rõ ràng"] -->|"gRPC Reserve"| I["inventory"]
+    O -->|"OrderAwaitingPayment"| Pay["payment"]
+    Pay -->|"PaymentSucceeded"| O
+    O -->|"OrderPaid"| TK["inventory và ticket"]
+    TK -->|"TicketsIssued"| O
+  end
+  subgraph CHOR["Notification, Audit, Analytics = CHOREOGRAPHY"]
+    EV["Domain events"] --> N["notification"]
+    EV --> A["audit"]
+    EV --> AN["analytics read model"]
+  end
+  ORCH -.->|"phát event"| EV

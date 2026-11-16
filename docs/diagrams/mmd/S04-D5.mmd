@@ -1,0 +1,35 @@
+sequenceDiagram
+  autonumber
+  actor A as Attendee
+  participant GW as Gateway
+  participant ORD as order
+  participant INV as inventory
+  participant PAY as payment
+  participant MP as Mock Provider
+  participant K as Kafka
+  participant TKT as ticket
+  participant NA as notification + audit
+  A->>GW: POST /orders với Idempotency-Key và admission token nếu có waiting room
+  GW->>ORD: chuyển tiếp
+  ORD->>ORD: tx1 insert order PENDING
+  ORD->>INV: gRPC Reserve orderId items ttl 10m idempotent theo orderId
+  INV->>INV: tx UPDATE stock + INSERT hold + outbox
+  INV-->>ORD: reserved
+  ORD->>ORD: tx2 order AWAITING_PAYMENT + outbox OrderAwaitingPayment
+  ORD-->>A: order AWAITING_PAYMENT
+  A->>PAY: POST /payments với Idempotency-Key
+  PAY-->>A: redirect sang Mock Provider
+  MP->>PAY: webhook
+  PAY->>PAY: verify signature, dedupe provider_event_id, tx payment SUCCEEDED + outbox PaymentSucceeded
+  PAY->>K: PaymentSucceeded
+  K->>ORD: consume
+  ORD->>ORD: tx order PAID + outbox OrderPaid
+  ORD->>K: OrderPaid
+  K->>INV: consume
+  INV->>INV: hold CONSUMED, reserved chuyển thành sold
+  K->>TKT: consume
+  TKT->>TKT: phát hành vé trong 1 transaction
+  TKT->>K: TicketsIssued
+  K->>ORD: consume
+  ORD->>ORD: order COMPLETED
+  K->>NA: mọi event được notification và audit consume

@@ -1,0 +1,11 @@
+flowchart TB
+  NAV["Điều hướng đến route"] --> MW["Middleware Next.js"]
+  MW --> T{"Có phiên hợp lệ?"}
+  T -->|"không"| L["Chuyển về /auth/login"]
+  T -->|"có"| R{"Role phù hợp route?"}
+  R -->|"không"| F["Trang 403"]
+  R -->|"có"| PG["Render trang"]
+  PG --> API["Gọi API"]
+  API --> BE["Backend vẫn kiểm quyền thật"]
+  BE -->|"403"| F
+  Note1["Chặn ở UI chỉ để trải nghiệm tốt hơn, không phải bảo mật"] -.-> MW

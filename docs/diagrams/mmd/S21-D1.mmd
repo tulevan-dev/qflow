@@ -1,0 +1,2 @@
+flowchart LR
+  L["Local<br/>Docker Compose"] --> CI["CI<br/>test + build image"] --> ST["Staging<br/>VPS nhỏ hoặc cùng VPS khác port"] --> PR["Production<br/>VPS + Caddy + Cloudflare"]

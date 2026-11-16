@@ -1,0 +1,12 @@
+flowchart TB
+  F["Consumer xử lý lỗi"] --> T{"Loại lỗi?"}
+  T -->|"tạm thời: DB chậm, network"| R["Retry topic với backoff"]
+  R --> A{"Còn trong N lần?"}
+  A -->|"còn"| P["Xử lý lại"]
+  P --> F
+  A -->|"hết N lần"| D["DLQ"]
+  T -->|"vĩnh viễn: payload sai schema"| D
+  D --> AL["Alert, DLQ lớn hơn 0"]
+  AL --> FIX["Sửa nguyên nhân"]
+  FIX --> RP["Replay từ DLQ bằng tooling"]
+  Note1["N, backoff và tên retry topic: SOURCE CHƯA QUY ĐỊNH"] -.-> A

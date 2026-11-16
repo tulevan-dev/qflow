@@ -1,0 +1,18 @@
+flowchart LR
+  F9["Correlation ID"] --> P0["Phase 0"]
+  F1["Auth JWT + refresh rotation"] --> P1["Phase 1"]
+  F2["Workflow duyệt sự kiện"] --> P2["Phase 2"]
+  F3["List search filter phân trang"] --> P2
+  F5["Chống oversell"] --> P4["Phase 4"]
+  F8["Idempotency-Key tạo order"] --> P5["Phase 5"]
+  F4["Checkout end-to-end"] --> P6["Phase 6"]
+  AF3["Refund và compensation"] --> P6
+  F6["QR và check-in"] --> P7["Phase 7"]
+  F7["Notification"] --> P7
+  AF4["Audit service"] --> P7
+  AF1["Waiting room"] --> P8["Phase 8"]
+  AF2["Rate limiting"] --> P8
+  AF5["Real-time dashboard"] --> V21["v2.1 Expansion"]
+  AF7["Analytics read model"] --> V30["v3.0 Expansion"]
+  AF6["Bot mitigation"] --> U1["SOURCE CHƯA QUY ĐỊNH phase"]
+  AF8["Waitlist"] --> U2["SOURCE CHƯA QUY ĐỊNH phase"]

@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+  participant W as Next.js
+  participant ID as identity
+  participant DB as identity-db
+  W->>ID: refresh với cookie refresh token
+  ID->>DB: tìm theo hash token
+  alt không tồn tại hoặc hết hạn
+    ID-->>W: 401, đăng nhập lại
+  else token đã bị revoke hoặc đã rotate (dùng lại token cũ)
+    ID->>DB: revoke toàn bộ token cùng family_id
+    ID-->>W: 401, buộc login lại
+  else token đang hợp lệ
+    ID->>DB: revoke token cũ, set replaced_by
+    ID->>DB: lưu token mới cùng family_id
+    ID-->>W: access token mới + refresh token mới qua cookie
+  end

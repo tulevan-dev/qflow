@@ -1,0 +1,23 @@
+flowchart LR
+  subgraph U["Unit — mock phụ thuộc"]
+    direction LR
+    U1["Email, chính sách mật khẩu, hash"]
+    U2["Claims và TTL của JWT"]
+    U3["Sinh refresh token và state"]
+    U4["Ánh xạ role sang authority"]
+    U5["Bộ đếm khóa tạm"]
+  end
+  subgraph I["Integration — Postgres và Redis thật"]
+    direction LR
+    I1["Migration và ràng buộc DB"]
+    I2["Register, login, me"]
+    I3["Refresh, reuse, logout, race"]
+    I4["Gateway cùng identity với JWKS thật"]
+    I5["Rate limit với Redis thật"]
+    I6["CORS và CSRF, thuộc tính cookie"]
+  end
+  subgraph S["Security — tấn công thật vào hệ thống"]
+    direction LR
+    S1["SEC-01 đến SEC-20"]
+  end
+  U --> I --> S

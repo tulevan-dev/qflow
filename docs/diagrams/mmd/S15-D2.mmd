@@ -1,0 +1,21 @@
+flowchart LR
+  subgraph AB["A → B"]
+    direction LR
+    a1["Cần mua vé"] --> a2["Cũ: chưa có tranh chấp tài nguyên"] --> a3["Mới: inventory độc lập, atomic update, hold TTL"]
+  end
+  subgraph BC["B → C"]
+    direction LR
+    b1["Order gọi sync mọi thứ"] --> b2["Cũ: 1 service chậm là cả luồng chết, dual-write mất đồng bộ khi crash"] --> b3["Mới: Event + Outbox + Saga"]
+  end
+  subgraph CD["C → D"]
+    direction LR
+    c1["Notification và audit gắn vào luồng chính"] --> c2["Cũ: side-effect nằm trong critical path, dễ lỗi lây"] --> c3["Mới: choreography consumers"]
+  end
+  subgraph DE["D → E"]
+    direction LR
+    d1["Lúc mở bán traffic dồn"] --> d2["Cũ: inventory và DB nghẽn, không công bằng, backpressure chỉ bằng rate limit là thô"] --> d3["Mới: waiting room điều tiết tốc độ vào"]
+  end
+  subgraph EF["E → F"]
+    direction LR
+    e1["Đã có hệ thống"] --> e2["Cũ: chưa biết nó chịu lỗi thế nào, tin vào happy path"] --> e3["Mới: chaos + metrics + tuning"]
+  end

@@ -1,0 +1,9 @@
+flowchart TB
+  REQ["Request login hoặc register"] --> L1{"Lớp 1 gateway: token bucket theo IP trong Redis còn token?"}
+  L1 -->|"hết"| R429["429 kèm Retry-After"]
+  L1 -->|"còn"| ID["identity xử lý"]
+  ID --> L2{"Lớp 2: tài khoản đang bị khóa tạm?"}
+  L2 -->|"có"| DENY["Từ chối với thông báo chung"]
+  L2 -->|"không"| CHK["Verify mật khẩu"]
+  CHK -->|"sai"| INC["Tăng bộ đếm, đủ N lần thì đặt locked_until"]
+  CHK -->|"đúng"| RST["Reset bộ đếm"]

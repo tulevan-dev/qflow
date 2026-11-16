@@ -1,0 +1,7 @@
+flowchart TB
+  LO["Logout"] --> R1["Revoke refresh token và family"]
+  R1 --> R2["Không thể refresh nữa"]
+  LO --> AT["Access token vẫn hợp lệ đến khi hết hạn, tối đa khoảng 15 phút"]
+  AT --> Q{"Cần chặn gấp?"}
+  Q -->|"có"| DL["Denylist jti trong Redis — OPTIONAL"]
+  Q -->|"không"| W["Chờ access token hết hạn"]

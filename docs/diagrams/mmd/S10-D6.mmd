@@ -1,0 +1,9 @@
+flowchart TB
+  subgraph SC16["#16 Retry storm"]
+    direction TB
+    p16["Problem: Retry storm"] --> w16["Why: mọi client retry đồng loạt khi service chậm"] --> d16["Detect: RPS tăng đột ngột + 5xx"] --> pr16["Prevent: exponential backoff + jitter, circuit breaker, 429 Retry-After"] --> r16["Recover: bulkhead, shed load"] --> t16["Trade-off: từ chối bớt request để cứu hệ thống"]
+  end
+  subgraph SC19["#19 Bot hoặc thundering herd"]
+    direction TB
+    p19["Problem: Bot hoặc thundering herd"] --> w19["Why: script spam"] --> d19["Detect: rate limit hit, queue join bất thường"] --> pr19["Prevent: waiting room + rate limit + giới hạn mỗi người"] --> r19["Recover: block, tăng PoW"] --> t19["Trade-off: friction cho người thật"]
+  end

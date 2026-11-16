@@ -1,0 +1,10 @@
+flowchart LR
+  E["Chi tiết sự kiện"] --> Q{"Waiting room đang bật?"}
+  Q -->|"có"| JQ["Vào /queue/eventId"]
+  JQ -->|"SSE: được admit"| CO["/checkout/orderId"]
+  Q -->|"không"| CO
+  CO --> CD["Countdown hold 10 phút"]
+  CD --> PAY["Thanh toán mock"]
+  PAY --> ST["Theo dõi trạng thái order qua SSE hoặc poll"]
+  ST -->|"COMPLETED"| TK["/me/tickets vé QR"]
+  ST -->|"EXPIRED hoặc lỗi"| E

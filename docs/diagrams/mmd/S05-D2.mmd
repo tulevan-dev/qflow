@@ -1,0 +1,36 @@
+erDiagram
+  users ||--o{ user_roles : has
+  users ||--o| organizer_profiles : has
+  users ||--o{ refresh_tokens : owns
+  users {
+    uuid id PK
+    string email UK "unique trên lower email"
+    string password_hash
+    string status "ACTIVE LOCKED DELETED"
+    timestamp created_at
+    timestamp updated_at
+    timestamp deleted_at "soft delete"
+  }
+  user_roles {
+    uuid user_id PK, FK
+    string role PK
+  }
+  organizer_profiles {
+    uuid user_id PK, FK
+    string org_name
+    string status "PENDING VERIFIED REJECTED"
+    uuid verified_by
+    timestamp verified_at
+  }
+  refresh_tokens {
+    uuid id PK
+    uuid user_id FK
+    string token_hash UK "lưu hash không lưu plaintext"
+    uuid family_id "phát hiện token reuse"
+    timestamp expires_at
+    timestamp revoked_at
+    uuid replaced_by
+    string user_agent
+    string ip
+    timestamp created_at
+  }

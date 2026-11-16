@@ -1,0 +1,11 @@
+flowchart LR
+  CAT["catalog"] --> T1["catalog.events.v1"]
+  INV["inventory"] --> T2["inventory.events.v1"]
+  ORD["order"] --> T3["order.events.v1"]
+  PAY["payment"] --> T4["payment.events.v1"]
+  TKT["ticket"] --> T5["ticket.events.v1"]
+  T1 --> C1["inventory, ticket, notification, audit, waiting-room"]
+  T2 --> C2["order, notification, audit"]
+  T3 --> C3["payment, inventory, ticket, notification, audit"]
+  T4 --> C4["order, notification, audit"]
+  T5 --> C5["order, notification, audit"]

@@ -1,0 +1,22 @@
+sequenceDiagram
+  autonumber
+  actor C as Client
+  participant GW as Gateway
+  participant ID as identity
+  participant DB as identity-db
+  C->>GW: POST register với email và password
+  GW->>GW: sanitize header, rate limit
+  GW->>ID: chuyển tiếp, route công khai
+  ID->>ID: validate email và password policy, chuẩn hóa lower email
+  alt dữ liệu không hợp lệ
+    ID-->>C: 400 problem+json kèm lỗi từng field
+  else hợp lệ
+    ID->>ID: hash mật khẩu
+    ID->>DB: 1 transaction: INSERT users + INSERT user_roles ATTENDEE
+    alt vi phạm UNIQUE lower email
+      DB-->>ID: unique violation
+      ID-->>C: 409 problem+json, xem quyết định 9
+    else thành công
+      ID-->>C: 201 id, email, roles, không trả password_hash
+    end
+  end

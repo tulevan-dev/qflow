@@ -1,0 +1,6 @@
+stateDiagram-v2
+  [*] --> PENDING : user nộp hồ sơ
+  PENDING --> VERIFIED : ADMIN approve, ghi verified_by và verified_at
+  PENDING --> REJECTED : ADMIN reject
+  REJECTED --> PENDING : nộp lại, ĐỀ XUẤT
+  VERIFIED --> [*]

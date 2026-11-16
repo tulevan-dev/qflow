@@ -1,0 +1,15 @@
+flowchart TB
+  P0["Phase 0<br/>Requirement và Skeleton<br/>≈1 tuần"] --> P1["Phase 1<br/>Identity + Gateway<br/>≈2 tuần"]
+  P1 --> P2["Phase 2<br/>Catalog + Workflow<br/>≈2–3 tuần"]
+  P2 --> P4["Phase 4<br/>Inventory<br/>≈3 tuần"]
+  P4 --> P5["Phase 5<br/>Order + Saga sync + gRPC<br/>≈2–3 tuần"]
+  P5 --> P6["Phase 6<br/>Kafka + Outbox + Payment + Ticket<br/>≈4 tuần, khó nhất"]
+  P6 --> P7["Phase 7<br/>Notification, Audit, SSE<br/>≈2 tuần"]
+  P7 --> P8["Phase 8<br/>Waiting Room + Rate Limit<br/>≈3 tuần"]
+  P8 --> P9["Phase 9<br/>Observability + Resilience<br/>≈2 tuần"]
+  P9 --> P10["Phase 10<br/>Debugging Lab + Perf<br/>≈2–3 tuần"]
+  P10 --> P11["Phase 11<br/>Deploy + Public Release<br/>≈2 tuần"]
+  P11 --> P12["Phase 12<br/>Advanced Architecture<br/>tùy chọn"]
+  P3["Phase 3<br/>Frontend nền<br/>song song, ≈1–2 tuần rải rác"]
+  P1 -.-> P3
+  P2 -.-> P3

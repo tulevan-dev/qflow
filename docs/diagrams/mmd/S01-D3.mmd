@@ -1,0 +1,14 @@
+flowchart LR
+  GUEST["GUEST"] -->|"đọc"| PUB["Catalog đã PUBLISHED"]
+  ATT["ATTENDEE"] -->|"join waiting room, tạo/xem/hủy"| MINE["Order và vé của chính mình"]
+  ORG["ORGANIZER"] -->|"CRUD chỉ sự kiện mình tạo"| OWN["Sự kiện và ticket tier của mình"]
+  ORG -->|"submit duyệt"| REV["Hàng chờ duyệt"]
+  ORG -->|"gán staff"| STF["Event staff"]
+  ORG -->|"xem báo cáo, yêu cầu hủy/hoàn"| RPT["Báo cáo sự kiện của mình"]
+  STAFF["EVENT_STAFF"] -->|"check-in chỉ sự kiện được gán"| CHK["Check-in vé"]
+  MOD["MODERATOR"] -->|"duyệt/từ chối kèm lý do, gỡ vi phạm"| REV
+  ADM["ADMIN"] -->|"verify organizer, quản lý user"| USR["User và organizer profile"]
+  ADM -->|"xem"| AUD["Audit log"]
+  ADM -->|"hoàn tiền thủ công"| RFD["Refund"]
+  ADM -->|"cấu hình rate limit và waiting room toàn cục"| CFG["Cấu hình nền tảng"]
+  SYS["SYSTEM service account"] -->|"expire hold, reconcile order kẹt, replay DLQ<br/>dùng machine token riêng"| JOBS["Worker nội bộ"]

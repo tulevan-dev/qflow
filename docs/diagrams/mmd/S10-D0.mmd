@@ -1,0 +1,27 @@
+mindmap
+  root((19 failure scenarios))
+    Hạ tầng sập
+      1 Postgres inventory down
+      2 Redis down
+      3 Kafka down
+    Mạng và trùng lặp
+      4 Timeout order đến inventory
+      6 Duplicate request
+      7 Duplicate event
+    Đồng thời và nhất quán
+      8 Concurrent update
+      17 Clock skew và TTL
+      18 Cache inconsistency
+    Thanh toán và saga
+      5 Order crash sau reserve
+      9 Webhook đến sau hold hết hạn
+      10 Webhook giả mạo
+      11 Ticket-service down sau khi thu tiền
+      12 Partial failure phát hành vé
+    Kafka consumer
+      13 Consumer lag
+      14 Poison message
+      15 Restart giữa lúc xử lý
+    Tải và bot
+      16 Retry storm
+      19 Bot và thundering herd

@@ -1,0 +1,17 @@
+flowchart TB
+  T00["T00 Nền Phase 0"] --> T01["T01 Thiết kế và ADR"] --> T02["T02 Khung identity và migration"]
+  T02 --> T03["T03 Domain và hash"] --> T04["T04 Register"]
+  T02 --> T05["T05 Khóa RSA, JWT, JWKS"]
+  T04 --> T06["T06 Login và refresh token"]
+  T05 --> T06
+  T06 --> T07["T07 Refresh rotation"] --> T08["T08 Logout"]
+  T05 --> T09["T09 RBAC và method security"] --> T10["T10 Organizer profile"]
+  T05 --> T11["T11 Gateway verify JWT"] --> T12["T12 Sanitize và user context"]
+  T11 --> T13["T13 Rate limit"]
+  T07 --> T14["T14 CORS và CSRF"]
+  T08 --> T14
+  T10 --> T15["T15 Error model và OpenAPI"]
+  T12 --> T15
+  T13 --> T15
+  T14 --> T15
+  T15 --> T16["T16 Test bảo mật và CI"] --> T17["T17 Đo, quan sát, nghiệm thu"]

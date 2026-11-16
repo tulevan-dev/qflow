@@ -1,0 +1,6 @@
+flowchart LR
+  EV["Event<br/>catalog"] -->|"EventPublished / EventCancelled"| INV["Hold<br/>inventory"]
+  ORD["Order<br/>order-service"] -->|"Reserve / Release / OrderPaid"| INV
+  PAY["Payment events"] -->|"PaymentSucceeded"| ORD
+  EV -->|"EventCancelled kích hoạt refund hàng loạt"| ORD
+  INV -->|"hold hết hạn → order EXPIRED"| ORD

@@ -1,0 +1,12 @@
+flowchart TB
+  LO["POST logout kèm cookie refresh"] --> H["Hash token, tìm trong DB"]
+  H --> Q{"Tìm thấy?"}
+  Q -->|"có"| RV["Revoke token và family"]
+  Q -->|"không"| NOP["Không làm gì, vẫn trả thành công: idempotent"]
+  RV --> CK["Xóa cookie: Set-Cookie Max-Age=0, cùng Path và thuộc tính"]
+  NOP --> CK
+  CK --> OK["204"]
+  OK --> AT["Access token hiện có vẫn hợp lệ đến khi hết hạn, tối đa khoảng 15 phút"]
+  AT --> DL{"Cần chặn ngay?"}
+  DL -->|"có"| DN["Denylist jti trong Redis: OPTIONAL, ngoài Phase 1"]
+  DL -->|"không"| W["Chấp nhận trade-off của JWT stateless"]

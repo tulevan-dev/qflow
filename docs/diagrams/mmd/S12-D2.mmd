@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph P1["Hot row contention trên tier_stock"]
+    direction LR
+    a1["Tạo: 5.000 VU mua 1 tier"] --> b1["Đo: k6, pg_stat_activity, lock wait"] --> c1["Tối ưu: atomic UPDATE, Redis Lua pre-check, sharded counter"]
+  end
+  subgraph P2["N+1 ở danh sách order/event"]
+    direction LR
+    a2["Tạo: bật hibernate.generate_statistics, log SQL"] --> b2["Đo: log, test đếm query"] --> c2["Tối ưu: JOIN FETCH, EntityGraph, DTO projection"]
+  end
+  subgraph P3["Query list chậm"]
+    direction LR
+    a3["Tạo: seed 1 đến 5 triệu dòng"] --> b3["Đo: EXPLAIN ANALYZE BUFFERS"] --> c3["Tối ưu: composite hoặc partial index, keyset pagination thay OFFSET"]
+  end
+  subgraph P4["Cache miss storm khi event hot"]
+    direction LR
+    a4["Tạo: xóa cache + spike"] --> b4["Đo: hit ratio"] --> c4["Tối ưu: cache-aside + TTL jitter + request coalescing"]
+  end
+  subgraph P5["Consumer lag"]
+    direction LR
+    a5["Tạo: produce 100k event"] --> b5["Đo: lag metric"] --> c5["Tối ưu: batch listener, partition, tối ưu idempotency write"]
+  end
+  subgraph P6["Hikari cạn"]
+    direction LR
+    a6["Tạo: giảm pool, tăng tải"] --> b6["Đo: hikaricp_connections_pending"] --> c6["Tối ưu: giảm thời gian giữ connection, không gọi mạng trong transaction"]
+  end
+  subgraph P7["Waiting room scale"]
+    direction LR
+    a7["Tạo: 20k kết nối SSE"] --> b7["Đo: số connection, memory"] --> c7["Tối ưu: virtual threads ADVANCED, tune Tomcat hoặc Netty, heartbeat"]
+  end

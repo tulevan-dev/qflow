@@ -1,0 +1,13 @@
+flowchart LR
+  A1["Credential stuffing, brute force"] --> C1["Rate limit IP + khóa tạm theo tài khoản + thông báo chung"] --> T1["SEC-16, SEC-17"]
+  A2["Trộm và replay refresh token"] --> C2["Rotation + reuse detection thu hồi family"] --> T2["SEC-09"]
+  A3["Nhầm lẫn thuật toán, alg=none"] --> C3["Ép alg RS256, chọn khóa theo kid"] --> T3["SEC-03, SEC-04"]
+  A4["Giả header danh tính"] --> C4["Sanitize ở gateway + service tự verify JWT"] --> T4["SEC-13, SEC-14"]
+  A5["Tự nâng quyền qua body hoặc endpoint"] --> C5["Role từ JWT, method security, đổi role chỉ ADMIN"] --> T5["SEC-08, SEC-15"]
+  A6["Organizer tự duyệt cho mình"] --> C6["Chỉ ADMIN duyệt, rule tách nhiệm vụ"] --> T6["IT-09, NEG-07"]
+  A7["CSRF lên refresh/logout"] --> C7["SameSite=Strict + Origin + header tùy biến"] --> T7["SEC-18, SEC-19"]
+  A8["Lách rate limit bằng X-Forwarded-For giả"] --> C8["Chỉ tin header proxy tin cậy"] --> T8["IT-12"]
+  A9["Flood kid giả để gateway gọi JWKS liên tục"] --> C9["Giới hạn refetch JWKS, cache âm"] --> T9["SEC-06"]
+  A10["Mật khẩu cực dài để tốn CPU"] --> C10["Giới hạn độ dài tối đa"] --> T10["NEG-02"]
+  A11["Cố ý khóa tài khoản người khác"] --> C11["Khóa chỉ tạm thời, kết hợp lớp IP"] --> T11["UT-06, SEC-17"]
+  A12["Dùng access token cũ sau logout"] --> C12["Chấp nhận có chủ đích: sống tới hết hạn; OPTIONAL denylist jti"] --> T12["Ghi vào ADR, không có test chặn"]

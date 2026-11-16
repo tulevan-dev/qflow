@@ -1,0 +1,23 @@
+sequenceDiagram
+  autonumber
+  participant UI as Components
+  participant API as API client
+  participant GW as Gateway
+  participant ID as identity
+  UI->>API: request A
+  UI->>API: request B
+  API->>GW: A kèm access token hết hạn
+  API->>GW: B kèm access token hết hạn
+  GW-->>API: 401 cho A
+  GW-->>API: 401 cho B
+  API->>API: chỉ 1 refresh đang chạy, B đợi chung kết quả
+  API->>ID: refresh bằng cookie
+  alt refresh thành công
+    ID-->>API: access token mới
+    API->>GW: gửi lại A
+    API->>GW: gửi lại B
+    GW-->>UI: kết quả
+  else refresh thất bại
+    ID-->>API: 401
+    API-->>UI: xóa phiên, chuyển về login
+  end

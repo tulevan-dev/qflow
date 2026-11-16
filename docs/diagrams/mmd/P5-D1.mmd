@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 4: inventory"] --> G["Goal<br/>Checkout hoàn chỉnh (sync) + hiểu dual-write."]
+  G --> F["Features<br/>Order + Idempotency-Key, price snapshot, gRPC, reconciler"]
+  G --> A["Architecture / Technology<br/>order → inventory (REST → gRPC), state machine"]
+  F --> O["Output<br/>Checkout sync hoàn chỉnh + reconciler"]
+  A --> O
+  O --> D["Definition of Done<br/>Không còn order mồ côi; Mọi timeout có giá trị rõ ràng; So sánh REST vs gRPC bằng đo thực tế"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 6"]
+  GT -->|"chưa đạt"| G

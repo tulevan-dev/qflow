@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph APP["Ứng dụng"]
+    GW["gateway"]
+    HELLO["service hello"]
+  end
+  subgraph INFRA["Hạ tầng trong compose"]
+    PG[("PostgreSQL 1 instance")]
+    RD[("Redis")]
+    KF[("Kafka hoặc Redpanda")]
+  end
+  subgraph DBS["Database trong PostgreSQL, mỗi DB một user riêng"]
+    D1[("hello_db")]
+    D2[("identity_db")]
+  end
+  GW --> HELLO
+  HELLO --> D1
+  PG --- D1
+  PG --- D2
+  GW -.->|"Phase 1: rate limit"| RD
+  KF -.->|"chưa có service dùng ở Phase 0"| APP

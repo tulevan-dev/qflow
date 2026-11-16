@@ -1,0 +1,10 @@
+flowchart TB
+  S["Bắt đầu nghiệm thu"] --> D1{"DoD 1: SEC-01 đến SEC-20 xanh trong CI,<br/>gồm đủ token hết hạn, sai chữ ký, reuse, role sai?"}
+  D1 -->|"chưa"| FX["Sửa hoặc bổ sung test"]
+  FX --> D1
+  D1 -->|"rồi"| D2{"DoD 2: quét secret xanh,<br/>chỉ có .env.example, khóa nạp từ ngoài repo?"}
+  D2 -->|"chưa"| FX
+  D2 -->|"rồi"| D3{"DoD 3: OpenAPI lint sạch,<br/>đủ 13 endpoint và lỗi 4xx, contract test xanh?"}
+  D3 -->|"chưa"| FX
+  D3 -->|"rồi"| X["Bằng chứng bổ trợ: ADR đủ, perf journal ≥ 1 mục, tự kiểm 20 câu"]
+  X --> OK["Qua cổng Phase 1, sang Phase 2 sau khi qua interview checkpoint"]

@@ -1,0 +1,13 @@
+flowchart LR
+  B1["1 Race condition inventory<br/>bán 101 trên 100 vé"] --> K1["concurrency test, DB lock, constraint"]
+  B2["2 N+1 ở me/orders"] --> K2["log SQL, EntityGraph"]
+  B3["3 Duplicate event<br/>vé phát hành 2 lần sau rebalance"] --> K3["inbox, unique constraint"]
+  B4["4 Memory leak<br/>SSE emitter không remove"] --> K4["heap dump, MAT hoặc VisualVM"]
+  B5["5 Slow query<br/>2 triệu dòng, thiếu index hoặc OFFSET sâu"] --> K5["EXPLAIN ANALYZE"]
+  B6["6 Deadlock<br/>mua nhiều tier theo thứ tự ngược"] --> K6["pg_locks, lock ordering"]
+  B7["7 Cache inconsistency<br/>còn vé hoặc giá cũ"] --> K7["invalidate theo event"]
+  B8["8 Retry storm"] --> K8["backoff + jitter, CB"]
+  B9["9 Consumer lag<br/>notification lag hàng chục nghìn event"] --> K9["partition, batch, profiling"]
+  B10["10 Authentication bug<br/>refresh cũ vẫn dùng được hoặc IDOR check-in"] --> K10["security test, ownership check"]
+  B11["11 Transactional self-invocation<br/>rollback không xảy ra"] --> K11["hiểu proxy AOP"]
+  B12["12 Timezone bug<br/>mở bán lệch 7 tiếng"] --> K12["UTC everywhere, Instant hoặc OffsetDateTime"]

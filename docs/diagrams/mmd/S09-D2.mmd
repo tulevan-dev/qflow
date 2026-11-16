@@ -1,0 +1,15 @@
+sequenceDiagram
+  autonumber
+  participant C as Client
+  participant GW as Gateway
+  participant O as order
+  participant I as inventory
+  participant K as Kafka
+  participant T as ticket
+  C->>GW: request, có thể chưa có X-Correlation-Id
+  GW->>GW: sinh X-Correlation-Id nếu chưa có
+  GW->>O: HTTP header X-Correlation-Id
+  O->>I: gRPC metadata correlationId
+  O->>K: Kafka header + envelope correlationId
+  K->>T: consume, đọc correlationId từ header
+  Note over GW,T: mọi dòng log có timestamp, level, service, correlationId, traceId, userId đã hash, eventId, orderId

@@ -1,0 +1,4 @@
+flowchart LR
+  L1["Atomic UPDATE WHERE available >= q<br/>chọn trước"] -->|"đo thấy PG là bottleneck"| L2["Redis Lua pre-check"]
+  L2 -->|"vẫn nghẽn hot row"| L3["Chia stock thành N bucket<br/>sharded counter"]
+  L1 -.->|"Redis KHÔNG là source of truth ở v1"| PG[("PostgreSQL")]

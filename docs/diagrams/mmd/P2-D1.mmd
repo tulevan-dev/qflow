@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 1: auth, role, ownership từ JWT"] --> G["Goal<br/>Domain có state machine + role-based workflow."]
+  G --> F["Features<br/>CRUD + ownership, workflow duyệt, FTS, cursor pagination"]
+  G --> A["Architecture / Technology<br/>catalog + Postgres + Redis cache-aside (đo trước)"]
+  F --> O["Output<br/>catalog với workflow duyệt, search, pagination"]
+  A --> O
+  O --> D["Definition of Done<br/>Mọi transition sai trả 409/422 có mã lỗi; Test ownership; List 1 triệu event vẫn nhanh bằng keyset (bạn đo)"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 3"]
+  GT -->|"chưa đạt"| G

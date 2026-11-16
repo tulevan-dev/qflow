@@ -1,0 +1,7 @@
+flowchart TB
+  API["api<br/>AuthController, UserController, OrganizerController, AdminController, JwksController<br/>request/response DTO, exception handler"] --> APP["application<br/>RegisterUser, Authenticate, RefreshSession, Logout, ManageRoles, OrganizerApplication<br/>transaction boundary"]
+  APP --> DOM["domain<br/>User, Role, RefreshToken và token family, OrganizerProfile<br/>rule thuần, không phụ thuộc framework nặng"]
+  INF["infrastructure<br/>JPA repository, JwtIssuer với khóa RSA, PasswordEncoder adapter, Clock"] --> DOM
+  APP --> INF
+  CFG["config<br/>SecurityConfig, key properties, CORS"] -.-> API
+  CFG -.-> INF

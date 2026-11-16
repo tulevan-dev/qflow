@@ -1,0 +1,12 @@
+flowchart TB
+  M["Nhận message từ Kafka"] --> B["BEGIN transaction"]
+  B --> I["INSERT processed_events eventId, consumer<br/>ON CONFLICT DO NOTHING"]
+  I --> Q{"Chèn được dòng mới?"}
+  Q -->|"có: chưa xử lý"| H["Xử lý nghiệp vụ trong cùng transaction"]
+  H --> C["COMMIT"]
+  C --> O["Commit offset"]
+  Q -->|"không: đã xử lý trước đó"| S["Bỏ qua"]
+  S --> C2["COMMIT hoặc rollback rỗng"]
+  C2 --> O
+  H -->|"exception"| RB["ROLLBACK, không commit offset"]
+  RB --> RT["Retry hoặc DLQ"]

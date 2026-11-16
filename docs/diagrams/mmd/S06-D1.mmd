@@ -1,0 +1,10 @@
+flowchart LR
+  BIZ["Nghiệp vụ trong service"] -->|"cùng 1 transaction"| DB[("DB của service<br/>dữ liệu + outbox_events")]
+  DB --> RELAY["Relay poller<br/>FOR UPDATE SKIP LOCKED"]
+  RELAY -->|"publish, key = aggregateId"| TOPIC["Kafka topic"]
+  TOPIC --> CONS["Consumer<br/>processed_events chống trùng"]
+  CONS -->|"thành công"| OK["commit offset sau khi DB commit"]
+  CONS -->|"lỗi tạm thời"| RETRY["retry topic + backoff"]
+  RETRY --> CONS
+  CONS -->|"lỗi vĩnh viễn hoặc hết N lần"| DLQ["topic .dlq"]
+  DLQ -->|"sửa rồi replay"| TOPIC

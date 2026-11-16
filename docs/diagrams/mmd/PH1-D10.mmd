@@ -1,0 +1,26 @@
+sequenceDiagram
+  autonumber
+  actor C as Client
+  participant ID as identity
+  participant DB as identity-db
+  C->>ID: POST refresh kèm cookie R1 và Origin
+  ID->>ID: kiểm Origin hoặc header tùy biến, chống CSRF
+  ID->>ID: hash R1
+  ID->>DB: SELECT refresh_tokens theo token_hash
+  alt không có hoặc đã quá hạn
+    ID-->>C: 401 và xóa cookie
+  else đã revoked hoặc đã rotated, tức dùng lại token cũ
+    ID->>DB: UPDATE revoke mọi token chưa revoke của family
+    ID-->>C: 401, xóa cookie, ghi log sự kiện bảo mật
+  else đang ACTIVE
+    ID->>DB: kiểm user còn ACTIVE, đọc lại roles hiện tại
+    ID->>DB: UPDATE revoked_at, replaced_by WHERE id = R1 AND revoked_at IS NULL
+    alt 0 dòng bị ảnh hưởng, request khác đã rotate trước
+      ID->>DB: xử lý như reuse hoặc grace window, theo quyết định 7
+      ID-->>C: 401
+    else đúng 1 dòng
+      ID->>DB: INSERT R2 cùng family_id, expires_at mới
+      ID->>ID: tạo access token mới với roles mới đọc
+      ID-->>C: 200 access mới và Set-Cookie R2
+    end
+  end

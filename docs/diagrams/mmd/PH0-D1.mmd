@@ -1,0 +1,16 @@
+flowchart TB
+  A["P0-T01 Event storming"] --> B["P0-T02 Glossary và bounded context"] --> C["P0-T03 ADR 1–5"]
+  C --> D["P0-T04 Khung monorepo"]
+  D --> E["P0-T05 Compose: Postgres, Redis, Kafka"]
+  D --> F["P0-T07 Cross-cutting: problem+json, correlation id, log JSON"]
+  E --> G["P0-T06 Gateway và service hello"]
+  F --> G
+  E --> H["P0-T08 Flyway baseline"]
+  G --> I["P0-T09 CI"]
+  H --> I
+  D --> J["P0-T10 Khung docs và README"]
+  G --> K["P0-T11 API contract đầu tiên"]
+  I --> L["P0-T12 Nghiệm thu DoD"]
+  J --> L
+  K --> L
+  L --> M["Cổng: DoD + interview checkpoint, rồi sang Phase 1"]

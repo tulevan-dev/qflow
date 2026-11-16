@@ -1,0 +1,33 @@
+erDiagram
+  notifications ||--o{ deliveries : delivered_by
+  notifications {
+    uuid id PK
+    uuid user_id
+    string type
+    string title
+    string body
+    jsonb payload
+    timestamp read_at
+    timestamp created_at
+  }
+  deliveries {
+    uuid id PK
+    uuid notification_id FK
+    string channel
+    string status
+    int attempts
+    string last_error
+    timestamp next_retry_at
+    uuid source_event_id "UK cùng channel"
+  }
+  audit_logs {
+    uuid id PK
+    timestamp occurred_at
+    uuid actor_id
+    string actor_role
+    string action
+    string resource_type
+    string resource_id
+    string correlation_id
+    jsonb payload
+  }

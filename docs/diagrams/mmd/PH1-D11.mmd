@@ -1,0 +1,6 @@
+flowchart LR
+  subgraph FAM["family_id = F1"]
+    R1["R1 revoked, replaced_by R2"] --> R2["R2 revoked, replaced_by R3"] --> R3["R3 ACTIVE"]
+  end
+  ATK["Kẻ trộm replay R1"] -->|"R1 đã revoked: reuse detected"| REV["Revoke toàn bộ F1, gồm cả R3"]
+  REV --> UL["Người dùng thật phải login lại"]

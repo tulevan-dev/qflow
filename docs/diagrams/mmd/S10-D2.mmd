@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph SC4["#4 Network timeout order → inventory"]
+    direction TB
+    p4["Problem: Network timeout order → inventory"] --> w4["Why: mạng hoặc GC pause"] --> d4["Detect: timeout metric"] --> pr4["Prevent: timeout + retry với cùng orderId (idempotent)"] --> r4["Recover: gọi lại Reserve; kết quả 'trạng thái không biết' thì query hold theo orderId"] --> t4["Trade-off: retry có thể gây tải thêm (retry storm) nên cần backoff + jitter"]
+  end
+  subgraph SC6["#6 Duplicate request (double click, retry mạng)"]
+    direction TB
+    p6["Problem: Duplicate request (double click, retry mạng)"] --> w6["Why: client hoặc proxy retry"] --> d6["Detect: unique violation (user, idempotency_key)"] --> pr6["Prevent: Idempotency-Key + unique constraint"] --> r6["Recover: trả lại kết quả cũ (cùng body, 200 hoặc 201)"] --> t6["Trade-off: lưu key thêm storage, cần TTL cleanup"]
+  end
+  subgraph SC7["#7 Duplicate event, xử lý 2 lần"]
+    direction TB
+    p7["Problem: Duplicate event, xử lý 2 lần"] --> w7["Why: at-least-once, rebalance"] --> d7["Detect: processed_events conflict"] --> pr7["Prevent: idempotent consumer"] --> r7["Recover: bỏ qua"] --> t7["Trade-off: thêm 1 write mỗi event"]
+  end

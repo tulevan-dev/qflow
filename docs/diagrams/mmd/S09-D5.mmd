@@ -1,0 +1,7 @@
+flowchart TB
+  A["Actuator"] --> L["liveness: tiến trình còn sống"]
+  A --> R["readiness: sẵn sàng nhận traffic"]
+  R --> DB["kiểm tra DB"]
+  R --> KF["kiểm tra Kafka"]
+  R -->|"fail"| OUT["Ngừng nhận traffic, ví dụ readiness fail khi DB down"]
+  Alert["Alert: consumer lag, outbox backlog, DLQ lớn hơn 0, order kẹt"] -.-> R

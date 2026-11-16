@@ -1,0 +1,14 @@
+sequenceDiagram
+  autonumber
+  participant MP as Mock Provider
+  participant PAY as payment
+  participant DB as payment DB
+  MP->>PAY: webhook provider_event_id E1
+  PAY->>DB: INSERT webhook_events E1
+  DB-->>PAY: OK
+  PAY->>DB: tx payment SUCCEEDED + outbox
+  MP->>PAY: webhook E1 lần 2
+  PAY->>DB: INSERT webhook_events E1
+  DB-->>PAY: trùng PK provider_event_id
+  PAY-->>MP: bỏ qua xử lý lặp
+  Note over PAY,MP: HTTP code trả cho provider: SOURCE CHƯA QUY ĐỊNH

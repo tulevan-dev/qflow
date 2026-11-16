@@ -1,0 +1,14 @@
+sequenceDiagram
+  autonumber
+  participant K as Kafka
+  participant T as ticket
+  participant DB as ticket-db
+  K->>T: OrderPaid cho 5 vé
+  T->>DB: BEGIN, insert vé 1 2 3
+  Note over T: lỗi giữa vòng lặp
+  T->>DB: ROLLBACK, không có vé nửa vời
+  K->>T: retry cùng event
+  T->>DB: BEGIN, insert 5 vé, UK order_id tier_id seq
+  DB-->>T: COMMIT
+  T->>K: TicketsIssued
+  Note over T,DB: phát hành trong 1 transaction nên chạy lại là idempotent

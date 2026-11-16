@@ -1,0 +1,12 @@
+flowchart LR
+  ID["identity"] --> D1[("identity-db")]
+  CAT["catalog"] --> D2[("catalog-db")]
+  INV["inventory"] --> D3[("inventory-db")]
+  ORD["order"] --> D4[("order-db")]
+  PAY["payment"] --> D5[("payment-db")]
+  TKT["ticket"] --> D6[("ticket-db")]
+  NOTI["notification"] --> D7[("notification-db")]
+  AUD["audit"] --> D8[("audit-db")]
+  WR["waiting-room"] --> R1[("Redis")]
+  GW["gateway"] --> R2[("Redis rate limit")]
+  X["Service khác"] -.->|"CẤM đọc DB trực tiếp, CẤM cross-service FK"| D3

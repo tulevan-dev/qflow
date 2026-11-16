@@ -1,0 +1,9 @@
+flowchart TB
+  ORG["ORGANIZER"] -.->|"KHÔNG"| X1["Tự duyệt sự kiện của mình"]
+  MOD["MODERATOR"] -.->|"KHÔNG"| X2["Động vào tiền"]
+  STAFF["EVENT_STAFF"] -.->|"KHÔNG"| X3["Đọc dữ liệu thanh toán"]
+  SYS["SYSTEM"] -.->|"KHÔNG"| X4["Dùng token của người"]
+  X1 --> W["Mục đích: separation of duties<br/>không tạo role chỉ để cho nhiều"]
+  X2 --> W
+  X3 --> W
+  X4 --> W

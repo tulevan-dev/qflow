@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 2: tier, EventPublished"] --> G["Goal<br/>Không bao giờ oversell dưới tải đồng thời."]
+  G --> F["Features<br/>Stock, Reserve/Release/Commit, hold TTL, expire worker"]
+  G --> A["Architecture / Technology<br/>inventory + Postgres; replica từ EventPublished (REST seed hoặc Kafka sớm, ADR)"]
+  F --> O["Output<br/>inventory không oversell + ADR chiến lược lock có số đo"]
+  A --> O
+  O --> D["Definition of Done<br/>Test 500 luồng / 100 vé = đúng 100 (chạy 20 lần không flaky); Expire worker chạy 2 instance không double-release; ADR so sánh có số đo của bạn"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 5"]
+  GT -->|"chưa đạt"| G

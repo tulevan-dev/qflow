@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  participant Dev as Developer
+  participant GH as GitHub Actions
+  participant REG as GHCR
+  participant VPS as VPS
+  Dev->>GH: push hoặc merge vào main
+  GH->>GH: lint
+  GH->>GH: unit test
+  GH->>GH: integration test với Testcontainers
+  GH->>GH: build image
+  GH->>REG: push image
+  GH->>VPS: SSH deploy docker compose pull và up -d
+  GH->>VPS: smoke test
+  alt smoke test fail
+    GH->>VPS: rollback về tag trước
+  else pass
+    VPS-->>Dev: deploy thành công
+  end

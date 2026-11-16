@@ -1,0 +1,33 @@
+sequenceDiagram
+  autonumber
+  actor C as Client
+  participant GW as Gateway
+  participant ID as identity
+  participant DB as identity-db
+  C->>GW: POST login với email và password
+  GW->>GW: rate limit theo IP
+  alt vượt ngưỡng
+    GW-->>C: 429 kèm Retry-After
+  else còn trong ngưỡng
+    GW->>ID: chuyển tiếp
+    ID->>DB: tìm user theo lower email
+    alt user không tồn tại
+      ID->>ID: vẫn chạy 1 phép hash giả để giảm chênh lệch thời gian
+      ID-->>C: 401 thông báo chung
+    else user tồn tại
+      ID->>ID: kiểm status LOCKED hoặc locked_until còn hiệu lực
+      alt đang bị khóa
+        ID-->>C: 401 thông báo chung, hoặc mã riêng theo quyết định
+      else được phép thử
+        ID->>ID: verify mật khẩu với hash
+        alt sai mật khẩu
+          ID->>DB: tăng failed_login_count, có thể đặt locked_until
+          ID-->>C: 401 thông báo chung
+        else đúng
+          ID->>DB: reset bộ đếm, INSERT refresh_tokens với family_id mới
+          ID->>ID: tạo access JWT
+          ID-->>C: 200 accessToken, expiresIn, cùng Set-Cookie refresh token
+        end
+      end
+    end
+  end

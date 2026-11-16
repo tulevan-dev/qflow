@@ -1,0 +1,18 @@
+flowchart TB
+  REQ["Request đã qua gateway"] --> J{"JWT hợp lệ khi service verify lại?"}
+  J -->|"không"| D1["401"]
+  J -->|"có"| ID["Lấy userId và role từ JWT<br/>KHÔNG tin userId hay role trong body hoặc header client gửi"]
+  ID --> RULE{"Loại hành động?"}
+  RULE -->|"ORGANIZER sửa event"| O1{"organizer_id = userId?"}
+  RULE -->|"EVENT_STAFF check-in"| O2{"Staff được gán cho event?"}
+  RULE -->|"ATTENDEE xem hoặc hủy order"| O3{"Order thuộc userId?"}
+  RULE -->|"Đổi role"| O4{"Là ADMIN?"}
+  RULE -->|"Thao tác nhạy cảm"| O5["Có thể kiểm lại DB thay vì chỉ tin role trong JWT"]
+  O1 -->|"không"| D2["403"]
+  O2 -->|"không"| D2
+  O3 -->|"không"| D2
+  O4 -->|"không"| D2
+  O4 -->|"có"| A["Cho phép và ghi audit"]
+  O1 -->|"có"| OK["Cho phép"]
+  O2 -->|"có"| OK
+  O3 -->|"có"| OK

@@ -1,0 +1,7 @@
+flowchart TB
+  U["Unit<br/>state machine, rule max_per_user, tính tiền, QR, mapper<br/>mock repo/client"] --> I["Integration service<br/>repository + Flyway, query phức tạp, outbox relay, consumer idempotent, controller + security<br/>KHÔNG mock DB/Kafka/Redis — Testcontainers"]
+  I --> CC["Concurrency<br/>500 thread mua 100 vé, 2 worker expire, webhook gửi 10 lần song song"]
+  CC --> CT["Contract<br/>schema event, gRPC proto; Pact OPTIONAL"]
+  CT --> E["E2E<br/>Playwright + Docker Compose test profile; provider = mock-payment"]
+  E --> L["Load<br/>waiting room admit rate, checkout throughput, soak — k6 hoặc Gatling"]
+  L --> CH["Chaos nhẹ<br/>docker kill giữa saga, script thủ công"]

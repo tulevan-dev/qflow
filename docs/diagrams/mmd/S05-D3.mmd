@@ -1,0 +1,63 @@
+erDiagram
+  events ||--o{ ticket_tiers : has
+  events ||--o{ event_reviews : reviewed_by
+  events ||--o{ event_status_history : logs
+  events ||--o{ event_staff : assigns
+  events {
+    uuid id PK
+    uuid organizer_id "ref identity không FK"
+    string title
+    string slug UK
+    string description
+    string venue
+    string city
+    timestamp starts_at
+    timestamp ends_at
+    timestamp sale_starts_at
+    timestamp sale_ends_at
+    string status
+    tsvector search_vector "GIN full-text"
+    bigint version
+    timestamp created_at
+    timestamp updated_at
+    timestamp deleted_at
+  }
+  ticket_tiers {
+    uuid id PK
+    uuid event_id FK
+    string name "UK cùng event_id"
+    bigint price_amount "đơn vị nhỏ nhất"
+    string currency
+    int total_quantity
+    int max_per_order
+    int max_per_user
+    int sort_order
+    bigint version
+  }
+  event_reviews {
+    uuid id PK
+    uuid event_id FK
+    uuid reviewer_id
+    string decision
+    string reason
+    timestamp created_at
+  }
+  event_status_history {
+    uuid id PK
+    uuid event_id FK
+    string from_status
+    string to_status
+    uuid actor_id
+    string actor_role
+    timestamp created_at
+  }
+  event_staff {
+    uuid event_id PK, FK
+    uuid staff_id PK
+    uuid assigned_by
+  }
+  outbox_events {
+    uuid id PK
+    timestamp published_at "chỉ nhắc ở mục Observability"
+    string other_columns "SOURCE CHƯA QUY ĐỊNH"
+  }

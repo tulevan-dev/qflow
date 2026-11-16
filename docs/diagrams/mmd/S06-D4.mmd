@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+  participant S as Service
+  participant DB as DB của service
+  participant R as Relay poller
+  participant K as Kafka
+  S->>DB: BEGIN, ghi dữ liệu nghiệp vụ + INSERT outbox_events, COMMIT
+  loop mỗi chu kỳ
+    R->>DB: SELECT outbox chưa published FOR UPDATE SKIP LOCKED
+    DB-->>R: các dòng outbox
+    R->>K: publish event
+    K-->>R: ack
+    R->>DB: đánh dấu published_at
+  end
+  Note over R,K: crash giữa publish và đánh dấu thì lần sau gửi lại
+  Note over K: kết quả là at-least-once nên consumer phải idempotent
+  Note over S,K: Kafka down thì event nằm lại trong outbox, relay gửi bù khi Kafka sống lại

@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 9: observability để điều tra"] --> G["Goal<br/>Chuyển từ 'biết làm' sang 'biết sửa'."]
+  G --> F["Features<br/>12 bug lab, perf journal ≥ 4 bài"]
+  G --> A["Architecture / Technology<br/>SOURCE CHƯA QUY ĐỊNH"]
+  F --> O["Output<br/>12 bug có postmortem + perf journal ≥ 4 bài"]
+  A --> O
+  O --> D["Definition of Done<br/>Mỗi bug có postmortem ngắn + test chống tái phát"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 11"]
+  GT -->|"chưa đạt"| G

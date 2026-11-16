@@ -1,0 +1,16 @@
+sequenceDiagram
+  autonumber
+  participant B as Browser trên origin A
+  participant GW as Gateway
+  participant ID as identity
+  participant X as Trang tấn công trên origin B
+  B->>GW: OPTIONS preflight kèm Origin A
+  GW-->>B: Allow-Origin A, Allow-Credentials true, không dùng wildcard
+  B->>GW: POST refresh kèm cookie và header tùy biến
+  GW->>ID: chuyển tiếp
+  ID->>ID: Origin thuộc allowlist và có header tùy biến thì cho qua
+  ID-->>B: 200 và Set-Cookie mới
+  X->>GW: POST refresh từ origin B
+  Note over X,GW: SameSite=Strict nên trình duyệt không gửi cookie
+  GW->>ID: nếu vẫn tới được
+  ID-->>X: 403 vì Origin không hợp lệ hoặc thiếu header tùy biến

@@ -1,0 +1,5 @@
+flowchart TB
+  S["Bắt đầu test hành vi commit"] --> X["Ném exception giữa chừng"]
+  X --> A1["Assert không có dòng nửa vời"]
+  X --> A2["Assert không có outbox event"]
+  S --> N["KHÔNG dùng @Transactional trên test class<br/>vì tự rollback sẽ che bug commit và concurrency"]

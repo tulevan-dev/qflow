@@ -1,0 +1,13 @@
+sequenceDiagram
+  autonumber
+  participant K as Kafka
+  participant C1 as Consumer A
+  participant C2 as Consumer B
+  participant DB as DB service
+  K->>C1: OrderPaid E1
+  C1->>DB: tx INSERT processed_events E1 + xử lý nghiệp vụ, COMMIT
+  Note over C1,K: rebalance trước khi commit offset
+  K->>C2: OrderPaid E1 giao lại
+  C2->>DB: INSERT processed_events E1
+  DB-->>C2: conflict
+  C2->>C2: bỏ qua, commit offset

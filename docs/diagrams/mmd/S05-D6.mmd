@@ -1,0 +1,36 @@
+erDiagram
+  payments ||--o{ refunds : refunded_by
+  payments {
+    uuid id PK
+    uuid order_id "UK per active payment"
+    bigint amount
+    string currency
+    string status "CREATED PENDING SUCCEEDED FAILED REFUNDED"
+    string provider
+    string provider_txn_id UK
+    string idempotency_key UK
+    bigint version
+  }
+  webhook_events {
+    string provider_event_id PK "chống xử lý webhook trùng"
+    jsonb payload "raw payload để debug tranh chấp"
+    boolean signature_valid
+    timestamp received_at
+    timestamp processed_at
+  }
+  refunds {
+    uuid id PK
+    uuid payment_id FK
+    bigint amount
+    string status
+    string reason
+    string idempotency_key UK
+  }
+  outbox_events {
+    uuid id PK
+    string other_columns "SOURCE CHƯA QUY ĐỊNH"
+  }
+  processed_events {
+    uuid event_id PK
+    string consumer
+  }

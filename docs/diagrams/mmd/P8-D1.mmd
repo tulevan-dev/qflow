@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 5: order · Phase 7: SSE"] --> G["Goal<br/>Giải bài toán mở bán 5.000 người."]
+  G --> F["Features<br/>Queue ZSET, admit worker, SSE, admission token, rate limit"]
+  G --> A["Architecture / Technology<br/>waiting-room + Redis + gateway rate limit"]
+  F --> O["Output<br/>Waiting room + rate limit chịu tải mở bán"]
+  A --> O
+  O --> D["Definition of Done<br/>Load test: 5.000 VU vào phòng chờ, checkout vẫn ổn định trong ngưỡng bạn đặt; Không ai bypass token"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 9"]
+  GT -->|"chưa đạt"| G

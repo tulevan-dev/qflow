@@ -1,0 +1,36 @@
+erDiagram
+  orders ||--o{ order_items : contains
+  orders ||--o{ order_status_history : logs
+  orders {
+    uuid id PK
+    uuid user_id
+    uuid event_id
+    string status
+    bigint total_amount
+    string currency
+    string idempotency_key "UK cùng user_id"
+    timestamp expires_at
+    bigint version
+    timestamp created_at
+    timestamp updated_at
+  }
+  order_items {
+    uuid id PK
+    uuid order_id FK
+    uuid tier_id
+    string tier_name "snapshot"
+    bigint unit_price "snapshot"
+    int quantity
+  }
+  order_status_history {
+    uuid id PK
+    string columns "SOURCE CHƯA QUY ĐỊNH chi tiết cột"
+  }
+  outbox_events {
+    uuid id PK
+    string other_columns "SOURCE CHƯA QUY ĐỊNH"
+  }
+  processed_events {
+    uuid event_id PK
+    string consumer
+  }

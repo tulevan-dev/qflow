@@ -1,0 +1,15 @@
+sequenceDiagram
+  autonumber
+  participant C as Client
+  participant O as order
+  participant DB as order-db
+  C->>O: POST /orders, Idempotency-Key K1
+  O->>DB: INSERT orders, UK user_id idempotency_key
+  DB-->>O: OK
+  O-->>C: 201 + order
+  C->>O: gửi lại cùng K1 do double click hoặc retry mạng
+  O->>DB: INSERT orders, UK user_id idempotency_key
+  DB-->>O: unique violation
+  O->>DB: đọc order cũ theo user_id và K1
+  O-->>C: trả kết quả cũ, cùng body, 200 hoặc 201
+  Note over O,DB: key cần TTL cleanup, SOURCE CHƯA QUY ĐỊNH thời gian giữ

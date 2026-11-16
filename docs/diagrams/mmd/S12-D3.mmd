@@ -1,0 +1,8 @@
+flowchart TB
+  A["Cố định dataset bằng seed script"] --> B["Warm-up 1 đến 2 phút"]
+  B --> C["Chạy ít nhất 3 lần"]
+  C --> D["Lấy median"]
+  D --> E["Ghi p50 p95 p99, error rate, CPU và DB metrics"]
+  E --> F["Ghi cấu hình CPU, RAM, pool, dataset"]
+  F --> G["Chỉ đổi 1 biến mỗi lần"]
+  G --> A

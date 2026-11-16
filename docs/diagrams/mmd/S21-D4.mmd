@@ -1,0 +1,3 @@
+flowchart TB
+  Q{"Cần autoscale thật theo tải<br/>hoặc nhiều node<br/>hoặc rolling deploy phức tạp?"} -->|"không"| C["Giữ Docker Compose trên VPS"]
+  Q -->|"có"| K["Cân nhắc Kubernetes<br/>đã có Docker image sẵn nên chuyển được"]

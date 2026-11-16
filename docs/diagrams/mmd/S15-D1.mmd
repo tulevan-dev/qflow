@@ -1,0 +1,6 @@
+flowchart LR
+  A["Stage A Skeleton<br/>gateway + identity + catalog<br/>REST thuần, DB riêng"] --> B["Stage B + Checkout<br/>inventory + order sync<br/>gặp: consistency, contention, dual-write"]
+  B --> C["Stage C + Async<br/>Kafka + Outbox + payment + ticket<br/>gặp: duplicate, ordering, saga"]
+  C --> D["Stage D + Edge<br/>notification + audit + SSE<br/>gặp: eventual consistency, read model"]
+  D --> E["Stage E + Scale<br/>waiting-room + Redis + rate limit<br/>gặp: thundering herd, fairness"]
+  E --> F["Stage F + Resilience và Perf<br/>CB, DLQ replay, chaos, tuning"]

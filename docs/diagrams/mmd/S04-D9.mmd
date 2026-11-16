@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+  participant ORD as order
+  participant K as Kafka
+  participant TKT as ticket
+  participant DLQ as DLQ
+  ORD->>K: OrderPaid
+  K-xTKT: consume thất bại vì ticket-service down
+  Note over ORD: order kẹt PAID, consumer lag tăng
+  K->>TKT: retry với backoff
+  alt ticket-service sống lại
+    TKT->>K: TicketsIssued
+    K->>ORD: order COMPLETED
+  else lỗi vĩnh viễn sau N lần retry
+    K->>DLQ: đẩy vào DLQ, alert theo tuổi order
+    ORD->>ORD: order REFUND_PENDING rồi REFUNDED
+  end

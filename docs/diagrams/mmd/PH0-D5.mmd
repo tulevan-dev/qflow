@@ -1,0 +1,12 @@
+flowchart TB
+  S["Bắt đầu nghiệm thu"] --> D1{"docker compose up chạy được,<br/>mọi thành phần healthy?"}
+  D1 -->|"chưa"| FX["Sửa"] --> D1
+  D1 -->|"rồi"| D2{"CI xanh?"}
+  D2 -->|"chưa"| FX
+  D2 -->|"rồi"| D3{"ADR-001..005 đủ 5 phần?"}
+  D3 -->|"chưa"| FX
+  D3 -->|"rồi"| D4{"Có glossary?"}
+  D4 -->|"chưa"| FX
+  D4 -->|"rồi"| D5{"Smoke Phase 1 T00 xanh:<br/>DB riêng, hello qua gateway, correlationId, problem+json, log JSON?"}
+  D5 -->|"chưa"| FX
+  D5 -->|"rồi"| IV["Trả lời 3 câu phỏng vấn"] --> OK["Sang Phase 1"]

@@ -1,0 +1,6 @@
+flowchart LR
+  UR[("user_roles trong DB")] --> JWT["Claim roles trong access token"]
+  JWT --> GWC["Gateway: role thô theo route, ví dụ admin cần ADMIN"]
+  GWC --> SVC["Service: verify lại JWT"]
+  SVC --> MS["Method security: PreAuthorize theo role"]
+  MS --> OWN["Ownership check: từ Phase 2 trở đi"]

@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 11: v1.0.0"] --> G["Goal<br/>Mở rộng sau v1.0 theo mục 23 (v1.1 → v4 trong source Phase 12; bảng mục 23 còn có v5.0)."]
+  G --> F["Features<br/>Xem S23"]
+  G --> A["Architecture / Technology<br/>SOURCE CHƯA QUY ĐỊNH"]
+  F --> O["Output<br/>Các version mở rộng (S23)"]
+  A --> O
+  O --> D["Definition of Done<br/>SOURCE CHƯA QUY ĐỊNH"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["(hết roadmap)"]
+  GT -->|"chưa đạt"| G

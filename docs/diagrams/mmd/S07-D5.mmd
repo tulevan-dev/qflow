@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> ACTIVE : cấp khi login hoặc khi rotate
+  ACTIVE --> ROTATED : refresh thành công, revoke và set replaced_by
+  ACTIVE --> EXPIRED : quá expires_at
+  ACTIVE --> LOGGED_OUT : logout revoke
+  ROTATED --> FAMILY_REVOKED : bị dùng lại, reuse detection
+  FAMILY_REVOKED --> [*]
+  EXPIRED --> [*]
+  LOGGED_OUT --> [*]

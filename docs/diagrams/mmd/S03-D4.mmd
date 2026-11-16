@@ -1,0 +1,8 @@
+flowchart LR
+  PR["pricing"] --> CAT["catalog-service"]
+  PM["promotion"] --> CAT
+  VN["venue"] --> CAT
+  SR["search"] --> CAT
+  UP["user-profile"] --> ID["identity-service"]
+  AN["analytics"] -->|"ban đầu"| AU["consumer nhỏ trong audit hoặc notification"]
+  AN -.->|"chỉ tách khi có workload riêng, v3"| NEW["analytics service riêng"]

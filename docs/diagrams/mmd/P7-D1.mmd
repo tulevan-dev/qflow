@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 6: event stream"] --> G["Goal<br/>Side-effect và read model bằng choreography."]
+  G --> F["Features<br/>Notification, SSE, audit, QR + check-in"]
+  G --> A["Architecture / Technology<br/>notification + audit + SSE (chi tiết: SOURCE CHƯA QUY ĐỊNH)"]
+  F --> O["Output<br/>notification, audit, SSE, QR + check-in"]
+  A --> O
+  O --> D["Definition of Done<br/>Tắt notification-service → checkout vẫn chạy; Bật lại → thông báo được gửi bù, không gửi trùng"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 8"]
+  GT -->|"chưa đạt"| G

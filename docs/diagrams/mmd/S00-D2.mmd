@@ -1,0 +1,7 @@
+flowchart LR
+  R1["Rủi ro 1<br/>Thanh toán thật có pháp lý"] --> M1["MVP chỉ dùng payment sandbox<br/>hoặc mock provider tự dựng"]
+  M1 --> M1b["Public: vé miễn phí<br/>hoặc thanh toán giả lập"]
+  R2["Rủi ro 2<br/>Dễ over-engineer vì nhiều service"] --> M2["Roadmap thêm service theo từng phase<br/>không dựng 10 service rồi mới chạy"]
+  R3["Rủi ro 3<br/>Inventory + saga + waiting room khó test"] --> M3["Dành thời gian viết concurrency test<br/>và load test chứ không chỉ viết endpoint"]
+  M2 -.-> S16["S16 Roadmap + S15 Kiến trúc tiến hóa"]
+  M3 -.-> S11["S11 Testing + S12 Performance"]

@@ -1,0 +1,39 @@
+erDiagram
+  users ||--o{ user_roles : has
+  users ||--o| organizer_profiles : has
+  users ||--o{ refresh_tokens : owns
+  users {
+    uuid id PK
+    string email UK "source: unique trên lower email"
+    string password_hash "source"
+    string status "source: ACTIVE LOCKED DELETED"
+    int failed_login_count "ĐỀ XUẤT"
+    timestamp locked_until "ĐỀ XUẤT"
+    timestamp created_at
+    timestamp updated_at
+    timestamp deleted_at "source: soft delete"
+  }
+  user_roles {
+    uuid user_id PK, FK
+    string role PK
+  }
+  organizer_profiles {
+    uuid user_id PK, FK
+    string org_name
+    string status "source: PENDING VERIFIED REJECTED"
+    uuid verified_by "source"
+    timestamp verified_at "source"
+    string rejection_reason "ĐỀ XUẤT"
+  }
+  refresh_tokens {
+    uuid id PK
+    uuid user_id FK
+    string token_hash UK "source: chỉ lưu hash"
+    uuid family_id "source: phát hiện reuse"
+    timestamp expires_at
+    timestamp revoked_at
+    uuid replaced_by
+    string user_agent
+    string ip
+    timestamp created_at
+  }

@@ -1,0 +1,27 @@
+flowchart LR
+  subgraph T1["catalog.events.v1 — key eventId"]
+    E1["EventPublished<br/>EventCancelled<br/>TierChanged<br/>StaffAssigned"]
+  end
+  subgraph T2["inventory.events.v1 — key tierId"]
+    E2["StockReserved<br/>ReservationRejected<br/>HoldExpired<br/>StockCommitted"]
+  end
+  subgraph T3["order.events.v1 — key orderId"]
+    E3["OrderCreated<br/>OrderAwaitingPayment<br/>OrderPaid<br/>OrderCompleted<br/>OrderExpired<br/>OrderCancelled<br/>RefundRequested"]
+  end
+  subgraph T4["payment.events.v1 — key orderId"]
+    E4["PaymentSucceeded<br/>PaymentFailed<br/>RefundSucceeded"]
+  end
+  subgraph T5["ticket.events.v1 — key orderId"]
+    E5["TicketsIssued<br/>TicketCheckedIn"]
+  end
+  P1["catalog"] --> T1
+  P2["inventory"] --> T2
+  P3["order"] --> T3
+  P4["payment"] --> T4
+  P5["ticket"] --> T5
+  T1 --> C1["inventory, ticket, notification, audit, waiting-room"]
+  T2 --> C2["order, notification, audit"]
+  T3 --> C3["payment, inventory, ticket, notification, audit"]
+  T4 --> C4["order, notification, audit"]
+  T5 --> C5["order, notification, audit"]
+  C1 -.-> DLQ["*.dlq<br/>producer: consumer, replay bởi ADMIN hoặc SYSTEM"]

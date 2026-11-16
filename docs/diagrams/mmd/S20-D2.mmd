@@ -1,0 +1,12 @@
+gitGraph
+  commit id: "init"
+  branch feat/identity-login
+  checkout feat/identity-login
+  commit id: "feat(identity): login"
+  checkout main
+  merge feat/identity-login
+  branch fix/inventory-negative-stock
+  checkout fix/inventory-negative-stock
+  commit id: "fix(inventory): prevent negative stock"
+  checkout main
+  merge fix/inventory-negative-stock tag: "v1.0.0"

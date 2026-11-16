@@ -1,0 +1,12 @@
+flowchart TB
+  IN["Request vào gateway"] --> F1["1 Correlation ID filter, từ Phase 0"]
+  F1 --> F2["2 Sanitize: xóa X-User-Id và mọi header danh tính nội bộ do client gửi"]
+  F2 --> F3["3 Rate limit cho login và register, dùng Redis"]
+  F3 --> F4{"4 Route công khai?"}
+  F4 -->|"có"| FW["Chuyển tiếp tới service"]
+  F4 -->|"không"| F5["5 Verify JWT: alg RS256, chữ ký, exp, iss, aud"]
+  F5 -->|"lỗi"| R401["401 problem+json"]
+  F5 -->|"ok"| F6["6 Kiểm role thô theo route"]
+  F6 -->|"thiếu role"| R403["403 problem+json"]
+  F6 -->|"đủ"| F7["7 Gắn header user context, ví dụ X-User-Id"]
+  F7 --> FW

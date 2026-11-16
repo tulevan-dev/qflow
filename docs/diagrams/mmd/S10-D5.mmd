@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph SC13["#13 Consumer chậm gây lag"]
+    direction TB
+    p13["Problem: Consumer chậm gây lag"] --> w13["Why: xử lý nặng, DB chậm"] --> d13["Detect: lag metric"] --> pr13["Prevent: tăng partition và consumer, batch, tối ưu query"] --> r13["Recover: scale consumer"] --> t13["Trade-off: thứ tự theo key vẫn phải giữ"]
+  end
+  subgraph SC14["#14 Poison message"]
+    direction TB
+    p14["Problem: Poison message"] --> w14["Why: payload hỏng"] --> d14["Detect: lỗi lặp cùng offset"] --> pr14["Prevent: validate schema, DLQ sau N lần"] --> r14["Recover: sửa rồi replay từ DLQ"] --> t14["Trade-off: cần tooling replay"]
+  end
+  subgraph SC15["#15 Service restart giữa lúc xử lý Kafka message"]
+    direction TB
+    p15["Problem: Service restart giữa lúc xử lý Kafka message"] --> w15["Why: deploy"] --> d15["Detect: message được giao lại"] --> pr15["Prevent: commit offset sau khi transaction DB commit"] --> r15["Recover: idempotent consumer"] --> t15["Trade-off: source không nêu"]
+  end

@@ -1,0 +1,16 @@
+sequenceDiagram
+  autonumber
+  participant O as order
+  participant I as inventory
+  O->>I: gRPC Reserve orderId O1
+  I->>I: tx reserve + hold, UK order_id tier_id
+  Note over O,I: timeout hoặc GC pause, order không biết kết quả
+  O->>O: ghi nhận trạng thái không biết
+  O->>I: retry Reserve cùng orderId O1 với backoff + jitter
+  alt hold O1 đã tạo
+    I-->>O: trả kết quả cũ, không trừ thêm vé
+  else chưa tạo
+    I->>I: tạo hold mới
+    I-->>O: reserved
+  end
+  Note over O,I: hoặc truy vấn hold theo orderId trước khi quyết định

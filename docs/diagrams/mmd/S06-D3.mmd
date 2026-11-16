@@ -1,0 +1,18 @@
+classDiagram
+  class EventEnvelope {
+    +UUID eventId
+    +String type
+    +int version
+    +Instant occurredAt
+    +String aggregateId
+    +String correlationId
+    +String causationId
+    +Object payload
+  }
+  class KafkaRecord {
+    +String key
+    +EventEnvelope value
+  }
+  KafkaRecord --> EventEnvelope : value
+  note for EventEnvelope "eventId dùng để dedupe. version là schema version. correlationId để trace. causationId là event hoặc command gây ra nó"
+  note for KafkaRecord "key = aggregateId để giữ thứ tự theo aggregate"

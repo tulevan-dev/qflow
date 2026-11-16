@@ -1,0 +1,21 @@
+flowchart LR
+  subgraph ARCH["Kiến trúc"]
+    A1["001 Microservices ngay từ đầu, chấp nhận chi phí vận hành"]
+    A2["002 Database-per-service, cấm cross-DB"]
+    A3["004 Orchestrated saga cho checkout, choreography cho side-effect"]
+    A4["005 Transactional Outbox, không dual-write hay 2PC"]
+    A5["007 SSE thay WebSocket"]
+    A6["008 gRPC chỉ cho order → inventory"]
+    A7["012 Không Eureka, Config Server, K8s"]
+  end
+  subgraph DATA["Dữ liệu và đồng thời"]
+    D1["003 PostgreSQL là source of truth tồn kho, Redis chỉ tăng tốc"]
+    D2["006 Atomic UPDATE vs optimistic vs pessimistic, kèm số đo"]
+  end
+  subgraph DEC["Quyết định mở"]
+    O1["009 Redis chết: waiting room fail-closed hay fail-open"]
+    O2["010 Thanh toán đến muộn: refund hay cứu order"]
+  end
+  subgraph SEC["Bảo mật"]
+    S1["011 Refresh token rotation + reuse detection"]
+  end

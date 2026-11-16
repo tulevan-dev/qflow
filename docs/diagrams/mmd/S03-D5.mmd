@@ -1,0 +1,8 @@
+flowchart LR
+  GW["Gateway"] -->|"REST"| ALL["mọi service"]
+  ORD["order"] -->|"gRPC sync"| INV["inventory"]
+  ORD -->|"REST sync + cache"| CAT["catalog"]
+  MP["Mock Provider"] -->|"webhook"| PAY["payment"]
+  EV["Mọi giao tiếp còn lại"] -->|"Kafka events async"| KF[("Kafka")]
+  CAT -.->|"CẤM vòng gọi sync"| ORD
+  SVC["Service A"] -.->|"CẤM đọc DB trực tiếp"| DBB[("DB của service B")]

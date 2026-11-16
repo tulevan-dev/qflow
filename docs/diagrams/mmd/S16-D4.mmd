@@ -1,0 +1,12 @@
+flowchart TB
+  G0["P0: compose up chạy, CI xanh, ADR 1–5, glossary"] --> G1["P1: test bảo mật pass, không secret trong repo, OpenAPI"]
+  G1 --> G2["P2: transition sai trả 409 hoặc 422, test ownership, list 1 triệu event nhanh bằng keyset"]
+  G2 --> G4["P4: 500 luồng 100 vé đúng 100 chạy 20 lần, expire worker 2 instance không double-release, ADR có số đo"]
+  G4 --> G5["P5: không order mồ côi, timeout rõ ràng, REST vs gRPC có số đo"]
+  G5 --> G6["P6: chaos script, mọi order về COMPLETED EXPIRED hoặc REFUNDED, không vé mất hoặc trùng, không tiền treo"]
+  G6 --> G7["P7: tắt notification vẫn checkout, bật lại gửi bù không trùng"]
+  G7 --> G8["P8: 5.000 VU vào phòng chờ ổn định, không bypass token"]
+  G8 --> G9["P9: từ 1 correlationId truy ra hành trình, kill 1 service thì alert bắn"]
+  G9 --> G10["P10: mỗi bug có postmortem và test chống tái phát"]
+  G10 --> G11["P11: tag v1.0.0, deploy 1 lệnh, rollback được, restore backup thử thành công"]
+  G3["P3: tự refresh khi hết token, lỗi validation hiện đúng field"] -.-> G2

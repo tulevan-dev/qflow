@@ -1,0 +1,7 @@
+flowchart LR
+  L["Login<br/>verify password Argon2id hoặc BCrypt cost ≥ 12"] --> AT["Access Token<br/>JWT RS256, khoảng 10–15 phút<br/>lưu trong memory"]
+  L --> RT["Refresh Token<br/>opaque 256-bit, 7–14 ngày<br/>httpOnly Secure SameSite=Strict cookie<br/>path=/auth/refresh"]
+  AT --> GWC["Gateway<br/>chữ ký, exp, rate limit, role thô theo route"]
+  GWC --> SVC["Service<br/>verify lại JWT bằng JWKS + ownership"]
+  RT -->|"hết access token"| RF["Refresh rotation + reuse detection"]
+  RF --> AT

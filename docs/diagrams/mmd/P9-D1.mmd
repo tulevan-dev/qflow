@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 8: hệ thống đủ thành phần"] --> G["Goal<br/>Nhìn vào hệ thống trả lời được 5 câu hỏi ở mục 9."]
+  G --> F["Features<br/>Tracing, dashboard, alert, health, chaos"]
+  G --> A["Architecture / Technology<br/>OpenTelemetry + Prometheus + Grafana + Jaeger"]
+  F --> O["Output<br/>Dashboard + alert + trace end-to-end + chaos script"]
+  A --> O
+  O --> D["Definition of Done<br/>Từ 1 correlationId truy ra toàn bộ hành trình; Kill 1 service → alert bắn trong ngưỡng"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 10"]
+  GT -->|"chưa đạt"| G

@@ -1,0 +1,13 @@
+flowchart TB
+  subgraph SC1["#1 Postgres inventory down"]
+    direction TB
+    p1["Problem: Postgres inventory down"] --> w1["Why: crash hoặc hết connection"] --> d1["Detect: readiness fail, Hikari pending tăng"] --> pr1["Prevent: pool size hợp lý, timeout ngắn, circuit breaker ở order"] --> r1["Recover: order trả 503 + Retry-After, không tạo order nửa vời"] --> t1["Trade-off: chọn fail fast thay vì cho đặt tạm (mất consistency)"]
+  end
+  subgraph SC2["#2 Redis down"]
+    direction TB
+    p2["Problem: Redis down"] --> w2["Why: OOM hoặc network"] --> d2["Detect: health check, error rate"] --> pr2["Prevent: waiting-room: fail-closed hay fail-open? (tự quyết, ADR-009). Rate limit: fail-open có giới hạn local. Cache: fallback DB"] --> r2["Recover: khởi động lại; rebuild queue từ đâu? (source để bạn tự nghĩ)"] --> t2["Trade-off: availability vs fairness"]
+  end
+  subgraph SC3["#3 Kafka down"]
+    direction TB
+    p3["Problem: Kafka down"] --> w3["Why: broker chết"] --> d3["Detect: producer error, outbox backlog tăng"] --> pr3["Prevent: Outbox: ghi DB trước"] --> r3["Recover: relay tự gửi bù khi Kafka sống lại"] --> t3["Trade-off: checkout vẫn chạy nhưng hoàn tất chậm (eventual)"]
+  end

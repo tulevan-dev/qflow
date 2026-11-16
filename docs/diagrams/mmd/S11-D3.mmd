@@ -1,0 +1,15 @@
+sequenceDiagram
+  autonumber
+  participant T as Test
+  participant P as ExecutorService 500 thread
+  participant S as inventory trên Testcontainers Postgres
+  T->>S: seed tier với total 100
+  T->>P: tạo 500 task, cùng chờ CountDownLatch
+  T->>P: mở latch, tất cả gọi Reserve cùng lúc
+  P->>S: 500 request reserve song song
+  S-->>P: thành công hoặc hết vé
+  P-->>T: tổng kết quả
+  T->>S: truy vấn tier_stock
+  T->>T: assert đúng 100 thành công và 0 oversell
+  T->>T: assert reserved + sold không vượt total
+  Note over T,S: chạy lặp, DoD Phase 4: chạy 20 lần không flaky

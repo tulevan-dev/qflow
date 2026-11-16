@@ -1,0 +1,14 @@
+flowchart TB
+  T["Khung ADR"] --> C["Context"] --> De["Decision"] --> Al["Alternatives"] --> Tr["Trade-offs"] --> Co["Consequences"]
+  subgraph EX["Ví dụ ADR-005 Outbox"]
+    c1["Context: order cần ghi DB và phát event, crash giữa 2 việc thì mất event hoặc có event ma"]
+    d1["Decision: ghi event vào outbox cùng transaction, relay đẩy Kafka"]
+    a1["Alternatives: dual-write, 2PC hoặc XA, CDC Debezium"]
+    t1["Trade-offs: thêm bảng và job, trễ vài trăm ms, at-least-once nên consumer phải idempotent"]
+    q1["Consequences: mọi consumer có processed_events, cần metric outbox backlog, sau này thay relay bằng Debezium không đổi domain code"]
+  end
+  C -.-> c1
+  De -.-> d1
+  Al -.-> a1
+  Tr -.-> t1
+  Co -.-> q1

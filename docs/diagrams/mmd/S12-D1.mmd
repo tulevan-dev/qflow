@@ -1,0 +1,8 @@
+flowchart LR
+  B["Baseline"] --> M["Measure"]
+  M --> I["Identify bottleneck"]
+  I --> O["Optimize chỉ 1 thay đổi"]
+  O --> M2["Measure again"]
+  M2 --> J["Ghi vào docs/learning/perf-journal.md"]
+  J -->|"vẫn chưa đạt"| M
+  X["Tối ưu mù khi chưa có baseline"] -.->|"KHÔNG ĐƯỢC"| O

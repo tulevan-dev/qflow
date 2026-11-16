@@ -1,0 +1,27 @@
+flowchart TB
+  Client["Client"] --> Web["Next.js web"]
+  Web -->|"HTTPS"| GW["API Gateway<br/>Spring Cloud Gateway<br/>JWT verify, rate limit, correlation id, CORS"]
+  GW -.-> RGW[("Redis rate limit")]
+  GW --> ID["identity-service"]
+  GW --> CAT["catalog-service"]
+  GW --> WR["waiting-room-service"]
+  GW --> ORD["order-service<br/>saga orchestrator"]
+  GW --> INV["inventory-service"]
+  GW --> PAY["payment-service"]
+  GW --> TKT["ticket-service<br/>và check-in"]
+  GW --> NOTI["notification-service<br/>và SSE push"]
+  GW --> AUD["audit-service"]
+  ID --> DBID[("PG identity")]
+  CAT --> DBCAT[("PG catalog")]
+  WR --> RWR[("Redis")]
+  ORD --> DBORD[("PG order")]
+  INV --> DBINV[("PG inventory")]
+  INV -.-> RINV[("Redis cache hiển thị")]
+  PAY --> DBPAY[("PG payment")]
+  TKT --> DBTKT[("PG ticket")]
+  NOTI --> DBNOTI[("PG notification")]
+  NOTI -.-> RNOTI[("Redis pub/sub")]
+  AUD --> DBAUD[("PG audit")]
+  ORD -->|"gRPC reserve / release"| INV
+  ORD -->|"REST giá tier có cache + timeout + circuit breaker"| CAT
+  MP["Mock Payment Provider"] -->|"webhook"| PAY

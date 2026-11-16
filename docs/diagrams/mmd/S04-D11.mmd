@@ -1,0 +1,9 @@
+flowchart TB
+  R1["2 request cùng trừ 1 vé cuối"] --> S1["Lựa chọn tự đánh giá"]
+  S1 --> O1["a UPDATE ... WHERE available >= q atomic, chọn trước"]
+  S1 --> O2["b optimistic lock + retry"]
+  S1 --> O3["c SELECT FOR UPDATE"]
+  S1 --> O4["d Redis Lua"]
+  R2["Cùng user mua vượt max_per_user bằng 2 tab"] --> S2["unique hoặc atomic counter theo user và tier trong cùng tx"]
+  R3["Expire worker chạy cùng lúc 2 instance"] --> S3["SELECT FOR UPDATE SKIP LOCKED hoặc ShedLock"]
+  R4["User cancel đúng lúc payment thành công"] --> S4["version optimistic locking trên order + state machine từ chối transition sai"]

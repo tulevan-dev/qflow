@@ -1,0 +1,12 @@
+flowchart TB
+  REQ["Yêu cầu đổi role của user X"] --> G{"Gateway: có role ADMIN?"}
+  G -->|"không"| D1["403"]
+  G -->|"có"| V{"identity verify lại JWT hợp lệ?"}
+  V -->|"không"| D2["401"]
+  V -->|"có"| M{"Method security: hasRole ADMIN?"}
+  M -->|"không"| D3["403"]
+  M -->|"có"| R{"Role hợp lệ và X tồn tại?<br/>không cho SYSTEM hoặc GUEST<br/>không để hệ thống hết ADMIN"}
+  R -->|"không"| D4["400 hoặc 409"]
+  R -->|"có"| TX["Cập nhật user_roles trong 1 transaction"]
+  TX --> LG["Ghi structured log hành động: ai, đổi gì, cho ai<br/>audit-service có từ Phase 7"]
+  LG --> OK["200"]

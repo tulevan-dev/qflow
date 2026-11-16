@@ -1,0 +1,8 @@
+flowchart LR
+  L["Login"] --> A1["Access A1<br/>10–15 phút, trong memory"]
+  L --> R1["Refresh R1<br/>7–14 ngày, cookie httpOnly<br/>family F1"]
+  A1 -->|"hết hạn"| RF1["Refresh bằng R1"]
+  RF1 --> A2["Access A2"]
+  RF1 --> R2["Refresh R2, R1 bị revoke<br/>cùng family F1"]
+  R2 -->|"lặp lại"| RFN["Rotation tiếp"]
+  R2 -->|"quá hạn hoặc logout"| END["Hết phiên, phải login lại"]

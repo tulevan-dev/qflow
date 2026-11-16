@@ -1,0 +1,31 @@
+mindmap
+  root((Frontend))
+    API client
+      Wrapper typed fetch + zod
+      Tự gắn token
+      Tự refresh khi 401 single-flight
+      Gắn X-Correlation-Id
+    Auth
+      Access token trong memory
+      Middleware Next.js chặn route theo role
+      Check role ở UI chỉ để UX
+    State
+      TanStack Query cho server state
+      Zustand hoặc Context cho UI state nhỏ
+      Không Redux
+    Form
+      react-hook-form + zod
+      Hiển thị lỗi field từ backend errors
+    Error và Loading
+      Error boundary
+      Skeleton và retry
+      Phân biệt 4xx 5xx 429
+    Idempotency
+      Sinh Idempotency-Key một lần cho mỗi ý định mua
+      Disable nút khi gửi
+    Real-time
+      SSE cho queue order dashboard
+      Tự reconnect với Last-Event-ID
+    Responsive
+      Tailwind mobile-first
+      Staff check-in dùng điện thoại

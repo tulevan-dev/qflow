@@ -1,0 +1,8 @@
+flowchart TB
+  S["Hoàn thành code của phase N"] --> Q1{"Đạt toàn bộ DoD của phase N?"}
+  Q1 -->|"chưa"| FX["Sửa và bổ sung test hoặc số đo"]
+  FX --> Q1
+  Q1 -->|"đạt"| Q2{"Qua interview checkpoint của phase N?<br/>trả lời được bằng lý lẽ, không học thuộc"}
+  Q2 -->|"chưa"| ST["Học lại phần còn yếu"]
+  ST --> Q2
+  Q2 -->|"đạt"| NX["Sang phase N+1"]

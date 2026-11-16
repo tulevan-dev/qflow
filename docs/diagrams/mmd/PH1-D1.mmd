@@ -1,0 +1,13 @@
+flowchart LR
+  F1["Register và login"] --> V1["Test thành công và sai thông tin"]
+  F2["JWT RS256 + JWKS"] --> V2["Test token hết hạn và sai chữ ký"]
+  F3["Refresh rotation + reuse detection"] --> V3["Test dùng lại token cũ thì revoke cả family"]
+  F4["Logout"] --> V4["Test refresh sau logout thất bại"]
+  F5["RBAC"] --> V5["Test role sai thì 403"]
+  F6["Organizer profile"] --> V6["Test ADMIN verify, user thường bị chặn"]
+  F7["Rate limit login"] --> V7["Test vượt ngưỡng thì 429"]
+  V2 --> D1["DoD 1: Test bảo mật pass"]
+  V3 --> D1
+  V5 --> D1
+  S["Toàn bộ repo"] --> D2["DoD 2: Không có secret trong repo"]
+  A["Mọi endpoint"] --> D3["DoD 3: OpenAPI"]

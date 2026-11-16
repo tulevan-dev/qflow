@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph GAP["Không thay thế được kinh nghiệm thật"]
+    G1["Codebase lớn hoặc legacy do người khác viết"]
+    G2["Incident thật lúc 2h sáng với dữ liệu thật và áp lực"]
+    G3["Review từ đồng nghiệp có kinh nghiệm hơn"]
+    G4["Tải và dữ liệu thật ở quy mô công ty, chi phí và vận hành lâu dài, làm việc theo team và deadline"]
+  end
+  subgraph FILL["Cách bù"]
+    B1["Public repo"]
+    B2["Mời người ngoài review"]
+    B3["Chạy sự kiện thật với 1 CLB hoặc nhóm bạn"]
+    B4["Viết postmortem"]
+  end
+  GAP --> FILL

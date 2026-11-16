@@ -1,0 +1,18 @@
+sequenceDiagram
+  autonumber
+  participant ORD as order
+  participant INV as inventory
+  participant REC as Reconciler SYSTEM
+  ORD->>ORD: tx1 order PENDING
+  ORD->>INV: Reserve orderId
+  INV-->>ORD: reserved
+  Note over ORD: crash trước tx2
+  Note over INV: hold vẫn ACTIVE và có TTL
+  REC->>ORD: quét order PENDING quá N giây
+  REC->>INV: hỏi hold theo orderId
+  alt hold còn ACTIVE
+    REC->>ORD: sửa trạng thái hoặc hủy
+  else hold đã EXPIRED
+    REC->>ORD: order EXPIRED hoặc REJECTED
+  end
+  Note over REC: giá trị N source chưa quy định

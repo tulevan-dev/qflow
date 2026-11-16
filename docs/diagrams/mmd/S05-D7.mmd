@@ -1,0 +1,33 @@
+erDiagram
+  tickets ||--o{ check_in_logs : scanned
+  tickets {
+    uuid id PK
+    uuid order_id
+    uuid event_id
+    uuid tier_id
+    uuid owner_id
+    string code UK
+    string status "ISSUED CHECKED_IN VOID"
+    timestamp issued_at
+    timestamp checked_in_at
+    uuid checked_in_by
+    bigint version
+    int seq "suy ra từ UK order_id tier_id seq"
+  }
+  check_in_logs {
+    uuid id PK
+    uuid ticket_id FK
+    uuid staff_id
+    string result "OK DUPLICATE INVALID WRONG_EVENT"
+    timestamp scanned_at
+  }
+  event_staff_replica {
+    uuid event_id
+    uuid staff_id
+  }
+  event_replica {
+    uuid event_id PK
+    timestamp starts_at
+    timestamp ends_at
+    string status
+  }

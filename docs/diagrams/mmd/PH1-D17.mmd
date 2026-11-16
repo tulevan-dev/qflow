@@ -1,0 +1,14 @@
+sequenceDiagram
+  autonumber
+  actor U as ATTENDEE
+  actor A as ADMIN
+  participant ID as identity
+  participant DB as identity-db
+  U->>ID: nộp hồ sơ với org_name
+  ID->>DB: INSERT organizer_profiles PENDING, kiểm chưa có hồ sơ đang mở
+  ID-->>U: 201 trạng thái PENDING
+  A->>ID: xem danh sách PENDING
+  A->>ID: approve hoặc reject user U
+  ID->>DB: 1 transaction: cập nhật status, verified_by, verified_at và với approve thêm role ORGANIZER
+  ID-->>A: 200
+  Note over U,ID: access token cũ của U chưa có role ORGANIZER cho đến khi refresh

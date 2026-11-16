@@ -1,0 +1,10 @@
+flowchart LR
+  IN["Input<br/>Phase 10: hệ thống đã debug và tune"] --> G["Goal<br/>Có link chạy thật."]
+  G --> F["Features<br/>CI/CD, staging→prod, backup, HTTPS, simulator, README"]
+  G --> A["Architecture / Technology<br/>VPS + Compose + Caddy + Cloudflare"]
+  F --> O["Output<br/>v1.0.0 chạy public"]
+  A --> O
+  O --> D["Definition of Done<br/>Tag v1.0.0; Deploy bằng 1 lệnh hoặc 1 pipeline; Rollback được; Restore backup thử thành công"]
+  D --> GT{"Gate: DoD + interview checkpoint"}
+  GT -->|"đạt"| N["Phase 12"]
+  GT -->|"chưa đạt"| G

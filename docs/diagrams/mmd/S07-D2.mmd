@@ -1,0 +1,22 @@
+sequenceDiagram
+  autonumber
+  actor U as User
+  participant W as Next.js
+  participant GW as Gateway
+  participant ID as identity
+  participant DB as identity-db
+  U->>W: nhập email và mật khẩu
+  W->>GW: login request, endpoint chưa quy định
+  GW->>GW: rate limit login
+  GW->>ID: chuyển tiếp
+  ID->>DB: tìm user theo lower email
+  alt sai thông tin hoặc user bị LOCKED
+    ID-->>W: 401 hoặc lỗi theo error model
+  else đúng
+    ID->>ID: verify password hash
+    ID->>ID: tạo access JWT RS256 với sub, roles, jti
+    ID->>DB: lưu hash refresh token, family_id mới, expires_at
+    ID-->>W: access token trong body, refresh token qua cookie httpOnly
+  end
+  W->>W: giữ access token trong memory
+  Note over ID: TTL chính xác, endpoint, ngưỡng lock sau N lần sai: SOURCE CHƯA QUY ĐỊNH

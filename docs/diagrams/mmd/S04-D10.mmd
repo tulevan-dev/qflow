@@ -1,0 +1,8 @@
+flowchart LR
+  P1["1 Order crash sau reserve"] --> M1["Hold có TTL + Reconciler quét PENDING"]
+  P2["2 Webhook gửi 3 lần"] --> M2["PK provider_event_id + dedupe"]
+  P3["3 Payment đến muộn sau EXPIRED"] --> M3["State machine từ chối + refund hoặc cứu order, ADR-010"]
+  P4["4 User bấm Pay 5 lần"] --> M4["Idempotency-Key + unique constraint"]
+  P5["5 Kafka down lúc nhận webhook"] --> M5["Outbox giữ event, relay gửi sau"]
+  P6["6 OrderPaid xử lý 2 lần ở inventory"] --> M6["processed_events"]
+  P7["7 Ticket-service down 30 phút"] --> M7["Retry + DLQ + alert"]

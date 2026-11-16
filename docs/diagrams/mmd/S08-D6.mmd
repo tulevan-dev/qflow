@@ -1,0 +1,15 @@
+sequenceDiagram
+  autonumber
+  participant B as Browser
+  participant GW as Gateway
+  participant WR as waiting-room hoặc order
+  B->>GW: mở SSE stream
+  GW->>WR: chuyển tiếp
+  WR-->>B: event kèm id, vị trí hoặc trạng thái
+  WR-->>B: heartbeat định kỳ
+  Note over B,WR: mất kết nối
+  B->>GW: mở lại với Last-Event-ID
+  GW->>WR: chuyển tiếp
+  WR-->>B: gửi bù từ sau id đó
+  WR-->>B: được admit thì UI chuyển sang checkout
+  Note over WR: chỉ user đó được nghe stream của mình, tránh rò quyền

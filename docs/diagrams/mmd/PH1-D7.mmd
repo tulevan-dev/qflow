@@ -1,0 +1,21 @@
+sequenceDiagram
+  autonumber
+  participant ID as identity
+  participant GW as Gateway
+  participant C as Client
+  Note over ID: khởi động: nạp khóa RSA private từ secret ngoài repo, gán kid
+  GW->>ID: GET JWKS khi khởi động hoặc cache hết TTL
+  ID-->>GW: public key theo kid, không có phần private
+  GW->>GW: cache JWKS theo TTL
+  C->>GW: request kèm Bearer access token
+  GW->>GW: đọc header kid, chỉ chấp nhận alg RS256
+  alt kid không có trong cache
+    GW->>ID: refetch JWKS tối đa 1 lần, có giới hạn tần suất
+    ID-->>GW: JWKS mới
+  end
+  GW->>GW: verify chữ ký, exp, iss, aud
+  alt hợp lệ
+    GW->>GW: kiểm role thô, gắn user context
+  else không hợp lệ
+    GW-->>C: 401 problem+json
+  end

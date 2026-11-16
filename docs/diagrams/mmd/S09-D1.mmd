@@ -1,0 +1,6 @@
+flowchart LR
+  Q1["Request đã đi qua những service nào?"] --> T1["Distributed tracing: Jaeger hoặc Tempo theo correlationId"]
+  Q2["Nó chậm ở đâu?"] --> T2["Trace spans + metrics latency p50 p95 p99"]
+  Q3["Vì sao request fail?"] --> T3["Structured log JSON lọc theo correlationId, Loki hoặc docker logs với jq"]
+  Q4["Kafka event delay ở đâu?"] --> T4["consumer lag, DLQ size, outbox backlog"]
+  Q5["Query DB nào chậm?"] --> T5["pg_stat_statements, slow query log"]

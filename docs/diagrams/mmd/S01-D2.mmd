@@ -1,0 +1,8 @@
+flowchart LR
+  P1["1 Oversell / bán trùng"] --> S2["Reservation có TTL"]
+  P1 --> S3["Saga checkout"]
+  P2["2 Sập lúc mở bán"] --> S1["Waiting room"]
+  P3["3 Không công bằng"] --> S1
+  P4["4 Giữ chỗ vô thời hạn"] --> S2
+  P5["5 BTC nhỏ thiếu công cụ"] --> S4["Vé QR ký số + check-in"]
+  P5 --> S5["Dashboard Organizer"]

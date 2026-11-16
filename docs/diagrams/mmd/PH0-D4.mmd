@@ -1,0 +1,8 @@
+flowchart LR
+  PR["Push hoặc Pull Request"] --> CK["Restore cache dependency"]
+  CK --> B["Build mọi module"]
+  B --> T["Chạy test"]
+  T --> OK{"Xanh?"}
+  OK -->|"có"| G["Cho phép merge"]
+  OK -->|"không"| FIX["Sửa rồi push lại"]
+  FIX --> PR

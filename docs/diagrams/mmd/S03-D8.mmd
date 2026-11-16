@@ -1,0 +1,7 @@
+flowchart TB
+  API["api<br/>controller, DTO, exception handler"] --> APP["application<br/>use case, transaction boundary"]
+  APP --> DOM["domain<br/>entity, value object, state machine, domain event, rule thuần"]
+  INFRA["infrastructure<br/>JPA repo, Kafka producer/consumer, gRPC/REST client, Redis"] --> DOM
+  APP --> INFRA
+  CFG["config"] -.-> API
+  CFG -.-> INFRA

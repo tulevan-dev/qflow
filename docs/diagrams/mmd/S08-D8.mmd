@@ -1,0 +1,8 @@
+flowchart LR
+  ERR["Response lỗi"] --> G{"Nhóm"}
+  G -->|"4xx"| U["User tự sửa, hiện lỗi từng field"]
+  G -->|"401"| RF["Thử refresh một lần"]
+  G -->|"409"| RC["Refetch dữ liệu và thử lại có giới hạn"]
+  G -->|"429"| WT["Chờ Retry-After"]
+  G -->|"5xx"| TR["Cho phép thử lại, retry với backoff"]
+  G -->|"render lỗi"| EB["Error boundary"]

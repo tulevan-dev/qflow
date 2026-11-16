@@ -1,0 +1,21 @@
+flowchart TB
+  subgraph SC5["#5 Order crash sau reserve, trước update"]
+    direction TB
+    p5["Problem: Order crash sau reserve, trước update"] --> w5["Why: process bị kill"] --> d5["Detect: order kẹt PENDING quá N giây"] --> pr5["Prevent: hold có TTL"] --> r5["Recover: Reconciler: quét PENDING cũ, hỏi inventory, sửa trạng thái hoặc hủy"] --> t5["Trade-off: thêm 1 job nền phải vận hành"]
+  end
+  subgraph SC9["#9 Webhook thanh toán đến sau khi hold hết hạn"]
+    direction TB
+    p9["Problem: Webhook thanh toán đến sau khi hold hết hạn"] --> w9["Why: mạng chậm, user trả muộn"] --> d9["Detect: PaymentSucceeded cho order EXPIRED"] --> pr9["Prevent: state machine từ chối"] --> r9["Recover: hoàn tiền tự động hoặc cứu order nếu stock còn (quyết định + ADR-010)"] --> t9["Trade-off: UX vs độ phức tạp"]
+  end
+  subgraph SC10["#10 Webhook giả mạo"]
+    direction TB
+    p10["Problem: Webhook giả mạo"] --> w10["Why: attacker gọi endpoint"] --> d10["Detect: signature invalid"] --> pr10["Prevent: HMAC + timestamp + IP allowlist (optional)"] --> r10["Recover: log + alert"] --> t10["Trade-off: thêm chi phí verify"]
+  end
+  subgraph SC11["#11 Ticket-service down sau khi đã thu tiền"]
+    direction TB
+    p11["Problem: Ticket-service down sau khi đã thu tiền"] --> w11["Why: crash hoặc deploy"] --> d11["Detect: order kẹt PAID, consumer lag"] --> pr11["Prevent: retry vô hạn có backoff, DLQ, alert theo tuổi order"] --> r11["Recover: replay; nếu vĩnh viễn thì refund"] --> t11["Trade-off: thời gian user chờ vé"]
+  end
+  subgraph SC12["#12 Partial failure phát hành vé (3/5)"]
+    direction TB
+    p12["Problem: Partial failure phát hành vé (3/5)"] --> w12["Why: lỗi giữa vòng lặp"] --> d12["Detect: số ticket khác quantity"] --> pr12["Prevent: phát hành trong 1 transaction + UNIQUE(order_id, tier_id, seq)"] --> r12["Recover: chạy lại idempotent"] --> t12["Trade-off: transaction dài hơn"]
+  end
