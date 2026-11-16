@@ -1,9 +1,8 @@
 package com.qflow.hello.api;
 
+import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 @RestController
 public class HelloController {
@@ -11,7 +10,6 @@ public class HelloController {
     public Map<String, String> hello() {
         return Map.of(
                 "service", "hello",
-                "message", "QFlow skeleton is running"
-        );
+                "message", "QFlow skeleton is running");
     }
 }
