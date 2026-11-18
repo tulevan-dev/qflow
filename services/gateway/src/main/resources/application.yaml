@@ -1,4 +1,4 @@
-erver:
+server:
   port: 8080
 
 spring:
@@ -14,3 +14,11 @@ spring:
               # uri: ${HELLO_URI:http://hello:8081}
               predicates:
                 - Path=/hello
+  webflux:
+    problemdetails:
+      enabled: true
+
+logging:
+  structured:
+    format:
+      console: ecs

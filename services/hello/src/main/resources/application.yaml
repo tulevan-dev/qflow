@@ -4,9 +4,17 @@ server:
 spring:
   application:
     name: hello
+  mvc:
+    problemdetails:
+      enabled: true
 
 management:
   endpoints:
     web:
       exposure:
         include: health
+
+logging:
+  structured:
+    format:
+      console: ecs
