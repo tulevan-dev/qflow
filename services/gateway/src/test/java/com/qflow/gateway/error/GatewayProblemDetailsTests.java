@@ -2,7 +2,13 @@ package com.qflow.gateway.error;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.UUID;
+import java.util.zip.GZIPOutputStream;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,6 +29,18 @@ import reactor.netty.tcp.TcpServer;
 class GatewayProblemDetailsTests {
     private static final String HEADER = "X-Correlation-Id";
     private static final String ID = "5b21cb92-349e-4db8-8db1-7f6dbbe389ae";
+    private static final String VALIDATION_PROBLEM =
+            """
+            {
+              "type": "https://qflow.local/problems/validation-error",
+              "title": "Validation failed",
+              "status": 400,
+              "detail": "Request contains invalid fields",
+              "instance": "/hello",
+              "correlationId": "upstream-id",
+              "errors": [{"field": "name", "code": "NotBlank", "message": "Invalid value."}]
+            }
+            """;
     private static final DisposableServer INVALID_UPSTREAM =
             TcpServer.create()
                     .host("127.0.0.1")
@@ -40,25 +58,38 @@ class GatewayProblemDetailsTests {
                             return response.sendString(
                                     Mono.just(request.requestHeaders().get(HEADER)));
                         }
+                        if (status.equals("invalid-problem")
+                                || status.equals("oversized-problem")) {
+                            String body =
+                                    status.equals("invalid-problem")
+                                            ? "{\"status\":400,\"detail\":\"private upstream detail\"}"
+                                            : "{\"detail\":\"" + "x".repeat(64 * 1024) + "\"}";
+                            return response.status(400)
+                                    .header("Content-Type", "application/problem+json")
+                                    .sendString(Mono.just(body));
+                        }
+                        if (status.equals("slow-problem")) {
+                            return response.status(400)
+                                    .header("Content-Type", "application/problem+json")
+                                    .chunkedTransfer(true)
+                                    .sendHeaders()
+                                    .then(Mono.never());
+                        }
+                        if (status.equals("gzip-problem")
+                                || status.equals("oversized-gzip-problem")) {
+                            String body =
+                                    status.equals("gzip-problem")
+                                            ? VALIDATION_PROBLEM
+                                            : VALIDATION_PROBLEM + " ".repeat(64 * 1024);
+                            return response.status(400)
+                                    .header("Content-Type", "application/problem+json")
+                                    .header("Content-Encoding", "gzip")
+                                    .sendByteArray(Mono.fromSupplier(() -> gzip(body)));
+                        }
                         if (status.equals("400")) {
                             return response.status(400)
                                     .header("Content-Type", "application/problem+json")
-                                    .sendString(
-                                            Mono.just(
-                                                    """
-                                                    {
-                                                      "type": "https://qflow.local/problems/validation-error",
-                                                      "title": "Validation failed",
-                                                      "status": 400,
-                                                      "detail": "Request contains invalid fields",
-                                                      "instance": "/hello",
-                                                      "correlationId": "%s",
-                                                      "errors": [{"field": "name", "code": "NotBlank", "message": "Invalid value."}]
-                                                    }
-                                                    """
-                                                            .formatted(
-                                                                    request.requestHeaders()
-                                                                            .get(HEADER))));
+                                    .sendString(Mono.just(VALIDATION_PROBLEM));
                         }
                         if (status.equals("503")) {
                             response.header("Retry-After", "5");
@@ -71,6 +102,16 @@ class GatewayProblemDetailsTests {
 
     @LocalServerPort private int port;
     private WebTestClient client;
+
+    private static byte[] gzip(String body) {
+        var bytes = new ByteArrayOutputStream();
+        try (var gzip = new GZIPOutputStream(bytes)) {
+            gzip.write(body.getBytes(StandardCharsets.UTF_8));
+        } catch (IOException ex) {
+            throw new UncheckedIOException(ex);
+        }
+        return bytes.toByteArray();
+    }
 
     @DynamicPropertySource
     static void configureRoutes(DynamicPropertyRegistry properties) {
@@ -97,7 +138,11 @@ class GatewayProblemDetailsTests {
 
     @BeforeEach
     void connect() {
-        client = WebTestClient.bindToServer().baseUrl("http://localhost:" + port).build();
+        client =
+                WebTestClient.bindToServer()
+                        .baseUrl("http://localhost:" + port)
+                        .responseTimeout(Duration.ofSeconds(6))
+                        .build();
     }
 
     @Test
@@ -215,21 +260,49 @@ class GatewayProblemDetailsTests {
                 .isEqualTo(ID);
     }
 
-    @Test
-    void preservesUpstreamValidationErrors() {
+    @ParameterizedTest
+    @CsvSource({"400", "gzip-problem"})
+    void preservesUpstreamValidationErrors(String upstreamResponse) {
         client.get()
                 .uri("/hello")
                 .header(HEADER, ID)
-                .header("X-Test-Upstream-Status", "400")
+                .header("X-Test-Upstream-Status", upstreamResponse)
                 .exchange()
                 .expectStatus()
                 .isBadRequest()
                 .expectHeader()
                 .valueEquals(HEADER, ID)
+                .expectHeader()
+                .doesNotExist("Content-Encoding")
                 .expectBody()
+                .jsonPath("$.type")
+                .isEqualTo("https://qflow.local/problems/validation-error")
                 .jsonPath("$.correlationId")
                 .isEqualTo(ID)
                 .jsonPath("$.errors[0].field")
                 .isEqualTo("name");
+    }
+
+    @ParameterizedTest
+    @CsvSource({"invalid-problem", "oversized-problem", "oversized-gzip-problem", "slow-problem"})
+    void replacesUnusableProblemBodies(String upstreamResponse) {
+        client.get()
+                .uri("/hello")
+                .header(HEADER, ID)
+                .header("X-Test-Upstream-Status", upstreamResponse)
+                .exchange()
+                .expectStatus()
+                .isBadRequest()
+                .expectHeader()
+                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
+                .expectHeader()
+                .valueEquals(HEADER, ID)
+                .expectBody()
+                .jsonPath("$.type")
+                .isEqualTo("https://qflow.local/problems/bad-request")
+                .jsonPath("$.correlationId")
+                .isEqualTo(ID)
+                .jsonPath("$.detail")
+                .isEqualTo("The request could not be completed.");
     }
 }

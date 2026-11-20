@@ -4,11 +4,14 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.G
 
 import com.qflow.gateway.observability.RequestCorrelation;
 import io.netty.handler.codec.DecoderException;
+import io.netty.handler.codec.http.HttpResponseDecoder;
+import io.netty.handler.codec.http.HttpVersion;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.NoRouteToHostException;
 import java.net.URI;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.slf4j.Logger;
@@ -108,13 +111,28 @@ public class GatewayProblemHandler implements ErrorWebExceptionHandler, ServerRe
                         || cause instanceof NoRouteToHostException) {
                     return HttpStatus.SERVICE_UNAVAILABLE;
                 }
-                if (cause instanceof IOException || cause instanceof DecoderException) {
+                if (cause instanceof IOException
+                        || cause instanceof DecoderException
+                        || isInvalidUpstreamResponse(cause)) {
                     status = HttpStatus.BAD_GATEWAY;
                 }
             }
             return status;
         }
         return HttpStatus.INTERNAL_SERVER_ERROR;
+    }
+
+    private boolean isInvalidUpstreamResponse(Throwable cause) {
+        // Netty can propagate a malformed status line as an unwrapped argument exception.
+        if (!(cause instanceof IllegalArgumentException)) {
+            return false;
+        }
+        // Reactor's assembly tracing can retain only the original throwing frame.
+        return Arrays.stream(cause.getStackTrace())
+                .map(StackTraceElement::getClassName)
+                .anyMatch(name ->
+                        name.equals(HttpVersion.class.getName())
+                                || name.equals(HttpResponseDecoder.class.getName()));
     }
 
     @Override
