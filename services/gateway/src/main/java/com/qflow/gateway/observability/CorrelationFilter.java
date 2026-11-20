@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -32,18 +33,20 @@ public class CorrelationFilter implements WebFilter {
         var updated = exchange.mutate().request(request).build();
 
         updated.getResponse()
-                .beforeCommit(() -> {
-                    updated.getResponse().getHeaders().set(RequestCorrelation.HEADER, id);
-                    return Mono.empty();
-                });
+                .beforeCommit(() ->
+                        Mono.fromRunnable(() -> {
+                            updated.getResponse().getHeaders().set(RequestCorrelation.HEADER, id);
+                            var status = updated.getResponse().getStatusCode();
+                            log.atInfo()
+                                    .addKeyValue("correlationId", id)
+                                    .addKeyValue("method", request.getMethod().name())
+                                    .addKeyValue("path", request.getPath().value())
+                                    .addKeyValue(
+                                            "status",
+                                            status != null ? status.value() : HttpStatus.OK.value())
+                                    .log("request completed");
+                        }));
 
-        return chain.filter(updated)
-                .doFinally(signal ->
-                        log.atInfo()
-                                .addKeyValue("correlationId", id)
-                                .addKeyValue("method", request.getMethod().name())
-                                .addKeyValue("path", request.getPath().value())
-                                .log("request completed"))
-                .contextWrite(ctx -> ctx.put("correlationId", id));
+        return chain.filter(updated).contextWrite(ctx -> ctx.put("correlationId", id));
     }
 }

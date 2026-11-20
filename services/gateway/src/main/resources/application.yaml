@@ -21,8 +21,3 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
-
-#logging:
-#  structured:
-#    format:
-#      console: ecs

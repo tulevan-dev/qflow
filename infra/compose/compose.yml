@@ -70,6 +70,9 @@ services:
         MODULE: hello
     environment:
       SERVER_PORT: 8081
+      LOGGING_STRUCTURED_FORMAT_CONSOLE: ecs
+      SPRING_MAIN_BANNER_MODE: "off"
+      SPRING_OUTPUT_ANSI_ENABLED: NEVER
     depends_on:
       postgres:
         condition: service_healthy
@@ -91,6 +94,9 @@ services:
     environment:
       SERVER_PORT: 8080
       HELLO_SERVICE_URL: http://hello:8081
+      LOGGING_STRUCTURED_FORMAT_CONSOLE: ecs
+      SPRING_MAIN_BANNER_MODE: "off"
+      SPRING_OUTPUT_ANSI_ENABLED: NEVER
     ports:
       - "127.0.0.1:8080:8080"
     depends_on:

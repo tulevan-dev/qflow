@@ -16,8 +16,3 @@ management:
     web:
       exposure:
         include: health
-
-#logging:
-#  structured:
-#    format:
-#      console: ecs
