@@ -7,6 +7,9 @@ spring:
   mvc:
     problemdetails:
       enabled: true
+  output:
+    ansi:
+      enabled: ALWAYS
 
 management:
   endpoints:
@@ -14,7 +17,7 @@ management:
       exposure:
         include: health
 
-logging:
-  structured:
-    format:
-      console: ecs
+#logging:
+#  structured:
+#    format:
+#      console: ecs

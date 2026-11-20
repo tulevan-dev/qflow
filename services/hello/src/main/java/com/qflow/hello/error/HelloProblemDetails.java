@@ -1,4 +1,4 @@
-package com.qflow.hello.api.error;
+package com.qflow.hello.error;
 
 import com.qflow.hello.infrastructure.observability.RequestCorrelation;
 import jakarta.servlet.http.HttpServletRequest;

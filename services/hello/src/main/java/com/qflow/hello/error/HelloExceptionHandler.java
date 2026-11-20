@@ -1,4 +1,4 @@
-package com.qflow.hello.api.error;
+package com.qflow.hello.error;
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.net.URI;

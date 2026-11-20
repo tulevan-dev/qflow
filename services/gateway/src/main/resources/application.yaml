@@ -18,8 +18,11 @@ spring:
     problemdetails:
       # GatewayProblemHandler renders routing errors with the QFlow contract.
       enabled: false
+  output:
+    ansi:
+      enabled: ALWAYS
 
-logging:
-  structured:
-    format:
-      console: ecs
+#logging:
+#  structured:
+#    format:
+#      console: ecs
