@@ -11,6 +11,27 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+  datasource:
+    url: ${HELLO_DB_URL:jdbc:postgresql://127.0.0.1:15432/hello_db}
+    username: ${HELLO_DB_USER:hello_app}
+    password: ${HELLO_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    default-schema: public
+    schemas:
+      - public
+    table: flyway_schema_history
+    baseline-on-migrate: false
+    validate-on-migrate: true
+    validate-migration-naming: true
+    clean-disabled: true
+
+  sql:
+    init:
+      mode: never
 
 management:
   endpoints:

@@ -2,6 +2,8 @@ name: qflow
 
 services:
   postgres:
+    ports:
+      - "127.0.0.1:15432:5432"
     image: postgres:16
     environment:
       POSTGRES_USER: postgres
@@ -73,6 +75,9 @@ services:
       LOGGING_STRUCTURED_FORMAT_CONSOLE: ecs
       SPRING_MAIN_BANNER_MODE: "off"
       SPRING_OUTPUT_ANSI_ENABLED: NEVER
+      HELLO_DB_URL: jdbc:postgresql://postgres:5432/${HELLO_DB_NAME}
+      HELLO_DB_USER: ${HELLO_DB_USER:-hello_app}
+      HELLO_DB_PASSWORD: ${HELLO_DB_PASSWORD:?required}
     depends_on:
       postgres:
         condition: service_healthy
