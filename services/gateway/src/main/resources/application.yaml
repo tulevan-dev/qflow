@@ -11,7 +11,7 @@ spring:
         webflux:
           routes:
             - id: hello-route
-              uri: ${HELLO_SERVICE_URL:http://localhost:8081}
+              uri: ${HELLO_SERVICE_URL:http://localhost:9091}
               # uri: ${HELLO_SERVICE_URL:http://hello:8081}
               predicates:
                 - Path=/hello

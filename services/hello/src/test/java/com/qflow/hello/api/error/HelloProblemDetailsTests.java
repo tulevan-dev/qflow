@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        properties = {"spring.flyway.enabled=false", "spring.data.jdbc.repositories.enabled=false"})
 @Import(HelloProblemDetailsTests.FailingController.class)
 class HelloProblemDetailsTests {
     private static final String HEADER = "X-Correlation-Id";
