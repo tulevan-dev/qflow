@@ -4,8 +4,8 @@ info:
   version: 0.1.0
   description: HTTP contract for the Phase 0 walking skeleton through Gateway.
 servers:
-  - url: http://127.0.0.1:8080
-    description: Local Docker Compose Gateway
+  - url: /
+    description: Gateway serving this OpenAPI document
 security: []
 paths:
   /hello:

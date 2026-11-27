@@ -550,10 +550,8 @@ docs/
 
 | Method | Route qua Gateway | Auth | Thành công | Lỗi |
 |---|---|---|---|---|
-| GET | `/hello` | Public | 200 `HelloResponse` | 502/503/500 problem+json |
-| GET | `/api/v1/hello` | Public | 200 `HelloResponse` | tương tự, alias đề xuất |
-| GET | `/actuator/health` | Local/internal theo policy | 200 health status | 503 khi unhealthy |
-| GET | `/api/v1/health` | Public/local theo policy | 200 `HealthResponse` | 503; route đề xuất |
+| GET | `/hello` | Public | 200 `HelloResponse` | Problem Details cho 400, 404, 500, 502 hoặc 503 |
+| GET | `/actuator/health` | Local | 200 health status | 503 khi unhealthy |
 
 **Headers:** request `X-Correlation-Id` optional; response `X-Correlation-Id` required cho API business/error qua Gateway. `Content-Type: application/json` thành công; `application/problem+json` lỗi.
 

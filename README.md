@@ -27,6 +27,8 @@ curl -i http://127.0.0.1:8080/hello
 
 Dùng `curl.exe` trên Windows. Gateway trả HTTP 200 với header `X-Correlation-Id` và JSON có `"service": "hello"`.
 
+Mở [Swagger UI](http://127.0.0.1:8080/swagger-ui.html) để xem hợp đồng API và gọi thử endpoint qua Gateway.
+
 ## Kiểm thử
 
 ```bash

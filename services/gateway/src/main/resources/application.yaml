@@ -22,3 +22,8 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+
+springdoc:
+  swagger-ui:
+    url: /openapi-phase0.yaml
+    disable-swagger-default-url: true
