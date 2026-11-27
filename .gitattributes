@@ -13,3 +13,6 @@ mvnw text eol=lf
 *.yaml text
 *.xml text
 *.properties text
+# Superpowers scripts kept executable across Windows and Unix checkouts
+.agents/skills/superpowers/**/scripts/* text eol=lf
+.agents/skills/superpowers/writing-skills/render-graphs.js text eol=lf
