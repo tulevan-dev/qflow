@@ -1,0 +1,211 @@
+openapi: 3.0.3
+info:
+  title: QFlow Phase 0 API
+  version: 0.1.0
+  description: HTTP contract for the Phase 0 walking skeleton through Gateway.
+servers:
+  - url: /
+    description: Gateway serving this OpenAPI document
+security: []
+paths:
+  /hello:
+    get:
+      operationId: getHello
+      summary: Check that Gateway can reach Hello
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+      responses:
+        '200':
+          description: Hello service response.
+          headers:
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloResponse'
+              example:
+                service: hello
+                message: QFlow skeleton is running
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+        '503':
+          $ref: '#/components/responses/UpstreamUnavailable'
+  /actuator/health:
+    get:
+      operationId: getGatewayHealth
+      summary: Check Gateway health for local operations
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+      responses:
+        '200':
+          description: Gateway health endpoint responded successfully.
+          headers:
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/vnd.spring-boot.actuator.v3+json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+            application/vnd.spring-boot.actuator.v2+json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: Gateway health is DOWN or OUT_OF_SERVICE.
+          headers:
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/vnd.spring-boot.actuator.v3+json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: DOWN
+            application/vnd.spring-boot.actuator.v2+json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: DOWN
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: DOWN
+components:
+  parameters:
+    CorrelationId:
+      name: X-Correlation-Id
+      in: header
+      required: false
+      description: Gateway preserves a canonical UUID or generates one if the header is absent or invalid.
+      schema:
+        type: string
+        format: uuid
+  headers:
+    CorrelationId:
+      description: UUID used to correlate the request across Gateway and Hello logs.
+      required: true
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    HelloResponse:
+      type: object
+      required: [service, message]
+      properties:
+        service:
+          type: string
+          example: hello
+        message:
+          type: string
+          example: QFlow skeleton is running
+    HealthResponse:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          example: UP
+        groups:
+          type: array
+          items:
+            type: string
+          example: [liveness, readiness]
+    ProblemDetails:
+      type: object
+      required: [type, title, status, correlationId]
+      properties:
+        type:
+          type: string
+          description: URI reference identifying the problem type.
+          example: https://qflow.local/problems/not-found
+        title:
+          type: string
+        status:
+          type: integer
+          description: HTTP response status.
+        detail:
+          type: string
+        instance:
+          type: string
+          description: URI reference identifying the failed request.
+          example: /hello
+        correlationId:
+          type: string
+          format: uuid
+          description: Matches the X-Correlation-Id response header.
+        errors:
+          type: array
+          description: Field-level validation errors, when present.
+          items:
+            type: object
+            required: [field, code, message]
+            properties:
+              field:
+                type: string
+              code:
+                type: string
+              message:
+                type: string
+  responses:
+    BadRequest:
+      description: Upstream rejected the request.
+      headers:
+        X-Correlation-Id:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    NotFound:
+      description: The resource was not found. Gateway also uses this format for unmatched paths.
+      headers:
+        X-Correlation-Id:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+          example:
+            type: https://qflow.local/problems/not-found
+            title: Not Found
+            status: 404
+            detail: No route matches the requested resource.
+            instance: /does-not-exist
+            correlationId: 5b21cb92-349e-4db8-8db1-7f6dbbe389ae
+    InternalServerError:
+      description: Gateway or the upstream service could not complete the request.
+      headers:
+        X-Correlation-Id:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    BadGateway:
+      description: The upstream service returned an unusable response or a 502 status.
+      headers:
+        X-Correlation-Id:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    UpstreamUnavailable:
+      description: The upstream service was unreachable or temporarily unavailable.
+      headers:
+        X-Correlation-Id:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'

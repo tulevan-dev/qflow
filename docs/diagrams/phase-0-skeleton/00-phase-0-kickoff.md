@@ -136,7 +136,7 @@ sequenceDiagram
 
 ### P0-T08 — Flyway baseline
 - **Requirement:** mỗi service có DB riêng và migration `V1` (baseline); không để Hibernate tự sinh schema.
-- **Test:** khởi động trên DB trống thì migration chạy; chạy lại không đổi gì; `hello_db` và `identity_db` đều có bảng `flyway_schema_history`.
+- **Test:** khởi động Hello với `hello_db` trống thì Flyway ghi V1 vào `flyway_schema_history`. Khởi động lại Hello để kiểm tra V1 giữ nguyên. Migration của Identity thực hiện ở Phase 1.
 - **Pass:** migration chạy sạch và lặp lại được.
 
 ### P0-T09 — CI
