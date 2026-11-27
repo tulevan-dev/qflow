@@ -174,7 +174,12 @@ class GatewayProblemDetailsTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"404,not-found", "502,bad-gateway", "503,service-unavailable"})
+    @CsvSource({
+        "404,not-found",
+        "500,internal-server-error",
+        "502,bad-gateway",
+        "503,service-unavailable"
+    })
     void replacesUpstreamErrorBodyAndHeaders(int status, String type) {
         var response =
                 client.get()

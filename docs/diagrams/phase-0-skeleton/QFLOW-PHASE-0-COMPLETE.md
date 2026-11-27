@@ -653,7 +653,11 @@ components:
           schema: { $ref: '#/components/schemas/Problem' }
 ```
 
-**Contract review:** `/actuator/health` là endpoint vận hành Spring Actuator và không bắt buộc đưa vào public API; nếu public thì chỉ trả thông tin tối thiểu. **[CHỜ CODE/VERIFY]** OpenAPI lint, contract test response thực tế và bổ sung mọi error code thực tế (404/500/502) trước khi nghiệm thu.
+**Contract review:** `/actuator/health` là endpoint vận hành Spring Actuator. OpenAPI mô tả thông tin health được Gateway trả về trong môi trường local.
+
+**Kết quả 27/11/2026:** [OpenAPI Phase 0](../../api/openapi-phase0.yaml) mô tả `GET /hello` và `GET /actuator/health` đang chạy qua Gateway. Redocly CLI 2.84.0 lint sạch. Smoke test Compose xác nhận Hello trả 200, Gateway giữ UUID hợp lệ và tự cấp UUID khi thiếu hoặc sai. Route lạ trả 404 Problem Details với ID khớp header. Health trả 200 với `UP` và 503 với `DOWN` khi cấu hình ngưỡng dung lượng đĩa cao trên stack thử nghiệm. Cả hai response health hỗ trợ JSON thường và media type Actuator v2/v3.
+
+Maven verify pass 20 test. Các test Gateway kiểm tra Problem Details cho 400, 404, 500, 502 và 503, gồm case upstream trả 500.
 
 ---
 

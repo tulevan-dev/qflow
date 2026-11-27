@@ -15,4 +15,5 @@ Với Docker Compose, gọi Gateway qua `http://127.0.0.1:8080`.
 ```
 
 - [Chuẩn lỗi và correlation ID](error-model.md)
+- [OpenAPI Phase 0](openapi-phase0.yaml)
 - [Thiết kế API contract cho P0-T11](../diagrams/phase-0-skeleton/QFLOW-PHASE-0-COMPLETE.md#p0-t11--api-contract-đầu-tiên)
