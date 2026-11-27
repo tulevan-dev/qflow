@@ -4,7 +4,7 @@
 >
 > **Nguồn:** `PHASE 0 — Requirement & Skeleton design: Tài liệu khởi động` và `QFLOW — PROJECT BLUEPRINT` do chủ dự án cung cấp. Giữ nguyên định hướng microservices từ đầu, walking skeleton, database-per-service, Java 21 / Spring Boot 3.x / PostgreSQL 16 / Redis 7 / Kafka KRaft / Docker Compose / GitHub Actions.
 >
-> **Trạng thái:** **Thiết kế và quyết định: hoàn thiện để bắt đầu code.** **Code, test, CI, số đo và nghiệm thu thực tế: CHƯA THỰC HIỆN.** Không đánh dấu DoD kỹ thuật là đạt khi chưa có bằng chứng chạy thực tế.
+> **Trạng thái:** Thiết kế Phase 0 đã được ghi lại trong tài liệu này. Kết quả kiểm tra CI và quickstart được cập nhật ở P0-T09 và P0-T10. Ma trận P0-T12 vẫn dùng cho nghiệm thu toàn phase.
 
 ## Quy ước đọc
 
@@ -495,6 +495,8 @@ flowchart LR
 
 **Kiểm chứng [CHỜ CODE/VERIFY]:** PR thực tế chạy CI, tất cả jobs xanh; một test fail làm pipeline đỏ; cache hit quan sát được; thời gian đo được ghi lại.
 
+**Kết quả 27/11/2026:** [PR #1](https://github.com/tulevan-dev/qflow/pull/1) đã merge vào `develop`, ba lượt chạy CI đều xanh và GitHub ghi nhận lượt cuối truy cập cache Maven. Bước build/test giảm từ 35 xuống 25 giây. Tiêu chí chính để chuyển P0-T10 đã đạt. Đã xác nhận test fail làm Maven trả exit code 1 trên bản clone tạm. Bằng chứng lượt CI đỏ tương ứng trên GitHub Actions vẫn đang chờ. [Số đo CI](../../learning/perf-journal.md)
+
 ---
 
 # P0-T10 — DOCS + README
@@ -535,6 +537,8 @@ docs/
 **[CHỐT THIẾT KẾ]** Nếu Compose không bao gồm Gateway/Hello mà chỉ infra, README không được tuyên bố một lệnh chạy toàn hệ thống. Chọn Compose gồm cả Gateway/Hello để đáp ứng mục tiêu source; test readiness trước khi gọi curl.
 
 **Kiểm chứng [CHỜ CODE/VERIFY]:** một người khác clone, copy env, chạy đúng README và gọi hello thành công.
+
+**Kết quả 27/11/2026:** Đã viết [README](../../../README.md) và cây tài liệu theo bảy nhóm. Smoke test từ bản clone sạch của `develop` tại `d6118c6` chạy Compose với volume mới, cả năm container healthy, `GET /hello` trả HTTP 200 qua Gateway và `GET /actuator/health` báo `UP`. Bản OpenAPI YAML được thực hiện ở P0-T11. Bước xác nhận bởi một người mới vẫn đang chờ.
 
 ---
 
