@@ -4,7 +4,7 @@
 >
 > **Nguồn:** `PHASE 0 — Requirement & Skeleton design: Tài liệu khởi động` và `QFLOW — PROJECT BLUEPRINT` do chủ dự án cung cấp. Giữ nguyên định hướng microservices từ đầu, walking skeleton, database-per-service, Java 21 / Spring Boot 3.x / PostgreSQL 16 / Redis 7 / Kafka KRaft / Docker Compose / GitHub Actions.
 >
-> **Trạng thái:** Thiết kế Phase 0 đã được ghi lại trong tài liệu này. Kết quả kiểm tra CI và quickstart được cập nhật ở P0-T09 và P0-T10. Ma trận P0-T12 vẫn dùng cho nghiệm thu toàn phase.
+> **Trạng thái:** Kết quả kiểm chứng local và các mục chờ xác nhận để chuyển phase nằm trong ma trận P0-T12.
 
 ## Quy ước đọc
 
@@ -21,7 +21,7 @@
 
 **Đầu ra tài liệu đã chốt:** event storming checkout; glossary; bounded context và ownership; ADR-001…005; monorepo tree; cấu hình hạ tầng được mô tả; route hello/health; quy tắc problem+json, correlation ID và JSON log; chiến lược Flyway; thiết kế CI; khung docs; API contract; ma trận nghiệm thu.
 
-**Cổng ra Phase 0 [SOURCE]:** `docker compose up` chạy được, CI xanh, 5 ADR và glossary; bản task chi tiết còn yêu cầu DB isolation, hello qua gateway, correlation ID, problem+json, log JSON, Flyway và OpenAPI. **Đây là tiêu chí tương lai, không phải kết quả đã đạt.**
+**Cổng ra Phase 0 [SOURCE]:** Compose chạy được, CI xanh, 5 ADR và glossary. Tiêu chí kỹ thuật gồm DB isolation, Hello qua Gateway, correlation ID, Problem Details, log JSON, Flyway và OpenAPI. Xem kết quả từng tiêu chí ở P0-T12.
 
 ```mermaid
 flowchart TD
@@ -462,14 +462,13 @@ sequenceDiagram
 
 | DB | Owner | Migration đầu | Nội dung tối thiểu |
 |---|---|---|---|
-| `hello_db` | hello-service | `V1__baseline.sql` | marker table `hello_metadata` hoặc schema tối thiểu có ý nghĩa; Flyway history |
-| `identity_db` | identity-service ở Phase 1 | `V1__baseline.sql` | baseline trống/marker, chưa tạo bảng auth ở Phase 0 |
+| `hello_db` | hello-service | `V1__baseline.sql` | Bảng `hello_metadata` và lịch sử Flyway |
 
-**Lưu ý quan trọng:** `identity_db` được bootstrap sớm nhưng `identity-service` chưa tồn tại. Để đáp ứng test `flyway_schema_history` của cả hai DB, **[ĐỀ XUẤT BỔ SUNG]** dùng một bước migration init riêng cho `identity_db` trong Phase 0 (Flyway CLI/job hoặc module migration tối thiểu), thay vì giả vờ identity-service đã chạy. Khi Phase 1 bắt đầu, dùng tiếp lịch sử đó và thêm `V2__create_identity_tables.sql`.
+Migration của Identity bắt đầu ở Phase 1, cùng với `identity-service`. Phase 0 có sẵn database và role để kiểm chứng DB isolation.
 
 **Quy tắc:** không sửa migration đã apply; dùng migration mới; `spring.jpa.hibernate.ddl-auto=validate` nếu có JPA, không dùng `update/create`; migration chạy lại idempotent ở cấp công cụ Flyway (không apply lại V1); fail startup nếu migration sai.
 
-**Kiểm chứng [CHỜ CODE/VERIFY]:** DB mới → V1 applied; restart → không apply lại; checksum/history đúng; hai DB có bảng `flyway_schema_history`; identity app không thể sửa hello DB.
+**Kiểm chứng:** Bảng `flyway_schema_history` của `hello_db` có V1 thành công trên volume mới. Sau khi Hello khởi động lại, lịch sử và checksum phải giữ nguyên. Xem A10 trong ma trận nghiệm thu.
 
 ---
 
@@ -663,35 +662,37 @@ Maven verify pass 20 test. Các test Gateway kiểm tra Problem Details cho 400,
 
 ## Ma trận acceptance
 
+Nghiệm thu local ngày 27/11/2026 trên Windows, JDK 21 và Docker Compose 5.3.1. Stack được build từ bản clone mới của commit `00174f0` cộng với thay đổi OpenAPI của nhánh làm việc. Dùng volume mới và một cổng Gateway riêng để chạy song song với stack dev.
+
 | ID | Điều kiện pass | Bằng chứng phải có | Trạng thái hiện tại |
 |---|---|---|---|
-| A01 | Event storming có happy path + ≥2 failure path | Board/Markdown + review | **Thiết kế trong file này** |
-| A02 | Glossary và context ownership rõ | `docs/glossary.md`, context map | **Thiết kế trong file này** |
-| A03 | ADR-001..005 đủ Context/Decision/Alternatives/Trade-offs/Consequences | 5 ADR được commit | **Nội dung trong file này; chờ tách/commit** |
-| A04 | Monorepo đúng, không commit secrets | Repo tree + secret scan | **CHỜ CODE/VERIFY** |
-| A05 | Postgres, Redis, Kafka healthy | `docker compose ps` + health logs | **CHỜ CODE/VERIFY** |
-| A06 | DB isolation thật, mỗi DB user riêng | Test connect positive/negative | **CHỜ CODE/VERIFY** |
-| A07 | `GET /hello` qua Gateway trả 200 | curl output / integration test | **CHỜ CODE/VERIFY** |
-| A08 | Correlation ID cùng nhau ở Gateway/Hello | response header + JSON logs | **CHỜ CODE/VERIFY** |
-| A09 | Error `application/problem+json`, không lộ stack | curl error + test | **CHỜ CODE/VERIFY** |
-| A10 | Flyway V1 trên cả hai DB; restart không chạy lại | `flyway_schema_history` + log | **CHỜ CODE/VERIFY** |
-| A11 | CI build/test xanh, cache enabled | URL run/PR, cache log | **CHỜ CODE/VERIFY** |
-| A12 | README một lệnh + docs + OpenAPI lint | Fresh-clone test + lint | **CHỜ CODE/VERIFY** |
+| A01 | Event storming có happy path và ít nhất 2 nhánh lỗi | Đã rà soát timeline checkout và 6 nhánh lỗi. [Event storming](../../architecture/event-storming-checkout.md) | **PASS** |
+| A02 | Glossary và context ownership rõ | Đã rà soát thuật ngữ và bảng ownership. [Glossary](../../glossary.md) · [Context map](../../architecture/context-map.md) | **PASS** |
+| A03 | ADR-001..005 đủ Context, Decision, Alternatives, Trade-offs và Consequences | Cả 5 ADR đã có trong Git và đủ các phần. [Danh sách ADR](../../decisions/README.md) | **PASS** |
+| A04 | Monorepo đúng, secret local nằm ngoài Git | Maven reactor có Gateway và Hello. `.env` được ignore. Gitleaks 8.28.0 quét 21 commit và diff ứng viên, không có phát hiện. [Cấu trúc repo](../../../README.md#cấu-trúc-repo) | **PASS** |
+| A05 | Postgres, Redis, Kafka healthy | `compose up --wait` thành công. `compose ps` báo PostgreSQL, Redis, Kafka, Hello và Gateway đều `healthy`. Redis trả `PONG`. | **PASS** |
+| A06 | DB isolation, mỗi DB user riêng | `hello_app` và `identity_app` đăng nhập được vào DB của mình. Cả hai chiều truy cập chéo đều bị từ chối với `does not have CONNECT privilege`. | **PASS** |
+| A07 | `GET /hello` qua Gateway trả 200 | HTTP 200 với `service=hello`. `GET /actuator/health` trả 200 và `UP`. | **PASS** |
+| A08 | Correlation ID khớp ở Gateway và Hello | Header phản hồi và hai log ECS JSON đều có `5b21cb92-349e-4db8-8db1-7f6dbbe389ae`. Header thiếu hoặc sai được thay bằng UUID hợp lệ. | **PASS** |
+| A09 | Error `application/problem+json`, không lộ stack | Route lạ trả 404. Dừng Hello rồi gọi `/hello` trả 503. Hai response có `correlationId` khớp header và không có trường stack trace. | **PASS** |
+| A10 | Flyway V1 trên `hello_db` và giữ nguyên lịch sử sau khi restart | Volume mới có đúng một bản ghi `version=1`, `success=true`, checksum `1262217117`. Restart Hello giữ nguyên bản ghi và Flyway báo `No migration necessary`. | **PASS** |
+| A11 | CI build/test xanh và có cache Maven | Workflow đã chạy xanh trên PR #1 và #2, có bằng chứng cache ở PR #1. Maven tại local chạy qua 20 test. [Run PR #1](https://github.com/tulevan-dev/qflow/actions/runs/45842434697/attempts/3) · [Run PR #2](https://github.com/tulevan-dev/qflow/actions/runs/46007512748) · [Số đo cache](../../learning/perf-journal.md) | **PASS cho workflow · Chờ CI của phiên bản nghiệm thu** |
+| A12 | README một lệnh, docs và OpenAPI lint | Smoke test từ bản clone mới chạy thành công. Redocly CLI 2.12.0 báo spec hợp lệ. YAML được phục vụ qua Gateway khớp file nguồn và Swagger UI trỏ đúng URL. [README](../../../README.md#chạy-local) · [OpenAPI lint](../../api/README.md#kiểm-tra-openapi) | **PASS local · Chờ chạy README độc lập** |
 
-## Smoke test checklist để tự chạy sau khi code
+## Chạy lại smoke test
 
 ```bash
-# Lệnh minh họa, đường dẫn phải khớp repo bạn triển khai
 cp .env.example .env
-docker compose -f infra/compose/compose.yml up -d --build
-docker compose -f infra/compose/compose.yml ps
+# Điền mật khẩu local trong .env theo README trước khi chạy Compose.
+docker compose --env-file .env -f infra/compose/compose.yml up -d --build --wait
+docker compose --env-file .env -f infra/compose/compose.yml ps
 curl -i http://localhost:8080/hello
 curl -i -H 'X-Correlation-Id: 5b21cb92-349e-4db8-8db1-7f6dbbe389ae' http://localhost:8080/hello
 curl -i http://localhost:8080/route-does-not-exist
-./mvnw -B verify
+./mvnw -B spotless:check verify
 ```
 
-**Bắt buộc bổ sung bằng chứng:** query DB roles/connect privilege; kiểm tra Flyway history; log JSON parseable; CI run; cache measurement; OpenAPI lint. Các lệnh ở trên **chưa được thực thi** trong tài liệu này.
+Trên Windows, dùng `Copy-Item`, `curl.exe` và `.\mvnw.cmd`. Để kiểm lại DB isolation, kết nối lần lượt với từng role qua TCP và thử cả hai database. Để kiểm Flyway, chụp lịch sử trong `hello_db` trước và sau khi restart Hello. [Database ownership](../../database/ownership.md) · [Flyway](../../database/migrations.md) · [OpenAPI lint](../../api/README.md#kiểm-tra-openapi)
 
 ## Interview checkpoint
 
@@ -723,9 +724,9 @@ curl -i http://localhost:8080/route-does-not-exist
 
 ## Cổng chuyển sang Phase 1
 
-**Được bắt đầu Phase 1 khi:** A01–A12 có bằng chứng phù hợp; trả lời được Q1–Q3; cấu hình secrets không bị commit; README chạy được từ clone sạch. Nếu mới chỉ hoàn thành file thiết kế này thì **đã giải quyết bài toán thiết kế Phase 0 nhưng CHƯA hoàn thành Phase 0 kỹ thuật**.
+**Sign-off:** Chờ CI của phiên bản nghiệm thu, một lượt chạy README độc lập và xác nhận Q1–Q3 của chủ dự án trước khi chuyển Phase 1.
 
-**Đầu vào Phase 1 đã chuẩn bị:** Gateway route, correlation/error/logging standard, `identity_db` + Flyway baseline, repo/CI, 5 ADR. Phase 1 bổ sung identity-service, register/login, JWT RS256/JWKS, refresh rotation/reuse detection, logout, RBAC, organizer profile và login rate limiting.
+**Đầu vào Phase 1 đã chuẩn bị:** Gateway route, chuẩn correlation/error/logging, `identity_db` và role, repo/CI, 5 ADR. Phase 1 bổ sung migration của Identity, identity-service, register/login, JWT RS256/JWKS, refresh rotation/reuse detection, logout, RBAC, organizer profile và login rate limiting.
 
 ---
 
@@ -750,7 +751,7 @@ curl -i http://localhost:8080/route-does-not-exist
 
 1. Maven thay vì Gradle: lựa chọn đã chốt ở mức thiết kế, có thể thay đổi bằng ADR nếu môi trường yêu cầu.
 2. Kafka KRaft thay vì Redpanda: giữ Kafka theo blueprint; nếu máy không đủ RAM thì ghi quyết định thay thế, không lặng lẽ đổi.
-3. `identity_db` migration Phase 0: dùng Flyway job độc lập trước khi có identity-service; bảo đảm version chain nhất quán khi sang Phase 1.
+3. Bắt đầu lịch sử migration của `identity_db` cùng với Identity ở Phase 1.
 4. `GET /api/v1/hello` và `/api/v1/health`: route bổ sung, `/hello` vẫn là route bắt buộc.
 5. Cách bảo vệ Actuator health: public tối thiểu hoặc internal; không lộ env/config/metrics nhạy cảm.
 6. Mức quyền app user: tách owner/migrator/runtime ở production khi cần, nhưng phải chứng minh isolation ngay ở local.
@@ -761,4 +762,4 @@ curl -i http://localhost:8080/route-does-not-exist
 
 ---
 
-**Kết luận:** P0-T01…P0-T12 đã có lời giải ở mức requirement/architecture/contract/acceptance. Tài liệu này là **design baseline** để chủ dự án tự code. Trạng thái kỹ thuật của Phase 0 vẫn **NOT VERIFIED** cho đến khi toàn bộ acceptance evidence được tạo.
+Kết quả kiểm chứng và các mục chờ xác nhận được ghi ở [P0-T12](#p0-t12--nghiệm-thu--definition-of-done).
